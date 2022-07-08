@@ -19,10 +19,10 @@ const Home: NextPage = () => {
                         <Link href="/" className="mr-5 hover:text-gray-900">
                             Home
                         </Link>
-                        <Link href="#" className="mr-5 hover:text-gray-900">
+                        <Link href="/profiles" className="mr-5 hover:text-gray-900">
                             Profile
                         </Link>
-                        <Link href="#" className="mr-5 hover:text-gray-900">
+                        <Link href="/projects" className="mr-5 hover:text-gray-900">
                             Projects
                         </Link>
                         <Link href="#" className="mr-5 hover:text-gray-900">
