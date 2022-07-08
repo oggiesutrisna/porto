@@ -4,10 +4,6 @@ import Image from "next/image";
 import Link from 'next/link';
 
 // buat fungsi untuk ngambil gambar di typescript
-declare module ".jpg" {
-    const value = any;
-    export = value;
-}
 
 const Home: NextPage = () => {
     return (
