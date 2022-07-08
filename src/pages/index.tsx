@@ -54,7 +54,7 @@ const Home: NextPage = () => {
                 interested in the IT world and wishes to continue learning.
                 Oggie Sutrisna has made nearly several applications that have
                 been published by old companies due to his ability in the IT
-                field to find his passion in the IT field. So, let's take a look
+                field to find his passion in the IT field. So, lets take a look
                 at the profile and projects that have been completed thus far.
               </p>
             </div>
