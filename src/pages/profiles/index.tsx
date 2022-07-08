@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from 'next/link';
 
 // buat fungsi untuk ngambil gambar di typescript
 declare module ".jpg" {
@@ -18,18 +19,18 @@ const Home: NextPage = () => {
             <header className="text-gray-600 body-font">
                 <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                     <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-                        <a href="/" className="mr-5 hover:text-gray-900">
+                        <Link href="/" className="mr-5 hover:text-gray-900">
                             Home
-                        </a>
-                        <a href="#" className="mr-5 hover:text-gray-900">
+                        </Link>
+                        <Link href="#" className="mr-5 hover:text-gray-900">
                             Profile
-                        </a>
-                        <a href="#" className="mr-5 hover:text-gray-900">
+                        </Link>
+                        <Link href="#" className="mr-5 hover:text-gray-900">
                             Projects
-                        </a>
-                        <a href="#" className="mr-5 hover:text-gray-900">
+                        </Link>
+                        <Link href="#" className="mr-5 hover:text-gray-900">
                             Contact
-                        </a>
+                        </Link>
                     </nav>
                 </div>
             </header>
@@ -54,12 +55,12 @@ const Home: NextPage = () => {
                                 Domisili : <b>Indonesia</b> <br />
                                 Graduated : Computer Science (S1) <br />
                                 Language : Indonesia (Native), English (Passive) <br />
-                                Skills : <a href="#">HTML</a> | <a href="#">CSS</a> | <a href="#">Laravel</a> | <a href="#">React</a> | <a href="#">Vue</a> | <a href="#">Vite</a> <br />
+                                Skills : <Link href="#">HTML</Link> | <Link href="#">CSS</Link> | <Link href="#">Laravel</Link> | <Link href="#">React</Link> | <Link href="#">Vue</Link> | <Link href="#">Vite</Link> <br />
                                 Hobby :
-                                - Have a podcast called <a href="https://open.spotify.com/show/6CJhEdEtADDvyQLO8zqbtQ?si=aa37dd3c5dd64390">MariDiskusi</a> on Spotify <br />
+                                - Have a podcast called <Link href="https://open.spotify.com/show/6CJhEdEtADDvyQLO8zqbtQ?si=aa37dd3c5dd64390">MariDiskusi</Link> on Spotify <br />
                                 - Watching Movies <br />
                                 - Listening Music <br />
-                                - Playing Games : <a href="https://steamcommunity.com/id/melodyeskimo/"> SteamID </a> <br />
+                                - Playing Games : <Link href="https://steamcommunity.com/id/melodyeskimo/"> SteamID </Link> <br />
                             </p>
                         </div>
                     </div>
@@ -72,14 +73,14 @@ const Home: NextPage = () => {
                 <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                     <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
                         © 2022 Oggie Sutrisna —
-                        <a
+                        <Link
                             href="https://twitter.com/osutirsna"
                             className="text-gray-600 ml-1"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
                             @osutirnsa
-                        </a>
+                        </Link>
                     </p>
                 </div>
             </footer>
