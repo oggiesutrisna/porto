@@ -30,8 +30,8 @@ const Home: NextPage = () => {
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
-                Hello, I'm Oggie <br />
-                I'm a <div className="font-bold">Laravel Developer</div> from
+                Hello, Im Oggie <br />
+                Im a <div className="font-bold">Laravel Developer</div> from
                 Bali, Indonesia.
               </h1>
               <p className="leading-relaxed">
