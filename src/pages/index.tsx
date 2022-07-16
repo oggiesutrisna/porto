@@ -48,7 +48,7 @@ const Home: NextPage = () => {
           <div className="flex flex-wrap -m-4">
             <div className="p-4 md:w-1/3 transform hover:-translate-y-2 transition duration-250 ease-in-out">
               <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                <img
+                <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://images.unsplash.com/photo-1576669802367-42e9fd83d9af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                   alt="blog"
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
             {/* Openers */}
             <div className="p-4 md:w-1/3 transform hover:-translate-y-2 transition duration-250 ease-in-out">
               <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                <img
+                <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
                   alt="blog"
@@ -93,7 +93,7 @@ const Home: NextPage = () => {
             </div>
             <div className="p-4 md:w-1/3 transform hover:-translate-y-2 transition duration-250 ease-in-out">
               <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
-                <img
+                <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://images.unsplash.com/photo-1606318313647-137d1f3b4d3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1477&q=80"
                   alt="blog"
@@ -122,14 +122,14 @@ const Home: NextPage = () => {
       <div className="mt-32 max-w-6xl xl:max-w-7xl w-full mx-auto px-4 sm:px-10 space-y-8">
         <a
           href="https://github.com/sponsors/oggiesutrisna"
-          target="_blank"
+          target="_blank" rel="noreferrer"
           className="block px-4 sm:px-12 py-12 text-center text-xl sm:text-3xl font-medium text-white transform hover:-translate-y-2 focus:-translate-y-2 transition duration-250 ease-in-out bg-gradient-to-r from-purple-600 to-teal-400 rounded-lg"
         >
           Love my work? Sponsor me on GitHub ❤️
         </a>
 
         <a
-          href="mailto:sutrisna.oggie@gmail.com.com"
+          href="mailto:sutrisna.oggie@gmail.com" rel="noreferrer"
           className="block px-4 sm:px-12 py-12 text-center text-xl sm:text-3xl font-medium text-gray-900 transform hover:-translate-y-2 focus:-translate-y-2 transition duration-250 ease-in-out border-8 border-gray-900 rounded-lg"
         >
           Contact me at sutrisna.oggie@gmail.com
