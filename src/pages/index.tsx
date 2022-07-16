@@ -51,7 +51,7 @@ const Home: NextPage = () => {
                 <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://images.unsplash.com/photo-1576669802367-42e9fd83d9af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                  alt="blog"
+                  alt="blog" width="720" height="480"
                 />
                 <div className="p-6">
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
@@ -74,7 +74,7 @@ const Home: NextPage = () => {
                 <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-                  alt="blog"
+                  alt="blog" width="720" height="480"
                 />
                 <div className="p-6">
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
                 <Image
                   className="lg:h-48 md:h-36 w-full object-cover object-center"
                   src="https://images.unsplash.com/photo-1606318313647-137d1f3b4d3c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1477&q=80"
-                  alt="blog"
+                  alt="blog" width="720" height="480"
                 />
                 <div className="p-6">
                   <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
