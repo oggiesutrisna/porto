@@ -9,7 +9,7 @@ const Home: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Oggie Sutrisna - Mushroom's Diary</title>
+                <title>Oggie Sutrisna - Mushroom&apos;s Diary</title>
 
                 <meta name="title" content="Oggie Sutrisna - Mushroom's Diary"/>
                 <meta name="description" content="Hello, My Name is Oggie Sutrisna and welcome to my Mushroom's Diary"/>
@@ -47,8 +47,8 @@ const Home: NextPage = () => {
                             <h2 className="border-0">Codes, Tips, and make your life even better</h2>
                         </div>
                         <div className="flex flex-col justify-end text-right">
-                            <a href="/">Home</a>
-                            <a href="/category/blog">Blog (under development)</a>
+                            <Link href="/">Home</Link>
+                            <Link href="/category/blog">Blog (under development)</Link>
                         </div>
                     </div>
                 </header>
@@ -65,7 +65,7 @@ const Home: NextPage = () => {
                             <h2 className="border-b border-solid border-black mb-4">Hello:</h2>
                             <div className="prose max-w-none max-h">
                                 <p>
-                                    Greetings! My name is Oggie Sutrisna. I grew up in Indonesia, Especially in Bali. Yep, as a Bali-born, So many bule`s in here. before I
+                                    Greetings! My name is Oggie Sutrisna. I grew up in Indonesia, Especially in Bali. Yep, as a Bali-born, So many bule&apos;s in here. before I
                                     made my way and graduated from STMIK Primakara (now. Universitas Primakara). Then, I had travels so many places and working as a Software Engineer, Junior Web Developer, and Part-Time Music Producer and DJ in Bali.
                                 </p> <br />
                                 <p>
@@ -81,26 +81,26 @@ const Home: NextPage = () => {
                             </h2>
                             <ol className="flex flex-col justify-between grow">
                                 <li className="flex flex-row justify-between mb-1">
-                                    <div>Lead Software Engineer @ <a href="https://unicare-clinic.com/">Unicare Clinic</a></div>
+                                    <div>Lead Software Engineer @ <Link href="https://unicare-clinic.com/">Unicare Clinic</Link></div>
                                     <div>2020</div>
                                 </li>
 
                                 <li className="flex flex-row justify-between mb-1">
-                                    <div>Lead Software Engineer @ <a href="https://hydromedicalbali.com/">Hydromedical</a> </div>
+                                    <div>Lead Software Engineer @ <Link href="https://hydromedicalbali.com/">Hydromedical</Link> </div>
                                     <div>2019-2020</div>
                                 </li>
 
                                 <li className="flex flex-row justify-between mb-1">
-                                    <div>Graphic Designer @ <a href="#">Varash</a></div>
+                                    <div>Graphic Designer @ <Link href="#">Varash</Link></div>
                                     <div>2019</div>
                                 </li>
 
                                 <li className="flex flex-row justify-between mb-1">
-                                    <div>Junior Web Developer @ <a href="https://diskominfo.badungkab.go.id/">Diskominfo Badung</a></div>
+                                    <div>Junior Web Developer @ <Link href="https://diskominfo.badungkab.go.id/">Diskominfo Badung</Link></div>
                                     <div>2018</div>
                                 </li>
                                 <li className="flex flex-row justify-between">
-                                    <div>Graphic Designer @ <a href="#">Pondok Software Santha Bodhi</a></div>
+                                    <div>Graphic Designer @ <Link href="#">Pondok Software Santha Bodhi</Link></div>
                                     <div>2013</div>
                                 </li>
                             </ol>
