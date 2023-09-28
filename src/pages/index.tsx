@@ -21,8 +21,10 @@ const Home: NextPage = () => {
                 <meta name="revisit-after" content="7 days"/>
                 <meta name="author" content="Oggie Sutrisna"/>
 
+                <meta name="google-site-verification" content="djhZ1nKUHDbH8PTkkpPR46OzQiA71oW4jzBCME5ao60"/>
+
                 <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://metatags.io/"/>
+                <meta property="og:url" content="https://oggiesutrisna.vercel.app"/>
                 <meta property="og:title" content="Oggie Sutrisna - Mushroom's Diary"/>
                 <meta property="og:description"
                       content="Hello, My Name is Oggie Sutrisna and welcome to my Mushroom's Diary"/>
@@ -65,11 +67,15 @@ const Home: NextPage = () => {
                             <h2 className="border-b border-solid border-black mb-4">Hello:</h2>
                             <div className="prose max-w-none max-h">
                                 <p>
-                                    Greetings! My name is Oggie Sutrisna. I grew up in Indonesia, Especially in Bali. Yep, as a Bali-born, So many bule&apos;s in here. before I
-                                    made my way and graduated from STMIK Primakara (now. Universitas Primakara). Then, I had travels so many places and working as a Software Engineer, Junior Web Developer, and Part-Time Music Producer and DJ in Bali.
-                                </p> <br />
+                                    Greetings! My name is Oggie Sutrisna. I grew up in Indonesia, Especially in Bali.
+                                    Yep, as a Bali-born, So many bule&apos;s in here. before I
+                                    made my way and graduated from STMIK Primakara (now. Universitas Primakara). Then, I
+                                    had travels so many places and working as a Software Engineer, Junior Web Developer,
+                                    and Part-Time Music Producer and DJ in Bali.
+                                </p> <br/>
                                 <p>
-                                    Reach me on <a href="https://instagram.com/oggiesutrisna">Instagram</a>, or need some project to help or build it? Reach me on
+                                    Reach me on <a href="https://instagram.com/oggiesutrisna">Instagram</a>, or need
+                                    some project to help or build it? Reach me on
                                     Telegram.
                                 </p>
                             </div>
@@ -81,12 +87,14 @@ const Home: NextPage = () => {
                             </h2>
                             <ol className="flex flex-col justify-between grow">
                                 <li className="flex flex-row justify-between mb-1">
-                                    <div>Lead Software Engineer @ <Link href="https://unicare-clinic.com/">Unicare Clinic</Link></div>
+                                    <div>Lead Software Engineer @ <Link href="https://unicare-clinic.com/">Unicare
+                                        Clinic</Link></div>
                                     <div>2020</div>
                                 </li>
 
                                 <li className="flex flex-row justify-between mb-1">
-                                    <div>Lead Software Engineer @ <Link href="https://hydromedicalbali.com/">Hydromedical</Link> </div>
+                                    <div>Lead Software Engineer @ <Link
+                                        href="https://hydromedicalbali.com/">Hydromedical</Link></div>
                                     <div>2019-2020</div>
                                 </li>
 
@@ -96,7 +104,8 @@ const Home: NextPage = () => {
                                 </li>
 
                                 <li className="flex flex-row justify-between mb-1">
-                                    <div>Junior Web Developer @ <Link href="https://diskominfo.badungkab.go.id/">Diskominfo Badung</Link></div>
+                                    <div>Junior Web Developer @ <Link href="https://diskominfo.badungkab.go.id/">Diskominfo
+                                        Badung</Link></div>
                                     <div>2018</div>
                                 </li>
                                 <li className="flex flex-row justify-between">
