@@ -19,8 +19,12 @@ body {
 /* Dark mode */
 body.dark-mode {
     background-color: #121212;
-    color: #e0e0e0;
+    color: #ffffff;
     background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+}
+
+body.dark-mode .text {
+    color: #ffffff;
 }
 
 @keyframes gradientBG {
