@@ -315,7 +315,6 @@ body.dark-mode li {
 }
 
 li::before {
-    content: '•';
     color: #007bff;
     display: inline-block;
     width: 1em;
