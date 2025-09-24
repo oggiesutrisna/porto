@@ -17,6 +17,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vercel/style-guide@5.0.0/fonts/geist-mono/style.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://oggiesutrisna.vercel.app/"/>
+    <!-- PWA manifest & icons -->
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/image.png">
+    <!-- Preload hero/profile image for faster LCP -->
+    <link rel="preload" as="image" href="/image.png">
 
     <title>Oggie Sutrisna - Mushroom&apos;s Diary</title>
 
@@ -31,13 +36,7 @@
     <!-- Open Graph additional tags -->
     <meta property="og:locale" content="en_US"/>
     <meta property="og:site_name" content="Oggie Sutrisna - Mushroom's Diary"/>
-
-    <!-- Article specific meta tags -->
     
-
-    <!-- Cache control -->
-    <!-- Prefer HTTP response headers for cache control; meta http-equiv removed -->
-
     <!-- Additional SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
     
