@@ -1,0 +1,7 @@
+# Robots.txt for oggiesutrisna.vercel.app
+# Allow all crawlers to access the site
+User-agent: *
+Disallow:
+
+# Point crawlers to the XML sitemap
+Sitemap: https://oggiesutrisna.vercel.app/sitemap.xml

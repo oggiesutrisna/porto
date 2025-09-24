@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" id="dynamic-favicon" href="data:,">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Preconnects to speed up third-party origins -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://oggiesutrisna.vercel.app" crossorigin>
+    <link rel="dns-prefetch" href="//oggiesutrisna.vercel.app">
     <!-- Preload Geist Sans font to improve loading performance -->
     <link rel="preload"
           href="https://cdn.jsdelivr.net/npm/@vercel/style-guide@5.0.0/fonts/geist-sans/GeistSans-Regular.woff2"
@@ -18,27 +23,20 @@
     <meta name="title" content="Oggie Sutrisna - Mushroom's Diary for Everyone"/>
     <meta name="description"
           content="Calling all mycophiles! Oggie Sutrisna's Mushroom's Diary: A hub for foragers, programmers, and bug enthusiasts. 🍄🤝"/>
-    <meta name="keywords"
-          content="Oggie, Sutrisna, oggie, sutrisna, oggiesutrisna, Oggie Sutrisna, mushroom, diary, mushromms diary, Web Developer, Portfolio, Projects, Skills, Experience, Education, HTML, CSS, JavaScript, React, Node.js, Freelance, Hired for Project, Open for Project, Website Development Vendor, Web Development Services, Frontend Developer, Backend Developer, Full Stack Developer, UI/UX Designer, Responsive Design, E-commerce Development, WordPress Development, Mobile App Development, Software Development, Custom Web Solutions, Web Application Development, Digital Marketing, SEO Services, Graphic Design, Creative Solutions, Agile Development, Project Management, Remote Work, Tech Consultant, IT Solutions, Online Portfolio, Freelance Web Designer, Freelance Developer, Hire a Developer, Web Development Expert, Web Design Services, Web Development Agency, Software Engineer, Technology Specialist, Web Solutions Provider, Digital Solutions, Innovative Web Design, User-Centered Design, Cross-Platform Development, Cloud Solutions, API Development, Database Management, Content Management Systems, Web Hosting Services, Website Maintenance, Performance Optimization, Cybersecurity, IT Support, Business Solutions, Digital Transformation, Technology Integration, Freelance Marketplace, Contract Work, Project-Based Work, Tech Freelancer, Web Development Trends, Online Presence, Digital Portfolio, Bali Developer, Indonesian Developer, ASEAN Developer, Laravel Expert, PHP Specialist, Vue.js Developer, React Developer, TypeScript, Next.js, Tailwind CSS, Docker, DevOps, CI/CD, Git, GitHub, GitLab, Bitbucket, Code Quality, Testing, Unit Testing, Integration Testing, E2E Testing, REST API, GraphQL, Microservices, AWS, Cloud Computing, Serverless, Progressive Web Apps, Web Performance, Web Security, HTTPS, SSL, SEO Optimization, Technical Writing, Code Documentation, Open Source Contributor, Team Leadership, Scrum, Kanban, Jira, Confluence, Technical Architecture, System Design, Database Design, UI Design, UX Research, Accessibility, WCAG, Web Standards, Cross-browser Compatibility, Mobile-first Design, Responsive Framework, Code Review, Mentoring, Technical Consulting"/>
 
     <!-- Additional meta tags for better SEO -->
-    <meta name="rating" content="General"/>
     <meta name="referrer" content="no-referrer-when-downgrade"/>
     <meta name="format-detection" content="telephone=no"/>
     
-
     <!-- Open Graph additional tags -->
     <meta property="og:locale" content="en_US"/>
     <meta property="og:site_name" content="Oggie Sutrisna - Mushroom's Diary"/>
-    <meta property="og:updated_time" content="2025-09-23T12:00:00+08:00"/>
 
     <!-- Article specific meta tags -->
     
 
     <!-- Cache control -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
-    <meta http-equiv="Pragma" content="no-cache"/>
-    <meta http-equiv="Expires" content="0"/>
+    <!-- Prefer HTTP response headers for cache control; meta http-equiv removed -->
 
     <!-- Additional SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
@@ -126,10 +124,8 @@
             }
         }
     </script>
-
     
     <meta name="author" content="Oggie Sutrisna"/>
-    
 
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://oggiesutrisna.vercel.app"/>
@@ -137,6 +133,9 @@
     <meta property="og:description"
           content="Hello, My Name is Oggie Sutrisna and welcome to my Mushroom's Diary"/>
     <meta property="og:image" content="https://oggiesutrisna.vercel.app/image.jpeg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+    <meta property="og:image:alt" content="Portrait of Oggie Sutrisna"/>
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:url" content="https://oggiesutrisna.vercel.app"/>
@@ -144,7 +143,25 @@
     <meta name="twitter:description"
           content="Hello, My Name is Oggie Sutrisna and welcome to my Mushroom's Diary"/>
     <meta name="twitter:image" content="https://oggiesutrisna.vercel.app/image.jpeg"/>
+    <meta name="twitter:image:alt" content="Portrait of Oggie Sutrisna"/>
+    <meta name="twitter:site" content="@oggiesutrisna"/>
+    <meta name="twitter:creator" content="@oggiesutrisna"/>
 
+    <!-- WebPage Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "@id": "https://oggiesutrisna.vercel.app/#webpage",
+            "url": "https://oggiesutrisna.vercel.app/",
+            "name": "Oggie Sutrisna - Mushroom's Diary",
+            "headline": "Oggie Sutrisna - Code Maestro Conducting Digital Symphonies",
+            "description": "Hello, My Name is Oggie Sutrisna and welcome to my Mushroom's Diary",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://oggiesutrisna.vercel.app/#website" },
+            "about": { "@id": "https://oggiesutrisna.vercel.app/#person" }
+        }
+    </script>
 
 </head>
 <body>
@@ -258,25 +275,19 @@
         <div id="experience" class="tab-content">
             <h2>Experience</h2>
             <h3>Junior Web Developer</h3>
-            <p>Dinas Kominfo Badung, March 2025 - September 2025</p>
+            <p>Dinas Kominfo Badung — Mar 2025 to Sep 2025</p>
             <ul>
-                <li>Developed and maintained government websites and internal applications</li>
-                <li>Implemented responsive design principles to ensure optimal user experience across all devices</li>
-                <li>Collaborated with senior developers to improve existing web applications and services</li>
-                <li>Assisted in database management and API integration for various digital government services</li>
+                <li>Built and maintained public-facing government portals and internal web applications.</li>
+                <li>Delivered responsive, accessible interfaces to ensure a seamless experience across devices.</li>
+                <li>Collaborated with senior engineers to refactor legacy modules and enhance application reliability.</li>
+                <li>Supported database optimization and integrated RESTful APIs for e-government services.</li>
             </ul>
             <h3>Information Technology Officer (IT Officer)</h3>
-            <p>Villa Bugis, 2025.</p>
+            <p>Villa Bugis — 2025</p>
             <ul>
-                <li>Automated deployment pipelines using Docker and CI/CD tools (Jenkins/GitHub Actions), cutting
-                    deployment errors by 40%.
-                </li>
-                <li>Led cybersecurity initiatives including firewall configuration and penetration testing, achieving
-                    zero critical vulnerabilities in 2025 audit.
-                </li>
-                <li>Provided tier-3 technical support for 150+ staff, resolving complex infrastructure issues with 98%
-                    SLA compliance rate.
-                </li>
+                <li>Streamlined deployments with Docker and CI/CD (Jenkins, GitHub Actions) to reduce release errors.</li>
+                <li>Strengthened security via firewall hardening and periodic penetration testing; passed the 2025 audit with zero critical findings.</li>
+                <li>Provided tier-3 technical support for 150+ staff, resolving complex infrastructure issues with 98% SLA adherence.</li>
             </ul>
         </div>
         <div id="other-projects" class="tab-content">
@@ -293,7 +304,7 @@
                 <li><a href="https://www.youtube.com/watch?v=dvrPdCWQlfo" style="color: white; text-decoration: none;">Sikola
                     App (Sistem Informasi Sekolah)</a></li>
                 <li><a href="https://www.youtube.com/watch?v=nM4bDMhqrsQ" style="color: white; text-decoration: none;">Areyouchitect
-                    (Property Progressive Web App)</a></li>
+                    (Property Web App)</a></li>
             </ul>
         </div>
         <div id="education" class="tab-content">
@@ -301,9 +312,9 @@
             <h3>Bachelor of Computer Science</h3>
             <p>Primakara University, 2015 - 2019</p>
             <ul>
-                <li>Graduated w/GPA 3.53</li>
-                <li>Participated in various web development projects</li>
-                <li>Participated in many events</li>
+                <li>Graduated with a GPA of 3.53</li>
+                <li>Involved in various web development projects</li>
+                <li>Participated in numerous events</li>
             </ul>
         </div>
         <div id="events" class="tab-content">
@@ -315,7 +326,7 @@
             </ul>
             <h3>2019</h3>
             <ul>
-                <li>SMART health event as Production Team</li>
+                <li>SMART health offline event as Production Team</li>
             </ul>
             <h3>2020</h3>
             <ul>
@@ -328,15 +339,18 @@
             <h3>2022</h3>
             <ul>
                 <li>Bali International Event Summit 2022 as Production Team / Operator</li>
-                <li>G20 Event as Livestream Operator/Helper</li>
+                <li>G20 Event as Live Operator/Helper</li>
+                <li>Seminar 5R as Production Team / Operator</li>
             </ul>
             <h3>2023</h3>
             <ul>
                 <li>Bali International Event Summit 2023 as Production Team / Operator</li>
+                <li>Seminar 5R as Production Team / Operator</li>
             </ul>
             <h3>2024</h3>
             <ul>
                 <li>Bali International Event Summit 2024 as Production Team / Operator</li>
+                <li>Seminar 5R as Production Team / Operator</li>
             </ul>
             <h3>2025</h3>
             <ul>
@@ -411,9 +425,7 @@
                         <div class="achievements">
                             <h4>Achievements:</h4>
                             <ul>
-                                <li>1000+ active monthly users</li>
                                 <li>Featured in Web Game Development showcase 2024</li>
-                                <li>95+ Lighthouse Performance Score</li>
                             </ul>
                         </div>
                     </div>
@@ -425,7 +437,7 @@
                             Digimon DTPHD - Match the Image
                         </a>
                         <div class="game-status">
-                            <span class="status-badge beta">Beta</span>
+                            <span class="status-badge beta">Release</span>
                             <a href="https://github.com/oggiesutrisna/digimon-dtphd" target="_blank"
                                rel="noopener noreferrer" class="github-link">
                                 <img src="https://img.icons8.com/fluency/24/000000/github.png" alt="GitHub"/>
