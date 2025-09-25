@@ -75,6 +75,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Populate footer dates: current year, today's date, and last modified
+    try {
+        const now = new Date();
+        const yearEl = document.getElementById('current-year');
+        if (yearEl) yearEl.textContent = String(now.getFullYear());
+
+        const todayEl = document.getElementById('today-date');
+        if (todayEl) {
+            todayEl.setAttribute('datetime', now.toISOString());
+            todayEl.textContent = now.toLocaleDateString(undefined, {
+                year: 'numeric', month: 'long', day: 'numeric'
+            });
+        }
+
+        const lastModEl = document.getElementById('last-modified');
+        if (lastModEl) {
+            // document.lastModified is a localized string; parse defensively
+            const lm = new Date(document.lastModified);
+            if (!isNaN(lm.getTime())) {
+                lastModEl.setAttribute('datetime', lm.toISOString());
+                lastModEl.textContent = lm.toLocaleDateString(undefined, {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                });
+            } else {
+                // Fallback to now if parse fails
+                lastModEl.setAttribute('datetime', now.toISOString());
+                lastModEl.textContent = now.toLocaleDateString(undefined, {
+                    year: 'numeric', month: 'long', day: 'numeric'
+                });
+            }
+        }
+    } catch (_) { /* ignore */ }
+
     try {
         document.querySelectorAll('img:not(.lcp)').forEach(img => {
             if (!img.hasAttribute('loading')) img.loading = 'lazy';
@@ -137,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
         scheduleFavicon();
         faviconIntervalId = setInterval(() => {
             scheduleFavicon();
-        }, 30000); // update every 30s instead of 5s
+        }, 30000);
     }
 
     function stopFaviconUpdates() {
