@@ -9,6 +9,9 @@
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     <link rel="preconnect" href="https://oggiesutrisna.vercel.app" crossorigin>
     <link rel="dns-prefetch" href="//oggiesutrisna.vercel.app">
+    <!-- Preconnects for external icon CDN -->
+    <link rel="preconnect" href="https://img.icons8.com" crossorigin>
+    <link rel="dns-prefetch" href="//img.icons8.com">
     <!-- Preload Geist Sans font to improve loading performance -->
     <link rel="preload"
           href="https://cdn.jsdelivr.net/npm/@vercel/style-guide@5.0.0/fonts/geist-sans/GeistSans-Regular.woff2"
@@ -36,7 +39,7 @@
     <!-- Open Graph additional tags -->
     <meta property="og:locale" content="en_US"/>
     <meta property="og:site_name" content="Oggie Sutrisna - Mushroom's Diary"/>
-    
+
     <!-- Additional SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
     
@@ -166,7 +169,7 @@
 <body>
 <div class="container">
     <div class="photo">
-        <img src="image.png" alt="Profile Photo">
+        <img class="lcp" src="image.png" alt="Profile Photo" decoding="async" fetchpriority="high">
     </div>
     <div class="details">
         <div class="theme-toggle-container">
@@ -176,14 +179,14 @@
             </button>
         </div>
         <div class="tabs">
-            <button class="tab-button active" onclick="openTab('info')">Information</button>
-            <button class="tab-button" onclick="openTab('projects')">Projects</button>
-            <button class="tab-button" onclick="openTab('skills')">Skills</button>
-            <button class="tab-button" onclick="openTab('education')">Education</button>
-            <button class="tab-button" onclick="openTab('experience')">Experience</button>
-            <button class="tab-button" onclick="openTab('events')">Events</button>
-            <button class="tab-button" onclick="openTab('games')">Games</button>
-            <button class="tab-button" onclick="openTab('other-projects')">Other Projects</button>
+            <button class="tab-button active" onclick="openTab(event, 'info')">Information</button>
+            <button class="tab-button" onclick="openTab(event, 'projects')">Projects</button>
+            <button class="tab-button" onclick="openTab(event, 'skills')">Skills</button>
+            <button class="tab-button" onclick="openTab(event, 'education')">Education</button>
+            <button class="tab-button" onclick="openTab(event, 'experience')">Experience</button>
+            <button class="tab-button" onclick="openTab(event, 'events')">Events</button>
+            <button class="tab-button" onclick="openTab(event, 'games')">Games</button>
+            <button class="tab-button" onclick="openTab(event, 'other-projects')">Other Projects</button>
         </div>
         <div id="info" class="tab-content active">
             <h2>Information</h2>
@@ -208,13 +211,13 @@
             <ul>
                 <li><a href="https://mandalica-clinic.com">Mandalika Clinic</a></li>
                 <li><a href="https://www.unicare-clinic.com">Unicare Clinic</a></li>
+                <li><a href="https://www.unicare-clinic.com/plus">Unicare Plus</a></li>
                 <li><a href="https://www.hydromedicalbali.com">Hydro Medical Bali</a></li>
                 <li><a href="https://www.lifeeveryouth.com">Life Ever Youth</a></li>
                 <li><a href="#">Online Certificate for Covid-19</a></li>
                 <li><a href="#">E-Delivery</a></li>
                 <li><a href="#">E-BKK (Bantuan Keuangan Khusus)</a></li>
                 <li><a href="#">KumpulIn</a></li>
-                <li><a href="#">A Medical Records Software</a></li>
             </ul>
         </div>
         <div id="skills" class="tab-content">
@@ -231,28 +234,28 @@
                     <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
                     <span class="text">CSS</span>
                     <div class="skill-level">
-                        <div class="skill-progress" style="width: 90%"></div>
+                        <div class="skill-progress" style="width: 85%"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
                     <span class="text">JavaScript</span>
                     <div class="skill-level">
-                        <div class="skill-progress" style="width: 85%"></div>
+                        <div class="skill-progress" style="width: 75%"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <img src="https://img.icons8.com/officel/48/000000/php-logo.png" alt="PHP">
                     <span class="text">PHP</span>
                     <div class="skill-level">
-                        <div class="skill-progress" style="width: 80%"></div>
+                        <div class="skill-progress" style="width: 75%"></div>
                     </div>
                 </div>
                 <div class="skill-item">
                     <img src="https://img.icons8.com/fluency/48/000000/laravel.png" alt="Laravel">
                     <span class="text">Laravel</span>
                     <div class="skill-level">
-                        <div class="skill-progress" style="width: 75%"></div>
+                        <div class="skill-progress" style="width: 90%"></div>
                     </div>
                 </div>
                 <div class="skill-item">
@@ -266,7 +269,7 @@
                     <img src="https://img.icons8.com/color/48/000000/vue-js.png" alt="VueJS">
                     <span class="text">VueJS</span>
                     <div class="skill-level">
-                        <div class="skill-progress" style="width: 40%"></div>
+                        <div class="skill-progress" style="width: 50%"></div>
                     </div>
                 </div>
             </div>
@@ -274,7 +277,7 @@
         <div id="experience" class="tab-content">
             <h2>Experience</h2>
             <h3>Junior Web Developer</h3>
-            <p>Dinas Kominfo Badung — Mar 2025 to Sep 2025</p>
+            <p>Dinas Kominfo Badung — Mar 2025 to Sep 2025 (8 months)</p>
             <ul>
                 <li>Built and maintained public-facing government portals and internal web applications.</li>
                 <li>Delivered responsive, accessible interfaces to ensure a seamless experience across devices.</li>
@@ -301,9 +304,9 @@
                 <li><a href="https://laravel.com" style="color: white; text-decoration: none;">Laravel Contributor</a>
                 </li>
                 <li><a href="https://www.youtube.com/watch?v=dvrPdCWQlfo" style="color: white; text-decoration: none;">Sikola
-                    App (Sistem Informasi Sekolah)</a></li>
+                    App (Sistem Informasi Sekolah) featured on Livestream</a></li>
                 <li><a href="https://www.youtube.com/watch?v=nM4bDMhqrsQ" style="color: white; text-decoration: none;">Areyouchitect
-                    (Property Web App)</a></li>
+                    (Property Web App) featured on Livestream</a></li>
             </ul>
         </div>
         <div id="education" class="tab-content">
@@ -311,14 +314,13 @@
             <h3>Bachelor of Computer Science</h3>
             <p>Primakara University, 2015 - 2019</p>
             <ul>
-                <li>Graduated with a GPA of 3.53</li>
                 <li>Involved in various web development projects</li>
                 <li>Participated in numerous events</li>
             </ul>
         </div>
         <div id="events" class="tab-content">
             <h2>Events</h2>
-            <h6> Events that I handle while not code.</h6>
+            <h6>Events I handle while not coding. (updated every day because I sometimes forget which events I handle)</h6>
             <h3>2016</h3>
             <ul>
                 <li>Global Game Jam as Production Team</li>
