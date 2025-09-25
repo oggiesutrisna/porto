@@ -83,10 +83,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const todayEl = document.getElementById('today-date');
         if (todayEl) {
-            todayEl.setAttribute('datetime', now.toISOString());
-            todayEl.textContent = now.toLocaleDateString(undefined, {
-                year: 'numeric', month: 'long', day: 'numeric'
-            });
+            function updateToday() {
+                const nowTick = new Date();
+                todayEl.setAttribute('datetime', nowTick.toISOString());
+                todayEl.textContent = nowTick.toLocaleString(undefined, {
+                    year: 'numeric', month: 'long', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit', second: '2-digit'
+                });
+            }
+            updateToday();
+            // Keep the clock updated every second
+            setInterval(updateToday, 1000);
         }
 
         const lastModEl = document.getElementById('last-modified');
@@ -95,14 +102,16 @@ document.addEventListener('DOMContentLoaded', function() {
             const lm = new Date(document.lastModified);
             if (!isNaN(lm.getTime())) {
                 lastModEl.setAttribute('datetime', lm.toISOString());
-                lastModEl.textContent = lm.toLocaleDateString(undefined, {
-                    year: 'numeric', month: 'long', day: 'numeric'
+                lastModEl.textContent = lm.toLocaleString(undefined, {
+                    year: 'numeric', month: 'long', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit', second: '2-digit'
                 });
             } else {
                 // Fallback to now if parse fails
                 lastModEl.setAttribute('datetime', now.toISOString());
-                lastModEl.textContent = now.toLocaleDateString(undefined, {
-                    year: 'numeric', month: 'long', day: 'numeric'
+                lastModEl.textContent = now.toLocaleString(undefined, {
+                    year: 'numeric', month: 'long', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit', second: '2-digit'
                 });
             }
         }
