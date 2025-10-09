@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Populate footer dates: current year, today's date, and last modified
     try {
         const now = new Date();
         const yearEl = document.getElementById('current-year');
@@ -92,35 +91,87 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
             updateToday();
-            // Keep the clock updated every second
             setInterval(updateToday, 1000);
         }
 
         const lastModEl = document.getElementById('last-modified');
         if (lastModEl) {
-            // document.lastModified is a localized string; parse defensively
-            const lm = new Date(document.lastModified);
-            if (!isNaN(lm.getTime())) {
-                lastModEl.setAttribute('datetime', lm.toISOString());
-                lastModEl.textContent = lm.toLocaleString(undefined, {
-                    year: 'numeric', month: 'long', day: 'numeric',
-                    hour: '2-digit', minute: '2-digit', second: '2-digit'
-                });
-            } else {
-                // Fallback to now if parse fails
-                lastModEl.setAttribute('datetime', now.toISOString());
-                lastModEl.textContent = now.toLocaleString(undefined, {
-                    year: 'numeric', month: 'long', day: 'numeric',
-                    hour: '2-digit', minute: '2-digit', second: '2-digit'
-                });
+            async function setLastUpdated() {
+                try {
+                    const res = await fetch(location.href, { method: 'HEAD', cache: 'no-store' });
+                    const header = res.headers.get('last-modified');
+                    let dt = header ? new Date(header) : new Date(document.lastModified);
+                    if (isNaN(dt.getTime())) dt = now;
+                    lastModEl.setAttribute('datetime', dt.toISOString());
+                    lastModEl.textContent = dt.toLocaleString(undefined, {
+                        year: 'numeric', month: 'long', day: 'numeric',
+                        hour: '2-digit', minute: '2-digit', second: '2-digit'
+                    });
+                } catch (_) {
+                    const lm = new Date(document.lastModified);
+                    const fallback = !isNaN(lm.getTime()) ? lm : now;
+                    lastModEl.setAttribute('datetime', fallback.toISOString());
+                    lastModEl.textContent = fallback.toLocaleString(undefined, {
+                        year: 'numeric', month: 'long', day: 'numeric',
+                        hour: '2-digit', minute: '2-digit', second: '2-digit'
+                    });
+                }
             }
+            setLastUpdated();
         }
-    } catch (_) { /* ignore */ }
+    }
+    catch (_) { /* ignore */ }
 
     try {
+        // Optimize non-LCP images
         document.querySelectorAll('img:not(.lcp)').forEach(img => {
             if (!img.hasAttribute('loading')) img.loading = 'lazy';
             if (!img.hasAttribute('decoding')) img.decoding = 'async';
+            if (!img.hasAttribute('sizes')) img.setAttribute('sizes', '100vw');
+
+            const setDim = (el) => {
+                try {
+                    if (!el.hasAttribute('width') && el.naturalWidth) {
+                        el.setAttribute('width', String(el.naturalWidth));
+                    }
+                    if (!el.hasAttribute('height') && el.naturalHeight) {
+                        el.setAttribute('height', String(el.naturalHeight));
+                    }
+                } catch (_) { /* ignore */ }
+            };
+
+            if (img.complete) {
+                setDim(img);
+            } else {
+                img.addEventListener('load', () => setDim(img), { once: true, passive: true });
+            }
+        });
+
+        // Ensure LCP image has explicit dimensions to prevent CLS (but don't lazy-load it)
+        try {
+            const lcp = document.querySelector('img.lcp');
+            if (lcp) {
+                const setDimLcp = (el) => {
+                    try {
+                        if (!el.hasAttribute('width') && el.naturalWidth) {
+                            el.setAttribute('width', String(el.naturalWidth));
+                        }
+                        if (!el.hasAttribute('height') && el.naturalHeight) {
+                            el.setAttribute('height', String(el.naturalHeight));
+                        }
+                    } catch (_) { /* ignore */ }
+                };
+                if (lcp.complete) {
+                    setDimLcp(lcp);
+                } else {
+                    lcp.addEventListener('load', () => setDimLcp(lcp), { once: true, passive: true });
+                }
+            }
+        } catch (_) { /* ignore */ }
+
+        // Ensure iframes are lazy-loaded unless explicitly eager
+        document.querySelectorAll('iframe').forEach(frame => {
+            if (!frame.hasAttribute('loading')) frame.setAttribute('loading', 'lazy');
         });
     } catch (e) {
         //
@@ -161,7 +212,6 @@ document.addEventListener('DOMContentLoaded', function() {
         favicon.href = canvas.toDataURL('image/png');
     }
 
-    // Defer favicon generation to idle time and reduce update frequency
     let faviconIntervalId = null;
     function scheduleFavicon() {
         if (document.hidden) return;

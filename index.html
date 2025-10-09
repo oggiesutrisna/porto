@@ -18,7 +18,10 @@
           as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vercel/style-guide@5.0.0/fonts/geist-sans/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@vercel/style-guide@5.0.0/fonts/geist-mono/style.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="styles.css" as="style" onload="this.onload = null; this.rel = 'stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="styles.css">
+</noscript>
     <link rel="canonical" href="https://oggiesutrisna.vercel.app/"/>
     <!-- PWA manifest & icons -->
     <link rel="manifest" href="/manifest.webmanifest">
@@ -42,8 +45,8 @@
 
     <!-- Additional SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"/>
-    
 
+    <!-- Apple Web App Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="apple-mobile-web-app-title" content="Oggie Sutrisna"/>
@@ -53,7 +56,6 @@
 
     <meta name="google-site-verification" content="djhZ1nKUHDbH8PTkkpPR46OzQiA71oW4jzBCME5ao60"/>
     
-
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
         {
@@ -110,7 +112,6 @@
         }
     </script>
 
-    <!-- Professional Network Structured Data -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -277,7 +278,7 @@
         <div id="experience" class="tab-content">
             <h2>Experience</h2>
             <h3>Junior Web Developer</h3>
-            <p>Dinas Kominfo Badung — Mar 2025 to Sep 2025 (8 months)</p>
+            <p>Dinas Kominfo Badung — Mar 2025 to Sep 2025 (6 months)</p>
             <ul>
                 <li>Built and maintained public-facing government portals and internal web applications.</li>
                 <li>Delivered responsive, accessible interfaces to ensure a seamless experience across devices.</li>
@@ -340,7 +341,7 @@
             <h3>2022</h3>
             <ul>
                 <li>Bali International Event Summit 2022 as Team Production</li>
-                <li>G20 Event as Live Operator/Helper</li>
+                <li>G20 Event as Freelance Live Operator/Helper</li>
                 <li>Seminar 5R as Team Production</li>
             </ul>
             <h3>2023</h3>
@@ -352,10 +353,6 @@
             <ul>
                 <li>Bali International Event Summit 2024 as Team Production</li>
                 <li>Seminar 5R as Team Production</li>
-            </ul>
-            <h3>2025</h3>
-            <ul>
-                //
             </ul>
         </div>
         <div id="games" class="tab-content">
@@ -516,6 +513,6 @@
         </div>
     </div>
 </div>
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>
