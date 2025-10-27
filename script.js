@@ -248,4 +248,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { passive: true });
 
     startFaviconUpdates();
+    try {
+        const dl = document.getElementById('download-cv-link');
+        if (dl) {
+            dl.addEventListener('click', async (e) => {
+                const url = dl.getAttribute('href');
+                const filename = dl.getAttribute('download') || 'cv.pdf';
+                try {
+                    const absolute = new URL(url, location.href).toString();
+                    const res = await fetch(absolute, { cache: 'no-store' });
+                    if (!res.ok) return;
+                    const blob = await res.blob();
+                    const blobUrl = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = blobUrl;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    URL.revokeObjectURL(blobUrl);
+                    e.preventDefault();
+                } catch (_) {
+                }
+            }, { passive: false });
+        }
+    } catch (_) { /* ignore */ }
 });
