@@ -1,0 +1,179 @@
+---
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- Primary SEO Meta Tags -->
+        <meta name="description" content={description} />
+        <meta
+            name="keywords"
+            content="software engineer, senior software engineer, hire software engineer, freelance developer, full-stack developer, web developer, backend developer, frontend developer, software developer for hire, experienced software engineer, remote software engineer, contract developer, technical lead, software architect, hire developer, software engineering services, custom software development, application developer, programming expert, coding professional"
+        />
+        <meta name="author" content="Oggie Sutrisna" />
+        <meta
+            name="robots"
+            content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+        />
+        <meta name="googlebot" content="index, follow" />
+        <meta name="generator" content={Astro.generator} />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://oggiesutrisna.vercel.app/" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://oggiesutrisna.vercel.app/" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta
+            property="og:image"
+            content="https://oggiesutrisna.vercel.app/og-image.png"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:image:alt"
+            content="Senior Software Engineer - Available for Hire"
+        />
+        <meta
+            property="og:site_name"
+            content="Oggie Sutrisna | Software Engineer"
+        />
+        <meta property="og:locale" content="en_US" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://oggiesutrisna.vercel.app/" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta
+            name="twitter:image"
+            content="https://oggiesutrisna.vercel.app/og-image.png"
+        />
+        <meta
+            name="twitter:image:alt"
+            content="Senior Software Engineer - Available for Hire"
+        />
+        <meta name="twitter:creator" content="@oggiesutrisna" />
+        <meta name="twitter:site" content="@oggiesutrisna" />
+
+        <!-- Additional SEO Meta Tags -->
+        <meta name="theme-color" content="#6366f1" />
+        <meta name="msapplication-TileColor" content="#6366f1" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+        <!-- Geo Tags (optional - update with your location) -->
+        <meta name="geo.region" content="ID" />
+        <meta name="geo.placename" content="Indonesia" />
+
+        <!-- Structured Data - Person Schema -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Oggiesutrisna",
+                "url": "https://oggiesutrisna.vercel.app",
+                "image": "https://oggiesutrisna.vercel.app/profile.jpg",
+                "sameAs": [
+                    "https://github.com/oggiesutrisna",
+                    "https://linkedin.com/in/oggiesutrisna",
+                    "https://twitter.com/oggiesutrisna"
+                ],
+                "jobTitle": "Senior Software Engineer",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Available for Hire"
+                },
+                "description": "Senior Software Engineer with 8+ years of experience in building scalable, high-performance applications. Available for freelance and full-time opportunities.",
+                "knowsAbout": [
+                    "Software Engineering",
+                    "Web Development",
+                    "Full-Stack Development",
+                    "Backend Development",
+                    "Frontend Development",
+                    "System Architecture",
+                    "Cloud Computing",
+                    "Database Design",
+                    "API Development",
+                    "Agile Methodologies"
+                ],
+                "alumniOf": {
+                    "@type": "EducationalOrganization",
+                    "name": "Your University"
+                }
+            }
+        </script>
+
+        <!-- Structured Data - Website Schema -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Oggiesutrisna | Senior Software Engineer",
+                "url": "https://oggiesutrisna.vercel.app",
+                "description": "Portfolio of a Senior Software Engineer with 8+ years of experience. Hire me for your next project.",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://oggiesutrisna.vercel.app/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            }
+        </script>
+
+        <!-- Structured Data - Service Schema -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "serviceType": "Software Development",
+                "provider": {
+                    "@type": "Person",
+                    "name": "Oggiesutrisna",
+                    "url": "https://oggiesutrisna.vercel.app"
+                },
+                "areaServed": "Worldwide",
+                "availableChannel": {
+                    "@type": "ServiceChannel",
+                    "serviceUrl": "https://oggiesutrisna.vercel.app",
+                    "servicePhone": "+628123456789"
+                },
+                "description": "Professional software engineering services including web development, API development, system architecture, and technical consulting. Hire an experienced senior software engineer.",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "https://schema.org/InStock",
+                    "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "priceCurrency": "USD"
+                    }
+                }
+            }
+        </script>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>{title}</title>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
