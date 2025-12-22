@@ -1,43 +1,168 @@
-# Astro Starter Kit: Minimal
+# 🚀 Oggie Sutrisna - Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
+A modern, visually stunning portfolio website built with **Astro** featuring glassmorphism design, interactive animations, and a beautiful dark theme.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![Astro](https://img.shields.io/badge/Astro-5.16.6-BC52EE?logo=astro) ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?logo=typescript)
 
-## 🚀 Project Structure
+## ✨ Features
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Modern Dark Theme** - Elegant dark palette with purple/violet accent gradients
+- **Glassmorphism Design** - Beautiful frosted glass effects with backdrop blur
+- **Interactive Tech Stack** - Cards with cursor-following glow effects
+- **Smooth Animations** - Fade-in, float, and scale animations throughout
+- **Fully Responsive** - Looks great on all devices
+- **SEO Optimized** - Proper meta tags, structured data, and semantic HTML
+- **Fast Performance** - Built with Astro for optimal loading speed
+
+## 🎨 Design Highlights
+
+### Hero Section
+- Animated gradient orbs in background
+- Grid overlay with noise texture
+- Staggered entrance animations
+- Social links with hover effects
+
+### Tech Stack Section
+- **Interactive Glow Effect** - Cursor-following spotlight on each card
+- **6 Technology Categories**: Backend, Frontend, Database, DevOps, System Design, Tools
+- Experience badges that appear on hover
+- Technology tags with accent highlighting
+
+## 🛠️ Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| **Framework** | Astro 5.x |
+| **Language** | TypeScript |
+| **Styling** | Vanilla CSS with custom properties |
+| **Fonts** | Inter, Outfit (Google Fonts) |
+| **Icons** | Custom SVG icons |
+| **Deployment** | Vercel / Netlify ready |
+
+## 📁 Project Structure
 
 ```text
 /
 ├── public/
+│   └── oggiesutrisna-cv-2026-damascus.pdf
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── data/
+│   │   └── techStack.ts          # Tech stack data (easily editable)
+│   ├── layouts/
+│   │   └── Layout.astro          # Base layout with SEO
+│   ├── pages/
+│   │   └── index.astro           # Main portfolio page
+│   └── styles/
+│       ├── global.css            # Global styles & design tokens
+│       ├── hero.css              # Hero section styles
+│       └── stack.css             # Tech stack section styles
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## 🚀 Getting Started
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Prerequisites
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Node.js 18+ 
+- npm or pnpm
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/oggiesutrisna/porto.git
+
+# Navigate to directory
+cd porto
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+The site will be available at `http://localhost:4321`
+
+## 📝 Customization
+
+### Update Personal Info
+
+Edit the frontmatter in `src/pages/index.astro`:
+
+```javascript
+const siteTitle = "Your Name | Your Title";
+const siteDescription = "Your description here";
+```
+
+### Modify Tech Stack
+
+Edit `src/data/techStack.ts` to update your technologies:
+
+```typescript
+export const techStack = [
+  {
+    title: "Category Name",
+    description: "Description of your expertise",
+    experience: "X+ years",
+    tags: ["Tech1", "Tech2", "Tech3"],
+    icon: "iconName" // server, layout, database, cloud, architecture, wrench
+  },
+  // Add more categories...
+];
+```
+
+### Update Social Links
+
+Find the social links section in `src/pages/index.astro` and update the URLs:
+
+```html
+<a href="https://github.com/yourusername" ...>
+<a href="https://linkedin.com/in/yourusername" ...>
+<a href="https://twitter.com/yourusername" ...>
+```
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+| Command | Action |
+|---------|--------|
+| `npm install` | Install dependencies |
+| `npm run dev` | Start dev server at `localhost:4321` |
+| `npm run build` | Build production site to `./dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run astro check` | Run TypeScript checks |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🎨 Color Palette
 
-## 👀 Want to learn more?
+```css
+/* Primary Background */
+--color-bg-primary: #0a0a0f;
+--color-bg-secondary: #12121a;
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+/* Accent Colors (Gradient) */
+--color-accent-1: #6366f1;  /* Indigo */
+--color-accent-2: #8b5cf6;  /* Violet */
+--color-accent-3: #a855f7;  /* Purple */
+--color-accent-4: #ec4899;  /* Pink */
+
+/* Text */
+--color-text-primary: #ffffff;
+--color-text-secondary: #a1a1aa;
+```
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 👨‍💻 Author
+
+**Oggie Sutrisna**  
+Senior Software Engineer
+
+- GitHub: [@oggiesutrisna](https://github.com/oggiesutrisna)
+- LinkedIn: [oggiesutrisna](https://linkedin.com/in/oggiesutrisna)
+- Twitter: [@oggiesutrisna](https://twitter.com/oggiesutrisna)
+
+---
+
+⭐ If you found this helpful, please give it a star!
