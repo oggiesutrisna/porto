@@ -1,4 +1,3 @@
-// Tech Stack Data
 export interface TechItem {
     title: string;
     description: string;

@@ -10,7 +10,6 @@ const siteDescription =
 ---
 
 <Layout title={siteTitle} description={siteDescription}>
-  <!-- Background Effects -->
   <div class="background-effects">
     <div class="gradient-orb orb-1"></div>
     <div class="gradient-orb orb-2"></div>
@@ -19,29 +18,24 @@ const siteDescription =
     <div class="noise-overlay"></div>
   </div>
 
-  <!-- Main Content -->
   <main class="hero">
     <div class="hero-content">
-      <!-- Badge -->
       <div class="badge animate-fade-in-up">
         <span class="badge-dot"></span>
         <span>Available for work 24/7</span>
       </div>
 
-      <!-- Heading -->
       <h1 class="hero-title animate-fade-in-up delay-100">
         <span class="title-line">Hello, I'm</span>
         <span class="title-name gradient-text">Oggie Sutrisna</span>
       </h1>
 
-      <!-- Subtitle -->
       <p class="hero-subtitle animate-fade-in-up delay-200">
         Senior Software Engineer with <span class="highlight">8+ years</span> of experience<br
         />
         building scalable, high-performance applications
       </p>
 
-      <!-- CTA Buttons -->
       <div class="cta-container animate-fade-in-up delay-300">
         <a
           href="/oggiesutrisna-cv-2026-damascus.pdf"
@@ -89,7 +83,6 @@ const siteDescription =
         </a>
       </div>
 
-      <!-- Social Links (subtle) -->
       <div class="social-links animate-fade-in-up delay-400">
         <a
           href="https://github.com/oggiesutrisna"
@@ -151,7 +144,6 @@ const siteDescription =
       </div>
     </div>
 
-    <!-- Floating Elements -->
     <div class="floating-elements">
       <div class="floating-shape shape-1 animate-float"></div>
       <div
@@ -167,14 +159,11 @@ const siteDescription =
     </div>
   </main>
 
-  <!-- Tech Stack Section -->
   <section class="stack-section" id="tech-stack">
-    <!-- Decorative Elements -->
     <div class="stack-decoration stack-decoration-1"></div>
     <div class="stack-decoration stack-decoration-2"></div>
 
     <div class="stack-container">
-      <!-- Section Header -->
       <div class="stack-header">
         <div class="stack-badge">
           <svg
@@ -200,7 +189,6 @@ const siteDescription =
         </p>
       </div>
 
-      <!-- Stack Grid -->
       <div class="stack-grid">
         {
           techStack.map((tech, index) => (
@@ -326,14 +314,12 @@ const siteDescription =
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer animate-fade-in delay-500">
     <p>© 2026 Oggie Sutrisna. All rights reserved.</p>
   </footer>
 </Layout>
 
 <script>
-  // Interactive glow effect for stack cards
   document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll<HTMLElement>(".stack-card");
 
@@ -348,7 +334,6 @@ const siteDescription =
       });
 
       card.addEventListener("mouseleave", () => {
-        // Reset to center when mouse leaves
         card.style.setProperty("--mouse-x", "50%");
         card.style.setProperty("--mouse-y", "50%");
       });

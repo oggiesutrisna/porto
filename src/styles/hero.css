@@ -1,8 +1,3 @@
-/* ========================================
-   HERO PAGE STYLES - Neubrutalism
-   ======================================== */
-
-/* Background - Clean with decorative elements */
 .background-effects {
     position: fixed;
     inset: 0;
@@ -12,7 +7,6 @@
     background: var(--color-bg-primary);
 }
 
-/* Decorative grid pattern */
 .grid-overlay {
     position: absolute;
     inset: 0;
@@ -22,7 +16,6 @@
     background-size: 40px 40px;
 }
 
-/* Colorful gradient orbs - soft and playful */
 .gradient-orb {
     position: absolute;
     border-radius: 50%;
@@ -61,12 +54,10 @@
     opacity: 0.25;
 }
 
-/* Hide noise overlay for cleaner look */
 .noise-overlay {
     display: none;
 }
 
-/* Hero Section */
 .hero {
     min-height: 100vh;
     display: flex;
@@ -82,7 +73,6 @@
     z-index: 1;
 }
 
-/* Badge - Neubrutalism style */
 .badge {
     display: inline-flex;
     align-items: center;
@@ -113,7 +103,6 @@
     animation: pulse-dot 2s ease-in-out infinite;
 }
 
-/* Title */
 .hero-title {
     font-size: clamp(2.5rem, 8vw, var(--font-size-7xl));
     font-weight: var(--font-weight-extrabold);
@@ -134,24 +123,8 @@
 
 .title-name {
     display: block;
-    position: relative;
 }
 
-/* Name with colorful underline decoration */
-.title-name::after {
-    content: '';
-    position: absolute;
-    bottom: 0.1em;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    height: 0.15em;
-    background: var(--color-coral);
-    border-radius: var(--radius-full);
-    z-index: -1;
-}
-
-/* Subtitle */
 .hero-subtitle {
     font-size: clamp(var(--font-size-lg), 3vw, var(--font-size-xl));
     color: var(--color-text-secondary);
@@ -168,7 +141,6 @@
     border: var(--border-width) solid var(--color-border);
 }
 
-/* CTA Container */
 .cta-container {
     display: flex;
     flex-wrap: wrap;
@@ -177,7 +149,6 @@
     margin-bottom: var(--spacing-12);
 }
 
-/* Social Links - Neubrutalism style */
 .social-links {
     display: flex;
     gap: var(--spacing-4);
@@ -215,7 +186,6 @@
     background: var(--color-coral-light);
 }
 
-/* Floating Elements - Neubrutalism decorative shapes */
 .floating-elements {
     position: fixed;
     inset: 0;
@@ -265,7 +235,6 @@
     animation-delay: -4s;
 }
 
-/* Additional decorative shapes */
 .floating-elements::before {
     content: '★';
     position: absolute;
@@ -287,7 +256,6 @@
     animation-delay: -2s;
 }
 
-/* Footer - Neubrutalism */
 .footer {
     position: relative;
     padding: var(--spacing-8);
@@ -299,7 +267,6 @@
     border-top: var(--border-width-thick) solid var(--color-border);
 }
 
-/* Responsive */
 @media (max-width: 640px) {
     .hero {
         padding: var(--spacing-6);
@@ -323,7 +290,6 @@
     }
 }
 
-/* Opacity for staggered animations */
 .animate-fade-in-up,
 .animate-fade-in {
     opacity: 0;

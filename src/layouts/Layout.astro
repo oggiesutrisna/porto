@@ -16,7 +16,6 @@ const { title, description } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!-- Primary SEO Meta Tags -->
         <meta name="description" content={description} />
         <meta
             name="keywords"
@@ -30,10 +29,8 @@ const { title, description } = Astro.props;
         <meta name="googlebot" content="index, follow" />
         <meta name="generator" content={Astro.generator} />
 
-        <!-- Canonical URL -->
         <link rel="canonical" href="https://oggiesutrisna.vercel.app/" />
 
-        <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://oggiesutrisna.vercel.app/" />
         <meta property="og:title" content={title} />
@@ -54,7 +51,6 @@ const { title, description } = Astro.props;
         />
         <meta property="og:locale" content="en_US" />
 
-        <!-- Twitter Card -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://oggiesutrisna.vercel.app/" />
         <meta name="twitter:title" content={title} />
@@ -70,17 +66,14 @@ const { title, description } = Astro.props;
         <meta name="twitter:creator" content="@oggiesutrisna" />
         <meta name="twitter:site" content="@oggiesutrisna" />
 
-        <!-- Additional SEO Meta Tags -->
-        <meta name="theme-color" content="#6366f1" />
-        <meta name="msapplication-TileColor" content="#6366f1" />
+        <meta name="theme-color" content="#ff6b4a" />
+        <meta name="msapplication-TileColor" content="#ff6b4a" />
         <meta name="format-detection" content="telephone=no" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-        <!-- Geo Tags (optional - update with your location) -->
         <meta name="geo.region" content="ID" />
         <meta name="geo.placename" content="Indonesia" />
 
-        <!-- Structured Data - Person Schema -->
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -118,7 +111,6 @@ const { title, description } = Astro.props;
             }
         </script>
 
-        <!-- Structured Data - Website Schema -->
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -134,7 +126,6 @@ const { title, description } = Astro.props;
             }
         </script>
 
-        <!-- Structured Data - Service Schema -->
         <script type="application/ld+json">
             {
                 "@context": "https://schema.org",
@@ -163,7 +154,6 @@ const { title, description } = Astro.props;
             }
         </script>
 
-        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link

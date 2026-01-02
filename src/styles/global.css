@@ -1,8 +1,3 @@
-/* ========================================
-   GLOBAL STYLES - Neubrutalism Portfolio
-   ======================================== */
-
-/* CSS Reset & Base */
 *,
 *::before,
 *::after {
@@ -11,9 +6,7 @@
   box-sizing: border-box;
 }
 
-/* Custom Properties (Neubrutalism Design Tokens) */
 :root {
-  /* Colors - Neubrutalism Palette */
   --color-bg-primary: #faf8f5;
   --color-bg-secondary: #ffffff;
   --color-bg-card: #ffffff;
@@ -28,7 +21,6 @@
   --color-text-secondary: #4a4a4a;
   --color-text-muted: #6a6a6a;
 
-  /* Accent Colors - Bright & Playful */
   --color-coral: #ff6b4a;
   --color-coral-light: #fff0ec;
   --color-orange: #ff9a3d;
@@ -44,16 +36,13 @@
   --color-blue: #5b9aff;
   --color-blue-light: #f0f6ff;
 
-  /* Status Colors */
   --color-success: #4ecdc4;
   --color-success-dark: #2db8ae;
 
-  /* Border */
   --color-border: #1a1a1a;
   --border-width: 2px;
   --border-width-thick: 3px;
 
-  /* Shadows - Hard offset (Neubrutalism signature) */
   --shadow-sm: 3px 3px 0 var(--color-border);
   --shadow-md: 5px 5px 0 var(--color-border);
   --shadow-lg: 8px 8px 0 var(--color-border);
@@ -63,7 +52,6 @@
   --shadow-mint: 5px 5px 0 var(--color-mint);
   --shadow-yellow: 5px 5px 0 var(--color-yellow);
 
-  /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-display: 'Outfit', var(--font-primary);
 
@@ -90,7 +78,6 @@
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.625;
 
-  /* Spacing */
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
@@ -104,7 +91,6 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
 
-  /* Border Radius */
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
@@ -113,14 +99,12 @@
   --radius-3xl: 2rem;
   --radius-full: 9999px;
 
-  /* Transitions */
   --transition-fast: 150ms ease;
   --transition-base: 200ms ease;
   --transition-slow: 350ms ease;
   --transition-bounce: 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-/* Base Styles */
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -137,7 +121,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Typography Utilities */
 h1,
 h2,
 h3,
@@ -155,7 +138,6 @@ a {
   text-decoration: none;
 }
 
-/* Button Base Styles - Neubrutalism */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -183,7 +165,6 @@ a {
   box-shadow: none !important;
 }
 
-/* Primary Button - Coral */
 .btn-primary {
   background: var(--color-coral);
   color: #ffffff;
@@ -194,7 +175,6 @@ a {
   box-shadow: var(--shadow-lg);
 }
 
-/* Secondary Button - White with border */
 .btn-secondary {
   background: var(--color-bg-secondary);
   color: var(--color-text-primary);
@@ -206,14 +186,12 @@ a {
   background: var(--color-bg-cream);
 }
 
-/* Button Sizes */
 .btn-lg {
   padding: var(--spacing-5) var(--spacing-10);
   font-size: var(--font-size-lg);
   border-radius: var(--radius-2xl);
 }
 
-/* Animations */
 @keyframes float {
 
   0%,
@@ -300,7 +278,6 @@ a {
   }
 }
 
-/* Utility Classes */
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -321,7 +298,6 @@ a {
   animation: fade-in 1s ease-out forwards;
 }
 
-/* Stagger Animation Delays */
 .delay-100 {
   animation-delay: 100ms;
 }
@@ -346,12 +322,10 @@ a {
   animation-delay: 600ms;
 }
 
-/* Gradient Text - Neubrutalism style (bold color) */
 .gradient-text {
   color: var(--color-coral);
 }
 
-/* Neubrutalism Card */
 .neu-card {
   background: var(--color-bg-card);
   border: var(--border-width-thick) solid var(--color-border);
@@ -365,13 +339,11 @@ a {
   box-shadow: var(--shadow-lg);
 }
 
-/* Selection */
 ::selection {
   background: var(--color-coral);
   color: white;
 }
 
-/* Scrollbar - Neubrutalism style */
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -391,7 +363,6 @@ a {
   background: var(--color-orange);
 }
 
-/* Wavy Section Divider */
 .wavy-divider {
   position: relative;
   width: 100%;
@@ -406,7 +377,6 @@ a {
   height: 100%;
 }
 
-/* Decorative shapes */
 .deco-star {
   display: inline-block;
   color: var(--color-yellow);
