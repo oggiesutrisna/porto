@@ -1,5 +1,5 @@
 /* ========================================
-   TECH STACK SECTION STYLES
+   TECH STACK SECTION - Neubrutalism
    ======================================== */
 
 /* Stack Section Container */
@@ -8,6 +8,21 @@
     padding: var(--spacing-24) var(--spacing-8);
     padding-bottom: calc(var(--spacing-24) + 80px);
     z-index: 1;
+    background: var(--color-bg-cream);
+    border-top: var(--border-width-thick) solid var(--color-border);
+}
+
+/* Wavy top border effect */
+.stack-section::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60'%3E%3Cpath fill='%23fff9f0' d='M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z'/%3E%3Cpath fill='none' stroke='%231a1a1a' stroke-width='3' d='M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .stack-container {
@@ -25,33 +40,35 @@
     display: inline-flex;
     align-items: center;
     gap: var(--spacing-2);
-    padding: var(--spacing-2) var(--spacing-4);
-    background: var(--color-bg-glass);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-3) var(--spacing-5);
+    background: var(--color-purple-light);
+    border: var(--border-width-thick) solid var(--color-border);
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
     margin-bottom: var(--spacing-6);
+    box-shadow: var(--shadow-sm);
 }
 
 .stack-badge-icon {
-    width: 16px;
-    height: 16px;
-    color: var(--color-accent-2);
+    width: 18px;
+    height: 18px;
+    color: var(--color-purple);
 }
 
 .stack-title {
     font-size: clamp(2rem, 5vw, var(--font-size-5xl));
-    font-weight: 800;
+    font-weight: var(--font-weight-extrabold);
     margin-bottom: var(--spacing-4);
     letter-spacing: -0.02em;
+    color: var(--color-text-primary);
 }
 
 .stack-subtitle {
     font-size: var(--font-size-lg);
     color: var(--color-text-secondary);
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
     line-height: var(--line-height-relaxed);
 }
@@ -64,119 +81,85 @@
     gap: var(--spacing-6);
 }
 
-/* Stack Card */
+/* Stack Card - Neubrutalism */
 .stack-card {
-    --mouse-x: 50%;
-    --mouse-y: 50%;
+    --card-color: var(--color-coral-light);
     position: relative;
     padding: var(--spacing-8);
-    background: var(--color-bg-glass);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--color-bg-card);
+    border: var(--border-width-thick) solid var(--color-border);
     border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-md);
     transition: all var(--transition-base);
-    overflow: hidden;
     cursor: pointer;
     width: 100%;
     max-width: 360px;
     flex: 0 1 360px;
+    overflow: visible;
 }
 
-/* Gradient border on hover */
-.stack-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-primary);
-    opacity: 0;
-    transition: opacity var(--transition-base);
-    z-index: -1;
+/* Color variations for each card */
+.stack-card:nth-child(1) {
+    --card-color: var(--color-coral-light);
+    --card-accent: var(--color-coral);
 }
 
-/* Inner background */
-.stack-card::after {
-    content: '';
-    position: absolute;
-    inset: 1px;
-    background: var(--color-bg-secondary);
-    border-radius: calc(var(--radius-2xl) - 1px);
-    z-index: -1;
-    transition: background var(--transition-base);
+.stack-card:nth-child(2) {
+    --card-color: var(--color-blue-light);
+    --card-accent: var(--color-blue);
 }
 
-/* Interactive glow that follows cursor */
-.stack-card-glow {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity var(--transition-base);
-    pointer-events: none;
-    z-index: 0;
-    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
-            rgba(139, 92, 246, 0.15),
-            rgba(99, 102, 241, 0.08) 25%,
-            transparent 50%);
+.stack-card:nth-child(3) {
+    --card-color: var(--color-mint-light);
+    --card-accent: var(--color-mint);
 }
 
-.stack-card:hover .stack-card-glow {
-    opacity: 1;
+.stack-card:nth-child(4) {
+    --card-color: var(--color-purple-light);
+    --card-accent: var(--color-purple);
 }
 
-/* Border glow effect */
-.stack-card-border {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity var(--transition-base);
-    pointer-events: none;
-    z-index: 1;
-    border-radius: var(--radius-2xl);
-    background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y),
-            rgba(139, 92, 246, 0.4),
-            transparent 40%);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    padding: 1px;
+.stack-card:nth-child(5) {
+    --card-color: var(--color-yellow-light);
+    --card-accent: var(--color-yellow);
 }
 
-.stack-card:hover .stack-card-border {
-    opacity: 1;
+.stack-card:nth-child(6) {
+    --card-color: var(--color-pink-light);
+    --card-accent: var(--color-pink);
 }
 
 .stack-card:hover {
-    transform: translateY(-8px);
-    border-color: transparent;
-    box-shadow: var(--shadow-glow);
+    transform: translate(-6px, -6px);
+    box-shadow: var(--shadow-lg);
+    background: var(--card-color);
 }
 
-.stack-card:hover::before {
-    opacity: 1;
+/* Hide the glow and border effects from dark theme */
+.stack-card-glow,
+.stack-card-border {
+    display: none;
 }
 
-.stack-card:hover::after {
-    background: rgba(10, 10, 15, 0.95);
-}
-
-/* Card Icon Container */
+/* Card Icon Container - Neubrutalism */
 .stack-icon-container {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--gradient-subtle);
+    background: var(--card-color);
+    border: var(--border-width-thick) solid var(--color-border);
     border-radius: var(--radius-xl);
     margin-bottom: var(--spacing-5);
     position: relative;
-    overflow: hidden;
+    box-shadow: 3px 3px 0 var(--color-border);
     transition: all var(--transition-base);
 }
 
 .stack-card:hover .stack-icon-container {
-    background: var(--gradient-primary);
-    transform: scale(1.1) rotate(-5deg);
+    background: var(--card-accent);
+    transform: rotate(-5deg) scale(1.05);
 }
 
 .stack-icon {
@@ -188,7 +171,7 @@
 }
 
 .stack-card:hover .stack-icon {
-    transform: scale(1.1);
+    color: #ffffff;
 }
 
 /* Card Content */
@@ -206,7 +189,7 @@
     margin-bottom: var(--spacing-5);
 }
 
-/* Stack Tags */
+/* Stack Tags - Neubrutalism pills */
 .stack-tags {
     display: flex;
     flex-wrap: wrap;
@@ -215,62 +198,85 @@
 
 .stack-tag {
     padding: var(--spacing-1) var(--spacing-3);
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--color-bg-primary);
+    border: var(--border-width) solid var(--color-border);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
-    color: var(--color-text-muted);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-primary);
     transition: all var(--transition-fast);
 }
 
 .stack-card:hover .stack-tag {
-    background: rgba(139, 92, 246, 0.15);
-    border-color: rgba(139, 92, 246, 0.3);
-    color: var(--color-accent-2);
+    background: var(--color-bg-card);
+    box-shadow: 2px 2px 0 var(--color-border);
+    transform: translate(-1px, -1px);
 }
 
-/* Experience Badge */
+/* Experience Badge - Neubrutalism */
 .stack-experience {
     position: absolute;
-    top: var(--spacing-4);
+    top: calc(var(--spacing-4) * -0.5);
     right: var(--spacing-4);
-    padding: var(--spacing-1) var(--spacing-3);
-    background: var(--gradient-primary);
+    padding: var(--spacing-2) var(--spacing-4);
+    background: var(--card-accent);
+    border: var(--border-width-thick) solid var(--color-border);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
-    font-weight: var(--font-weight-semibold);
-    color: white;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    box-shadow: 2px 2px 0 var(--color-border);
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-10px) rotate(3deg);
     transition: all var(--transition-base);
 }
 
 .stack-card:hover .stack-experience {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) rotate(3deg);
 }
 
-/* Floating Decoration */
+/* Fix text color on colored backgrounds */
+.stack-card:nth-child(1):hover .stack-experience,
+.stack-card:nth-child(3):hover .stack-experience,
+.stack-card:nth-child(5):hover .stack-experience {
+    color: var(--color-text-primary);
+}
+
+.stack-card:nth-child(2):hover .stack-experience,
+.stack-card:nth-child(4):hover .stack-experience,
+.stack-card:nth-child(6):hover .stack-experience {
+    color: #ffffff;
+}
+
+/* Floating Decoration - Now with shapes */
 .stack-decoration {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    filter: blur(100px);
-    opacity: 0.3;
+    width: 60px;
+    height: 60px;
+    border: var(--border-width-thick) solid var(--color-border);
     pointer-events: none;
+    z-index: 0;
 }
 
 .stack-decoration-1 {
-    background: var(--color-accent-1);
-    top: 0;
-    left: 10%;
+    background: var(--color-yellow);
+    top: 10%;
+    left: 5%;
+    border-radius: 50%;
+    box-shadow: 3px 3px 0 var(--color-border);
+    animation: float 8s ease-in-out infinite;
 }
 
 .stack-decoration-2 {
-    background: var(--color-accent-4);
-    bottom: 10%;
+    background: var(--color-pink);
+    bottom: 15%;
     right: 5%;
+    border-radius: var(--radius-lg);
+    transform: rotate(15deg);
+    box-shadow: 3px 3px 0 var(--color-border);
+    animation: float 10s ease-in-out infinite;
+    animation-delay: -3s;
 }
 
 /* Responsive Adjustments */
@@ -280,12 +286,16 @@
         padding-bottom: calc(var(--spacing-16) + 80px);
     }
 
-    .stack-grid {
-        grid-template-columns: 1fr;
+    .stack-section::before {
+        display: none;
     }
 
     .stack-card {
         padding: var(--spacing-6);
+    }
+
+    .stack-decoration {
+        display: none;
     }
 }
 

@@ -1,5 +1,5 @@
 /* ========================================
-   GLOBAL STYLES - Portfolio
+   GLOBAL STYLES - Neubrutalism Portfolio
    ======================================== */
 
 /* CSS Reset & Base */
@@ -11,32 +11,57 @@
   box-sizing: border-box;
 }
 
-/* Custom Properties (Design Tokens) */
+/* Custom Properties (Neubrutalism Design Tokens) */
 :root {
-  /* Colors - Dark Elegant Palette */
-  --color-bg-primary: #0a0a0f;
-  --color-bg-secondary: #12121a;
-  --color-bg-card: rgba(255, 255, 255, 0.03);
-  --color-bg-glass: rgba(255, 255, 255, 0.05);
+  /* Colors - Neubrutalism Palette */
+  --color-bg-primary: #faf8f5;
+  --color-bg-secondary: #ffffff;
+  --color-bg-card: #ffffff;
+  --color-bg-cream: #fff9f0;
+  --color-bg-lavender: #f5f0ff;
+  --color-bg-mint: #e8fff0;
+  --color-bg-peach: #fff0e8;
+  --color-bg-pink: #ffe8f5;
+  --color-bg-yellow: #fff8e0;
 
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #a1a1aa;
-  --color-text-muted: #71717a;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-muted: #6a6a6a;
 
-  /* Accent Colors - Vibrant Gradient */
-  --color-accent-1: #6366f1;
-  --color-accent-2: #8b5cf6;
-  --color-accent-3: #a855f7;
-  --color-accent-4: #ec4899;
+  /* Accent Colors - Bright & Playful */
+  --color-coral: #ff6b4a;
+  --color-coral-light: #fff0ec;
+  --color-orange: #ff9a3d;
+  --color-orange-light: #fff5eb;
+  --color-pink: #ff7eb3;
+  --color-pink-light: #fff0f7;
+  --color-purple: #9b7dff;
+  --color-purple-light: #f5f0ff;
+  --color-mint: #4ecdc4;
+  --color-mint-light: #e8fff8;
+  --color-yellow: #ffd93d;
+  --color-yellow-light: #fffbe8;
+  --color-blue: #5b9aff;
+  --color-blue-light: #f0f6ff;
 
-  /* Success/Action Colors */
-  --color-success: #10b981;
-  --color-success-hover: #059669;
+  /* Status Colors */
+  --color-success: #4ecdc4;
+  --color-success-dark: #2db8ae;
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--color-accent-1) 0%, var(--color-accent-3) 50%, var(--color-accent-4) 100%);
-  --gradient-subtle: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%);
-  --gradient-glow: radial-gradient(ellipse at center, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+  /* Border */
+  --color-border: #1a1a1a;
+  --border-width: 2px;
+  --border-width-thick: 3px;
+
+  /* Shadows - Hard offset (Neubrutalism signature) */
+  --shadow-sm: 3px 3px 0 var(--color-border);
+  --shadow-md: 5px 5px 0 var(--color-border);
+  --shadow-lg: 8px 8px 0 var(--color-border);
+  --shadow-xl: 12px 12px 0 var(--color-border);
+  --shadow-coral: 5px 5px 0 var(--color-coral);
+  --shadow-purple: 5px 5px 0 var(--color-purple);
+  --shadow-mint: 5px 5px 0 var(--color-mint);
+  --shadow-yellow: 5px 5px 0 var(--color-yellow);
 
   /* Typography */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -58,6 +83,7 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
 
   --line-height-tight: 1.1;
   --line-height-snug: 1.25;
@@ -84,21 +110,14 @@
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
   --radius-full: 9999px;
-
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.3);
-  --shadow-glow-sm: 0 0 20px rgba(139, 92, 246, 0.2);
 
   /* Transitions */
   --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
+  --transition-base: 200ms ease;
   --transition-slow: 350ms ease;
-  --transition-bounce: 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-bounce: 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 /* Base Styles */
@@ -126,8 +145,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-extrabold);
   line-height: var(--line-height-tight);
+  color: var(--color-text-primary);
 }
 
 a {
@@ -135,7 +155,7 @@ a {
   text-decoration: none;
 }
 
-/* Button Base Styles */
+/* Button Base Styles - Neubrutalism */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -144,68 +164,53 @@ a {
   padding: var(--spacing-4) var(--spacing-8);
   font-family: var(--font-primary);
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   line-height: 1;
   text-decoration: none;
-  border: none;
-  border-radius: var(--radius-full);
+  border: var(--border-width-thick) solid var(--color-border);
+  border-radius: var(--radius-xl);
   cursor: pointer;
   transition: all var(--transition-base);
   position: relative;
-  overflow: hidden;
 }
 
-.btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-  opacity: 0;
-  transition: opacity var(--transition-base);
+.btn:hover {
+  transform: translate(-3px, -3px);
 }
 
-.btn:hover::before {
-  opacity: 1;
+.btn:active {
+  transform: translate(0, 0);
+  box-shadow: none !important;
 }
 
-/* Primary Button - Gradient */
+/* Primary Button - Coral */
 .btn-primary {
-  background: var(--gradient-primary);
-  color: var(--color-text-primary);
-  box-shadow: var(--shadow-glow-sm);
+  background: var(--color-coral);
+  color: #ffffff;
+  box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: var(--shadow-glow);
+  box-shadow: var(--shadow-lg);
 }
 
-.btn-primary:active {
-  transform: translateY(0) scale(0.98);
-}
-
-/* Secondary Button - Glass */
+/* Secondary Button - White with border */
 .btn-secondary {
-  background: var(--color-bg-glass);
+  background: var(--color-bg-secondary);
   color: var(--color-text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-}
-
-.btn-secondary:active {
-  transform: translateY(0);
+  box-shadow: var(--shadow-lg);
+  background: var(--color-bg-cream);
 }
 
 /* Button Sizes */
 .btn-lg {
   padding: var(--spacing-5) var(--spacing-10);
   font-size: var(--font-size-lg);
+  border-radius: var(--radius-2xl);
 }
 
 /* Animations */
@@ -213,39 +218,39 @@ a {
 
   0%,
   100% {
-    transform: translateY(0px);
+    transform: translateY(0px) rotate(0deg);
   }
 
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-15px) rotate(3deg);
   }
 }
 
-@keyframes pulse-glow {
+@keyframes wiggle {
 
   0%,
   100% {
-    opacity: 0.5;
-    transform: scale(1);
+    transform: rotate(-3deg);
   }
 
   50% {
-    opacity: 0.8;
-    transform: scale(1.05);
+    transform: rotate(3deg);
   }
 }
 
-@keyframes gradient-shift {
+@keyframes bounce-in {
   0% {
-    background-position: 0% 50%;
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
   }
 
   50% {
-    background-position: 100% 50%;
+    transform: scale(1.05) translateY(-5px);
   }
 
   100% {
-    background-position: 0% 50%;
+    opacity: 1;
+    transform: scale(1) translateY(0);
   }
 }
 
@@ -271,15 +276,27 @@ a {
   }
 }
 
-@keyframes scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
+@keyframes pulse-dot {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 
-  to {
-    opacity: 1;
-    transform: scale(1);
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
   }
 }
 
@@ -288,8 +305,12 @@ a {
   animation: float 6s ease-in-out infinite;
 }
 
-.animate-pulse-glow {
-  animation: pulse-glow 4s ease-in-out infinite;
+.animate-wiggle {
+  animation: wiggle 3s ease-in-out infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.8s ease-out forwards;
 }
 
 .animate-fade-in-up {
@@ -298,10 +319,6 @@ a {
 
 .animate-fade-in {
   animation: fade-in 1s ease-out forwards;
-}
-
-.animate-scale-in {
-  animation: scale-in 0.6s ease-out forwards;
 }
 
 /* Stagger Animation Delays */
@@ -329,44 +346,86 @@ a {
   animation-delay: 600ms;
 }
 
-/* Gradient Text */
+/* Gradient Text - Neubrutalism style (bold color) */
 .gradient-text {
-  background: var(--gradient-primary);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-shift 8s ease infinite;
+  color: var(--color-coral);
 }
 
-/* Glass Card */
-.glass-card {
-  background: var(--color-bg-glass);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Neubrutalism Card */
+.neu-card {
+  background: var(--color-bg-card);
+  border: var(--border-width-thick) solid var(--color-border);
   border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+
+.neu-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Selection */
 ::selection {
-  background: var(--color-accent-2);
+  background: var(--color-coral);
   color: white;
 }
 
-/* Scrollbar */
+/* Scrollbar - Neubrutalism style */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-cream);
+  border-left: var(--border-width) solid var(--color-border);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-accent-1);
-  border-radius: var(--radius-full);
+  background: var(--color-coral);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-sm);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent-2);
+  background: var(--color-orange);
+}
+
+/* Wavy Section Divider */
+.wavy-divider {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+}
+
+.wavy-divider svg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Decorative shapes */
+.deco-star {
+  display: inline-block;
+  color: var(--color-yellow);
+}
+
+.deco-circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: var(--color-pink);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 50%;
+}
+
+.deco-square {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: var(--color-mint);
+  border: var(--border-width) solid var(--color-border);
+  transform: rotate(15deg);
 }

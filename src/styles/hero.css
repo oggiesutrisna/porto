@@ -1,76 +1,69 @@
 /* ========================================
-   HERO PAGE STYLES
+   HERO PAGE STYLES - Neubrutalism
    ======================================== */
 
-/* Background Effects */
+/* Background - Clean with decorative elements */
 .background-effects {
     position: fixed;
     inset: 0;
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
+    background: var(--color-bg-primary);
 }
 
-.gradient-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.5;
-}
-
-.orb-1 {
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle,
-            var(--color-accent-1) 0%,
-            transparent 70%);
-    top: -200px;
-    right: -100px;
-    animation: pulse-glow 8s ease-in-out infinite;
-}
-
-.orb-2 {
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle,
-            var(--color-accent-3) 0%,
-            transparent 70%);
-    bottom: -150px;
-    left: -100px;
-    animation: pulse-glow 10s ease-in-out infinite;
-    animation-delay: -3s;
-}
-
-.orb-3 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle,
-            var(--color-accent-4) 0%,
-            transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse-glow 12s ease-in-out infinite;
-    animation-delay: -5s;
-    opacity: 0.3;
-}
-
+/* Decorative grid pattern */
 .grid-overlay {
     position: absolute;
     inset: 0;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
 }
 
-.noise-overlay {
+/* Colorful gradient orbs - soft and playful */
+.gradient-orb {
     position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-    opacity: 0.03;
-    mix-blend-mode: overlay;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.4;
+}
+
+.orb-1 {
+    width: 500px;
+    height: 500px;
+    background: var(--color-pink);
+    top: -150px;
+    right: -100px;
+    animation: float 12s ease-in-out infinite;
+}
+
+.orb-2 {
+    width: 400px;
+    height: 400px;
+    background: var(--color-mint);
+    bottom: -100px;
+    left: -80px;
+    animation: float 15s ease-in-out infinite;
+    animation-delay: -5s;
+}
+
+.orb-3 {
+    width: 350px;
+    height: 350px;
+    background: var(--color-yellow);
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float 10s ease-in-out infinite;
+    animation-delay: -3s;
+    opacity: 0.25;
+}
+
+/* Hide noise overlay for cleaner look */
+.noise-overlay {
+    display: none;
 }
 
 /* Hero Section */
@@ -85,53 +78,77 @@
 
 .hero-content {
     text-align: center;
-    max-width: 800px;
+    max-width: 850px;
     z-index: 1;
 }
 
-/* Badge */
+/* Badge - Neubrutalism style */
 .badge {
     display: inline-flex;
     align-items: center;
-    gap: var(--spacing-2);
-    padding: var(--spacing-2) var(--spacing-4);
-    background: var(--color-bg-glass);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    gap: var(--spacing-3);
+    padding: var(--spacing-3) var(--spacing-5);
+    background: var(--color-mint-light);
+    border: var(--border-width-thick) solid var(--color-border);
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
     margin-bottom: var(--spacing-8);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+}
+
+.badge:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-md);
 }
 
 .badge-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--color-success);
+    width: 10px;
+    height: 10px;
+    background: var(--color-mint);
+    border: var(--border-width) solid var(--color-border);
     border-radius: 50%;
-    animation: pulse-glow 2s ease-in-out infinite;
+    animation: pulse-dot 2s ease-in-out infinite;
 }
 
 /* Title */
 .hero-title {
     font-size: clamp(2.5rem, 8vw, var(--font-size-7xl));
-    font-weight: 800;
+    font-weight: var(--font-weight-extrabold);
     margin-bottom: var(--spacing-6);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    color: var(--color-text-primary);
 }
 
 .title-line {
     display: block;
-    font-size: 0.4em;
+    font-size: 0.35em;
     font-weight: var(--font-weight-medium);
     color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-2);
-    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-3);
+    letter-spacing: 0.15em;
     text-transform: uppercase;
 }
 
 .title-name {
     display: block;
+    position: relative;
+}
+
+/* Name with colorful underline decoration */
+.title-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0.1em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 0.15em;
+    background: var(--color-coral);
+    border-radius: var(--radius-full);
+    z-index: -1;
 }
 
 /* Subtitle */
@@ -144,19 +161,23 @@
 
 .hero-subtitle .highlight {
     color: var(--color-text-primary);
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-bold);
+    background: var(--color-yellow-light);
+    padding: 0.1em 0.4em;
+    border-radius: var(--radius-sm);
+    border: var(--border-width) solid var(--color-border);
 }
 
 /* CTA Container */
 .cta-container {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-4);
+    gap: var(--spacing-5);
     justify-content: center;
     margin-bottom: var(--spacing-12);
 }
 
-/* Social Links */
+/* Social Links - Neubrutalism style */
 .social-links {
     display: flex;
     gap: var(--spacing-4);
@@ -167,23 +188,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: var(--color-bg-glass);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-lg);
-    color: var(--color-text-muted);
+    width: 52px;
+    height: 52px;
+    background: var(--color-bg-secondary);
+    border: var(--border-width-thick) solid var(--color-border);
+    border-radius: var(--radius-xl);
+    color: var(--color-text-primary);
+    box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
 }
 
 .social-link:hover {
-    color: var(--color-text-primary);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-3px);
+    transform: translate(-3px, -3px) rotate(-5deg);
+    box-shadow: var(--shadow-md);
 }
 
-/* Floating Elements */
+.social-link:nth-child(1):hover {
+    background: var(--color-purple-light);
+}
+
+.social-link:nth-child(2):hover {
+    background: var(--color-blue-light);
+}
+
+.social-link:nth-child(3):hover {
+    background: var(--color-coral-light);
+}
+
+/* Floating Elements - Neubrutalism decorative shapes */
 .floating-elements {
     position: fixed;
     inset: 0;
@@ -193,44 +225,78 @@
 
 .floating-shape {
     position: absolute;
-    border-radius: var(--radius-lg);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    background: var(--gradient-subtle);
+    border: var(--border-width-thick) solid var(--color-border);
 }
 
 .shape-1 {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     top: 15%;
     left: 10%;
+    background: var(--color-yellow);
+    border-radius: var(--radius-xl);
     transform: rotate(15deg);
+    box-shadow: 4px 4px 0 var(--color-border);
+    animation: float 8s ease-in-out infinite;
 }
 
 .shape-2 {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     top: 25%;
-    right: 15%;
-    transform: rotate(-20deg);
+    right: 12%;
+    background: var(--color-pink);
     border-radius: 50%;
+    box-shadow: 3px 3px 0 var(--color-border);
+    animation: float 7s ease-in-out infinite;
+    animation-delay: -2s;
 }
 
 .shape-3 {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     bottom: 20%;
-    right: 10%;
+    right: 8%;
+    background: var(--color-mint);
+    border-radius: var(--radius-lg);
     transform: rotate(45deg);
+    box-shadow: 4px 4px 0 var(--color-border);
+    animation: float 9s ease-in-out infinite;
+    animation-delay: -4s;
 }
 
-/* Footer */
+/* Additional decorative shapes */
+.floating-elements::before {
+    content: '★';
+    position: absolute;
+    font-size: 2rem;
+    color: var(--color-coral);
+    top: 35%;
+    left: 5%;
+    animation: wiggle 4s ease-in-out infinite;
+}
+
+.floating-elements::after {
+    content: '✦';
+    position: absolute;
+    font-size: 1.5rem;
+    color: var(--color-purple);
+    bottom: 30%;
+    left: 15%;
+    animation: wiggle 5s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+/* Footer - Neubrutalism */
 .footer {
     position: relative;
-    padding: var(--spacing-6);
+    padding: var(--spacing-8);
     text-align: center;
     font-size: var(--font-size-sm);
-    color: var(--color-text-muted);
-    background: transparent;
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    background: var(--color-bg-cream);
+    border-top: var(--border-width-thick) solid var(--color-border);
 }
 
 /* Responsive */
@@ -250,6 +316,10 @@
 
     .floating-elements {
         display: none;
+    }
+
+    .hero-subtitle .highlight {
+        display: inline;
     }
 }
 
