@@ -6,9 +6,29 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check",
+    "lint": "eslint src --ext .ts,.astro",
+    "format": "prettier --write src/**/*.{ts,astro,css}"
   },
   "dependencies": {
-    "astro": "^5.16.6"
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/node": "^9.5.4",
+    "@astrojs/tailwind": "^6.0.2",
+    "@types/dompurify": "^3.0.5",
+    "astro": "^5.16.6",
+    "dompurify": "^3.3.1",
+    "graphql-request": "^7.4.0",
+    "jsdom": "^28.1.0",
+    "marked": "^17.0.3",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.56.1",
+    "@typescript-eslint/parser": "^8.56.1",
+    "eslint": "^10.0.2",
+    "eslint-plugin-astro": "^1.6.0",
+    "prettier": "^3.8.1"
   }
 }

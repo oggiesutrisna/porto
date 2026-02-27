@@ -11,51 +11,60 @@
     position: absolute;
     inset: 0;
     background-image:
+        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+:root.light-mode .grid-overlay {
+    background-image:
         linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
 }
 
 .gradient-orb {
     position: absolute;
     border-radius: 50%;
     filter: blur(120px);
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 .orb-1 {
-    width: 500px;
-    height: 500px;
-    background: var(--color-pink);
-    top: -150px;
-    right: -100px;
+    width: 600px;
+    height: 600px;
+    background: var(--color-primary);
+    top: -200px;
+    right: -150px;
     animation: float 12s ease-in-out infinite;
 }
 
 .orb-2 {
-    width: 400px;
-    height: 400px;
-    background: var(--color-mint);
-    bottom: -100px;
-    left: -80px;
+    width: 500px;
+    height: 500px;
+    background: #ec4899;
+    bottom: -150px;
+    left: -100px;
     animation: float 15s ease-in-out infinite;
     animation-delay: -5s;
 }
 
 .orb-3 {
-    width: 350px;
-    height: 350px;
-    background: var(--color-yellow);
+    width: 400px;
+    height: 400px;
+    background: #6366f1;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     animation: float 10s ease-in-out infinite;
     animation-delay: -3s;
-    opacity: 0.25;
+    opacity: 0.3;
 }
 
 .noise-overlay {
-    display: none;
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
 .hero {
@@ -78,27 +87,25 @@
     align-items: center;
     gap: var(--spacing-3);
     padding: var(--spacing-3) var(--spacing-5);
-    background: var(--color-mint-light);
-    border: var(--border-width-thick) solid var(--color-border);
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.3);
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-semibold);
-    color: var(--color-text-primary);
+    color: var(--color-primary-light);
     margin-bottom: var(--spacing-8);
-    box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
 }
 
 .badge:hover {
     transform: translate(-2px, -2px);
-    box-shadow: var(--shadow-md);
+    background: rgba(139, 92, 246, 0.2);
 }
 
 .badge-dot {
-    width: 10px;
-    height: 10px;
-    background: var(--color-mint);
-    border: var(--border-width) solid var(--color-border);
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
     border-radius: 50%;
     animation: pulse-dot 2s ease-in-out infinite;
 }
@@ -133,12 +140,8 @@
 }
 
 .hero-subtitle .highlight {
-    color: var(--color-text-primary);
+    color: var(--color-primary-light);
     font-weight: var(--font-weight-bold);
-    background: var(--color-yellow-light);
-    padding: 0.1em 0.4em;
-    border-radius: var(--radius-sm);
-    border: var(--border-width) solid var(--color-border);
 }
 
 .cta-container {
@@ -161,29 +164,29 @@
     justify-content: center;
     width: 52px;
     height: 52px;
-    background: var(--color-bg-secondary);
-    border: var(--border-width-thick) solid var(--color-border);
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
     color: var(--color-text-primary);
-    box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
 }
 
 .social-link:hover {
-    transform: translate(-3px, -3px) rotate(-5deg);
-    box-shadow: var(--shadow-md);
+    transform: translate(-3px, -3px);
+    background: var(--color-bg-secondary);
+    border-color: var(--color-primary);
 }
 
 .social-link:nth-child(1):hover {
-    background: var(--color-purple-light);
+    color: #ffffff;
 }
 
 .social-link:nth-child(2):hover {
-    background: var(--color-blue-light);
+    color: #0a66c2;
 }
 
 .social-link:nth-child(3):hover {
-    background: var(--color-coral-light);
+    color: #1da1f2;
 }
 
 .floating-elements {
@@ -195,42 +198,40 @@
 
 .floating-shape {
     position: absolute;
-    border: var(--border-width-thick) solid var(--color-border);
+    border: 2px solid var(--color-border);
+    opacity: 0.3;
 }
 
 .shape-1 {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     top: 15%;
     left: 10%;
-    background: var(--color-yellow);
+    background: var(--color-primary);
     border-radius: var(--radius-xl);
     transform: rotate(15deg);
-    box-shadow: 4px 4px 0 var(--color-border);
     animation: float 8s ease-in-out infinite;
 }
 
 .shape-2 {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     top: 25%;
     right: 12%;
-    background: var(--color-pink);
+    background: #ec4899;
     border-radius: 50%;
-    box-shadow: 3px 3px 0 var(--color-border);
     animation: float 7s ease-in-out infinite;
     animation-delay: -2s;
 }
 
 .shape-3 {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     bottom: 20%;
     right: 8%;
-    background: var(--color-mint);
+    background: #6366f1;
     border-radius: var(--radius-lg);
     transform: rotate(45deg);
-    box-shadow: 4px 4px 0 var(--color-border);
     animation: float 9s ease-in-out infinite;
     animation-delay: -4s;
 }
@@ -239,7 +240,7 @@
     content: '★';
     position: absolute;
     font-size: 2rem;
-    color: var(--color-coral);
+    color: var(--color-primary);
     top: 35%;
     left: 5%;
     animation: wiggle 4s ease-in-out infinite;
@@ -249,7 +250,7 @@
     content: '✦';
     position: absolute;
     font-size: 1.5rem;
-    color: var(--color-purple);
+    color: #ec4899;
     bottom: 30%;
     left: 15%;
     animation: wiggle 5s ease-in-out infinite;
@@ -262,9 +263,9 @@
     text-align: center;
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    color: var(--color-text-secondary);
-    background: var(--color-bg-cream);
-    border-top: var(--border-width-thick) solid var(--color-border);
+    color: var(--color-text-muted);
+    background: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
 }
 
 @media (max-width: 640px) {
@@ -283,10 +284,6 @@
 
     .floating-elements {
         display: none;
-    }
-
-    .hero-subtitle .highlight {
-        display: inline;
     }
 }
 

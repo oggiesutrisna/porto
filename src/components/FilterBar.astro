@@ -1,0 +1,223 @@
+---
+import type { GitHubRepo } from '../types/github';
+import { getAllTopics, getAllLanguages } from '../lib/github';
+
+interface Props {
+  repos: GitHubRepo[];
+  selectedTopics?: string[];
+  selectedLanguage?: string | null;
+  sortBy?: 'stars' | 'updated' | 'name';
+  sortDirection?: 'asc' | 'desc';
+}
+
+const { 
+  repos, 
+  selectedTopics = [], 
+  selectedLanguage = null,
+  sortBy = 'updated',
+  sortDirection = 'desc'
+} = Astro.props;
+
+const allTopics = getAllTopics(repos);
+const allLanguages = getAllLanguages(repos);
+---
+
+<div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
+  <div class="flex flex-wrap gap-2 items-center">
+    <div class="relative" id="topics-filter-container">
+      <button
+        type="button"
+        id="topics-filter-btn"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-dark-bg-secondary border border-dark-border rounded-lg text-sm text-gray-300 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
+        aria-expanded="false"
+        aria-haspopup="true"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+        </svg>
+        Topics
+        {selectedTopics.length > 0 && (
+          <span class="px-1.5 py-0.5 text-xs bg-primary-500 text-white rounded-full">
+            {selectedTopics.length}
+          </span>
+        )}
+      </button>
+      
+      <div 
+        id="topics-dropdown"
+        class="hidden absolute z-50 mt-2 w-64 max-h-64 overflow-y-auto bg-dark-bg-secondary border border-dark-border rounded-lg shadow-xl"
+        role="menu"
+      >
+        <div class="p-2">
+          {allTopics.length === 0 ? (
+            <p class="px-3 py-2 text-sm text-gray-500">No topics available</p>
+          ) : (
+            allTopics.map((topic) => (
+              <label class="flex items-center gap-2 px-3 py-2 hover:bg-dark-bg rounded-lg cursor-pointer transition-colors">
+                <input
+                  type="checkbox"
+                  name="topics"
+                  value={topic}
+                  checked={selectedTopics.includes(topic)}
+                  class="w-4 h-4 rounded border-dark-border bg-dark-bg text-primary-500 focus:ring-primary-500 focus:ring-offset-0"
+                />
+                <span class="text-sm text-gray-300">{topic}</span>
+              </label>
+            ))
+          )}
+        </div>
+      </div>
+    </div>
+
+    <div class="relative" id="language-filter-container">
+      <button
+        type="button"
+        id="language-filter-btn"
+        class={`inline-flex items-center gap-2 px-4 py-2 bg-dark-bg-secondary border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors ${
+          selectedLanguage ? 'border-primary-500 text-primary-400' : 'border-dark-border text-gray-300 hover:border-primary-500/50'
+        }`}
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+        </svg>
+        {selectedLanguage || 'Language'}
+      </button>
+      
+      <div 
+        id="language-dropdown"
+        class="hidden absolute z-50 mt-2 w-48 max-h-64 overflow-y-auto bg-dark-bg-secondary border border-dark-border rounded-lg shadow-xl"
+        role="menu"
+      >
+        <div class="p-2">
+          <label class="flex items-center gap-2 px-3 py-2 hover:bg-dark-bg rounded-lg cursor-pointer transition-colors">
+            <input
+              type="radio"
+              name="language"
+              value=""
+              checked={!selectedLanguage}
+              class="w-4 h-4 border-dark-border bg-dark-bg text-primary-500 focus:ring-primary-500"
+            />
+            <span class="text-sm text-gray-300">All Languages</span>
+          </label>
+          {allLanguages.map((lang) => (
+            <label class="flex items-center gap-2 px-3 py-2 hover:bg-dark-bg rounded-lg cursor-pointer transition-colors">
+              <input
+                type="radio"
+                name="language"
+                value={lang}
+                checked={selectedLanguage === lang}
+                class="w-4 h-4 border-dark-border bg-dark-bg text-primary-500 focus:ring-primary-500"
+              />
+              <span class="text-sm text-gray-300">{lang}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {selectedTopics.length > 0 && (
+      <button
+        type="button"
+        id="clear-filters"
+        class="inline-flex items-center gap-1 px-3 py-1.5 text-xs text-gray-400 hover:text-white transition-colors"
+      >
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+        Clear
+      </button>
+    )}
+  </div>
+
+  <div class="flex items-center gap-2">
+    <span class="text-sm text-gray-500">Sort:</span>
+    <select
+      id="sort-select"
+      name="sort"
+      class="bg-dark-bg-secondary border border-dark-border rounded-lg px-3 py-2 text-sm text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
+    >
+      <option value="updated-desc" selected={sortBy === 'updated' && sortDirection === 'desc'}>Recently Updated</option>
+      <option value="updated-asc" selected={sortBy === 'updated' && sortDirection === 'asc'}>Oldest Updated</option>
+      <option value="stars-desc" selected={sortBy === 'stars' && sortDirection === 'desc'}>Most Stars</option>
+      <option value="stars-asc" selected={sortBy === 'stars' && sortDirection === 'asc'}>Least Stars</option>
+      <option value="name-asc" selected={sortBy === 'name' && sortDirection === 'asc'}>Name (A-Z)</option>
+      <option value="name-desc" selected={sortBy === 'name' && sortDirection === 'desc'}>Name (Z-A)</option>
+    </select>
+  </div>
+</div>
+
+<script>
+  const topicsBtn = document.getElementById('topics-filter-btn');
+  const topicsDropdown = document.getElementById('topics-dropdown');
+  const languageBtn = document.getElementById('language-filter-btn');
+  const languageDropdown = document.getElementById('language-dropdown');
+  const clearFilters = document.getElementById('clear-filters');
+  const sortSelect = document.getElementById('sort-select') as HTMLSelectElement;
+
+  let topicsOpen = false;
+  let languageOpen = false;
+
+  function toggleTopics() {
+    topicsOpen = !topicsOpen;
+    topicsDropdown?.classList.toggle('hidden', !topicsOpen);
+    topicsBtn?.setAttribute('aria-expanded', String(topicsOpen));
+    languageOpen = false;
+    languageDropdown?.classList.add('hidden');
+    languageBtn?.setAttribute('aria-expanded', 'false');
+  }
+
+  function toggleLanguage() {
+    languageOpen = !languageOpen;
+    languageDropdown?.classList.toggle('hidden', !languageOpen);
+    languageBtn?.setAttribute('aria-expanded', String(languageOpen));
+    topicsOpen = false;
+    topicsDropdown?.classList.add('hidden');
+    topicsBtn?.setAttribute('aria-expanded', 'false');
+  }
+
+  topicsBtn?.addEventListener('click', toggleTopics);
+  languageBtn?.addEventListener('click', toggleLanguage);
+
+  document.addEventListener('click', (e) => {
+    const target = e.target as Element;
+    if (!target.closest('#topics-filter-container') && topicsOpen) {
+      topicsOpen = false;
+      topicsDropdown?.classList.add('hidden');
+      topicsBtn?.setAttribute('aria-expanded', 'false');
+    }
+    if (!target.closest('#language-filter-container') && languageOpen) {
+      languageOpen = false;
+      languageDropdown?.classList.add('hidden');
+      languageBtn?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.querySelectorAll('input[name="topics"]').forEach((checkbox) => {
+    checkbox.addEventListener('change', () => {
+      const selected = Array.from(document.querySelectorAll('input[name="topics"]:checked'))
+        .map((el) => (el as HTMLInputElement).value);
+      window.dispatchEvent(new CustomEvent('filter-topics', { detail: { topics: selected } }));
+    });
+  });
+
+  document.querySelectorAll('input[name="language"]').forEach((radio) => {
+    radio.addEventListener('change', () => {
+      const value = (radio as HTMLInputElement).value;
+      window.dispatchEvent(new CustomEvent('filter-language', { detail: { language: value || null } }));
+    });
+  });
+
+  clearFilters?.addEventListener('click', () => {
+    document.querySelectorAll('input[name="topics"]').forEach((el) => {
+      (el as HTMLInputElement).checked = false;
+    });
+    const allLangRadio = document.querySelector('input[name="language"][value=""]') as HTMLInputElement;
+    if (allLangRadio) allLangRadio.checked = true;
+    window.dispatchEvent(new CustomEvent('filter-clear'));
+  });
+
+  sortSelect?.addEventListener('change', () => {
+    const [sortBy, direction] = sortSelect.value.split('-');
+    window.dispatchEvent(new CustomEvent('repo-sort', { detail: { sortBy, direction } }));
+  });
+</script>
