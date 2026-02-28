@@ -6,7 +6,7 @@ import FilterBar from '../components/FilterBar.astro';
 import FeaturedSection from '../components/FeaturedSection.astro';
 import RepoCard from '../components/RepoCard.astro';
 import '../styles/hero-section.css';
-import { fetchGitHubUser, filterRepos, sortRepos } from '../lib/github';
+import { fetchGitHubUser } from '../lib/github';
 import type { GitHubRepo } from '../types/github';
 
 const GITHUB_USERNAME = 'oggiesutrisna';
@@ -316,13 +316,23 @@ const siteDescription = user?.bio
   function init() {
     const repoCards = document.querySelectorAll('.repo-card');
     allRepos = Array.from(repoCards).map((card) => {
-      const data = card.dataset;
+      const data = (card as HTMLElement).dataset;
+      // FIXED: Safe JSON parsing with error handling to prevent crashes
+      let topics: string[] = [];
+      if (data.topics) {
+        try {
+          topics = JSON.parse(data.topics);
+        } catch (e) {
+          console.warn('Failed to parse topics JSON:', data.topics);
+          topics = [];
+        }
+      }
       return {
         name: data.repo || '',
         fullName: '',
         description: null,
         language: data.language || null,
-        topics: data.topics ? JSON.parse(data.topics) : [],
+        topics: topics,
         stargazersCount: 0,
         forksCount: 0,
         updatedAt: new Date().toISOString(),
