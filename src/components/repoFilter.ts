@@ -12,10 +12,13 @@ interface RepoData {
 }
 
 let allRepos: RepoData[] = [];
-let currentSearch = '';
+let currentSearch = "";
 let currentTopics: string[] = [];
 let currentLanguage: string | null = null;
-let currentSort = { by: 'updated' as 'stars' | 'updated' | 'name', direction: 'desc' as 'desc' | 'asc' };
+let currentSort = {
+  by: "updated" as "stars" | "updated" | "name",
+  direction: "desc" as "desc" | "asc",
+};
 
 function filterAndSort(): RepoData[] {
   let filtered = allRepos.filter((repo) => {
@@ -30,7 +33,7 @@ function filterAndSort(): RepoData[] {
 
     if (currentTopics.length > 0) {
       const hasSelectedTopic = currentTopics.some((topic) =>
-        repo.topics.includes(topic)
+        repo.topics.includes(topic),
       );
       if (!hasSelectedTopic) return false;
     }
@@ -44,16 +47,16 @@ function filterAndSort(): RepoData[] {
 
   filtered.sort((a, b) => {
     switch (currentSort.by) {
-      case 'stars':
-        return currentSort.direction === 'desc'
+      case "stars":
+        return currentSort.direction === "desc"
           ? b.stargazersCount - a.stargazersCount
           : a.stargazersCount - b.stargazersCount;
-      case 'updated':
-        return currentSort.direction === 'desc'
+      case "updated":
+        return currentSort.direction === "desc"
           ? new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
           : new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime();
-      case 'name':
-        return currentSort.direction === 'desc'
+      case "name":
+        return currentSort.direction === "desc"
           ? b.name.localeCompare(a.name)
           : a.name.localeCompare(b.name);
       default:
@@ -65,12 +68,12 @@ function filterAndSort(): RepoData[] {
 }
 
 function renderRepos(repos: RepoData[]) {
-  const container = document.getElementById('repo-grid');
+  const container = document.getElementById("repo-grid");
   if (!container) return;
 
-  const countEl = document.getElementById('repo-count');
+  const countEl = document.getElementById("repo-count");
   if (countEl) {
-    countEl.textContent = `${repos.length} project${repos.length !== 1 ? 's' : ''}`;
+    countEl.textContent = `${repos.length} project${repos.length !== 1 ? "s" : ""}`;
   }
 
   if (repos.length === 0) {
@@ -86,28 +89,29 @@ function renderRepos(repos: RepoData[]) {
     return;
   }
 
-  container.innerHTML = repos.map((repo) => {
-    const langColors: Record<string, string> = {
-      JavaScript: '#f1e05a',
-      TypeScript: '#2b7489',
-      Python: '#3572A5',
-      Java: '#b07219',
-      'C#': '#178600',
-      PHP: '#4F5D95',
-      Go: '#00ADD8',
-      Vue: '#41b883',
-      React: '#61dafb',
-      Blade: '#f7523f',
-    };
-    const color = langColors[repo.language || ''] || '#6b7280';
-    const isWebsite = repo.homepage || repo.topics.includes('website');
+  container.innerHTML = repos
+    .map((repo) => {
+      const langColors: Record<string, string> = {
+        JavaScript: "#f1e05a",
+        TypeScript: "#2b7489",
+        Python: "#3572A5",
+        Java: "#b07219",
+        "C#": "#178600",
+        PHP: "#4F5D95",
+        Go: "#00ADD8",
+        Vue: "#41b883",
+        React: "#61dafb",
+        Blade: "#f7523f",
+      };
+      const color = langColors[repo.language || ""] || "#6b7280";
+      const isWebsite = repo.homepage || repo.topics.includes("website");
 
-    return `
+      return `
       <article 
         class="repo-card group relative bg-dark-bg-card border border-dark-border rounded-xl p-5 hover:border-primary-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10"
         data-repo="${repo.name}"
         data-topics='${JSON.stringify(repo.topics)}'
-        data-language="${repo.language || ''}"
+        data-language="${repo.language || ""}"
       >
         <div class="flex items-start justify-between gap-3 mb-3">
           <h3 class="font-display font-semibold text-lg text-white group-hover:text-primary-400 transition-colors">
@@ -128,27 +132,40 @@ function renderRepos(repos: RepoData[]) {
         </div>
 
         <p class="text-gray-400 text-sm mb-4 line-clamp-2">
-          ${repo.description || 'No description available'}
+          ${repo.description || "No description available"}
         </p>
 
-        ${repo.topics.length > 0 ? `
+        ${
+          repo.topics.length > 0
+            ? `
           <div class="flex flex-wrap gap-1.5 mb-4">
-            ${repo.topics.slice(0, 4).map((topic) => `
+            ${repo.topics
+              .slice(0, 4)
+              .map(
+                (topic) => `
               <span class="px-2 py-0.5 text-xs bg-primary-500/10 text-primary-400 rounded-full border border-primary-500/20">
                 ${topic}
               </span>
-            `).join('')}
-            ${repo.topics.length > 4 ? `<span class="px-2 py-0.5 text-xs text-gray-500">+${repo.topics.length - 4}</span>` : ''}
+            `,
+              )
+              .join("")}
+            ${repo.topics.length > 4 ? `<span class="px-2 py-0.5 text-xs text-gray-500">+${repo.topics.length - 4}</span>` : ""}
           </div>
-        ` : ''}
+        `
+            : ""
+        }
 
         <div class="flex items-center gap-4 text-xs text-gray-500 mb-4">
-          ${repo.language ? `
+          ${
+            repo.language
+              ? `
             <div class="flex items-center gap-1.5">
               <span class="w-2.5 h-2.5 rounded-full" style="background-color: ${color}"></span>
               <span>${repo.language}</span>
             </div>
-          ` : ''}
+          `
+              : ""
+          }
           
           <div class="flex items-center gap-1">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -163,7 +180,9 @@ function renderRepos(repos: RepoData[]) {
         </div>
 
         <div class="absolute inset-x-0 bottom-0 p-5 pt-0 flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          ${repo.homepage && isWebsite ? `
+          ${
+            repo.homepage && isWebsite
+              ? `
             <a
               href="${repo.homepage}"
               target="_blank"
@@ -176,7 +195,9 @@ function renderRepos(repos: RepoData[]) {
               </svg>
               Demo
             </a>
-          ` : ''}
+          `
+              : ""
+          }
           <a
             href="${repo.url}"
             target="_blank"
@@ -197,7 +218,8 @@ function renderRepos(repos: RepoData[]) {
         </div>
       </article>
     `;
-  }).join('');
+    })
+    .join("");
 }
 
 function formatDate(dateString: string): string {
@@ -205,7 +227,7 @@ function formatDate(dateString: string): string {
   const now = new Date();
   const diffTime = Math.abs(now.getTime() - date.getTime());
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  
+
   if (diffDays < 7) return `${diffDays}d ago`;
   if (diffDays < 30) return `${Math.floor(diffDays / 7)}w ago`;
   if (diffDays < 365) return `${Math.floor(diffDays / 30)}mo ago`;
@@ -213,12 +235,12 @@ function formatDate(dateString: string): string {
 }
 
 function init() {
-  const repoCards = document.querySelectorAll('.repo-card');
+  const repoCards = document.querySelectorAll(".repo-card");
   allRepos = Array.from(repoCards).map((card) => {
-    const data = card.dataset;
+    const data = (card as HTMLElement).dataset;
     return {
-      name: data.repo || '',
-      fullName: '',
+      name: data.repo || "",
+      fullName: "",
       description: null,
       language: data.language || null,
       topics: data.topics ? JSON.parse(data.topics) : [],
@@ -226,38 +248,40 @@ function init() {
       forksCount: 0,
       updatedAt: new Date().toISOString(),
       homepage: null,
-      url: '',
+      url: "",
     };
   });
 
-  window.addEventListener('repo-search', ((e: CustomEvent) => {
+  window.addEventListener("repo-search", ((e: CustomEvent) => {
     currentSearch = e.detail.search;
     renderRepos(filterAndSort());
   }) as EventListener);
 
-  window.addEventListener('filter-topics', ((e: CustomEvent) => {
+  window.addEventListener("filter-topics", ((e: CustomEvent) => {
     currentTopics = e.detail.topics;
     renderRepos(filterAndSort());
   }) as EventListener);
 
-  window.addEventListener('filter-language', ((e: CustomEvent) => {
+  window.addEventListener("filter-language", ((e: CustomEvent) => {
     currentLanguage = e.detail.language;
     renderRepos(filterAndSort());
   }) as EventListener);
 
-  window.addEventListener('repo-sort', ((e: CustomEvent) => {
+  window.addEventListener("repo-sort", ((e: CustomEvent) => {
     currentSort = { by: e.detail.sortBy, direction: e.detail.direction };
     renderRepos(filterAndSort());
   }) as EventListener);
 
-  window.addEventListener('filter-clear', () => {
-    currentSearch = '';
+  window.addEventListener("filter-clear", () => {
+    currentSearch = "";
     currentTopics = [];
     currentLanguage = null;
-    const searchInput = document.getElementById('repo-search') as HTMLInputElement;
-    if (searchInput) searchInput.value = '';
+    const searchInput = document.getElementById(
+      "repo-search",
+    ) as HTMLInputElement;
+    if (searchInput) searchInput.value = "";
     renderRepos(filterAndSort());
   });
 }
 
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener("DOMContentLoaded", init);
