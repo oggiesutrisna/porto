@@ -31,7 +31,7 @@ try {
   readme = await fetchRepoReadme(GITHUB_USERNAME, slug);
   
   if (readme) {
-    const JSDOM = require('jsdom').JSDOM;
+    const { JSDOM } = await import('jsdom');
     const window = new JSDOM('').window;
     const DOMPurify = createDOMPurify(window);
     
