@@ -25,22 +25,35 @@
 </button>
 
 <script>
-  const themeToggle = document.getElementById('theme-toggle');
-  
-  // Toggle theme
-  function toggleTheme() {
-    const isLight = document.documentElement.classList.contains('light-mode');
-    
-    if (isLight) {
-      document.documentElement.classList.remove('light-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.add('light-mode');
-      localStorage.setItem('theme', 'light');
+  function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) {
+      console.warn('Theme toggle button not found');
+      return;
     }
+    
+    // Toggle theme
+    function toggleTheme() {
+      const isLight = document.documentElement.classList.contains('light-mode');
+      
+      if (isLight) {
+        document.documentElement.classList.remove('light-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.add('light-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+    
+    themeToggle.addEventListener('click', toggleTheme);
   }
   
-  themeToggle?.addEventListener('click', toggleTheme);
+  // Ensure DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
+  } else {
+    initThemeToggle();
+  }
 </script>
 
 <style>
@@ -89,12 +102,12 @@
     transform: rotate(0deg);
   }
 
-  html.light-mode .theme-icon-light {
+  :global(html.light-mode) .theme-icon-light {
     opacity: 1;
     transform: rotate(0deg);
   }
 
-  html.light-mode .theme-icon-dark {
+  :global(html.light-mode) .theme-icon-dark {
     opacity: 0;
     transform: rotate(180deg);
   }
