@@ -58,6 +58,71 @@ const formatDate = (dateString: string): string => {
 
 const siteTitle = `${repo.name}${featured ? ` - ${featured.title}` : ''} | Oggie Sutrisna`;
 const siteDescription = repo.description || `View ${repo.name} repository on GitHub`;
+
+// BreadcrumbList schema for project page
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://oggiesutrisna.vercel.app',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Projects',
+      item: 'https://oggiesutrisna.vercel.app/#projects',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: featured?.title || repo.name,
+    },
+  ],
+};
+
+// SoftwareApplication schema for project page
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: featured?.title || repo.name,
+  description: featured?.description || repo.description || `View ${repo.name} repository on GitHub`,
+  applicationCategory: 'DeveloperApplication',
+  operatingSystem: 'Web',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Oggie Sutrisna',
+    url: 'https://oggiesutrisna.vercel.app',
+    sameAs: ['https://github.com/oggiesutrisna'],
+  },
+  url: `https://oggiesutrisna.vercel.app/project/${repo.name}`,
+  codeRepository: repo.url,
+  datePublished: repo.createdAt,
+  dateModified: repo.updatedAt,
+  keywords: repo.topics.length > 0 ? repo.topics.join(', ') : 'open source, software development',
+  programmingLanguage: repo.languages.length > 0
+    ? repo.languages.map((l: any) => l.name).join(', ')
+    : repo.language || 'JavaScript',
+  ...(repo.license && { license: repo.license }),
+  ...(repo.homepage && { browserRequirements: 'Web Browser' }),
+  ...(repo.stargazersCount > 0 && {
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: Math.min(5, 1 + repo.stargazersCount / 10),
+      ratingCount: repo.stargazersCount,
+      bestRating: '5',
+      worstRating: '1',
+    },
+  }),
+};
 ---
 
 <Layout title={siteTitle} description={siteDescription}>
@@ -69,10 +134,10 @@ const siteDescription = repo.description || `View ${repo.name} repository on Git
     <div class="noise-overlay"></div>
   </div>
 
-  <main class="min-h-screen">
+  <main id="main-content" class="min-h-screen">
     <div class="container mx-auto px-4 py-12 max-w-5xl">
       <a 
-        href="/projects" 
+        href="/" 
         class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -234,3 +299,6 @@ const siteDescription = repo.description || `View ${repo.name} repository on Git
     </div>
   </main>
 </Layout>
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(softwareApplicationSchema)}></script>

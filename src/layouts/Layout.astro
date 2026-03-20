@@ -39,10 +39,10 @@ const { title, description } = Astro.props;
         <meta name="googlebot" content="index, follow" />
         <meta name="generator" content={Astro.generator} />
 
-        <link rel="canonical" href="https://oggiesutrisna.vercel.app/" />
+        <link rel="canonical" href={Astro.url} />
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://oggiesutrisna.vercel.app/" />
+        <meta property="og:url" content={Astro.url} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta
@@ -62,7 +62,7 @@ const { title, description } = Astro.props;
         <meta property="og:locale" content="en_US" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://oggiesutrisna.vercel.app/" />
+        <meta name="twitter:url" content={Astro.url} />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta
@@ -84,11 +84,12 @@ const { title, description } = Astro.props;
         <meta name="geo.region" content="ID" />
         <meta name="geo.placename" content="Indonesia" />
 
-        <script type="application/ld+json">
+        <script is:inline type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "Person",
-                "name": "Oggiesutrisna",
+                "name": "Oggie Sutrisna",
+                "alternateName": "oggiesutrisna",
                 "url": "https://oggiesutrisna.vercel.app",
                 "image": "https://oggiesutrisna.vercel.app/profile.jpg",
                 "sameAs": [
@@ -101,7 +102,7 @@ const { title, description } = Astro.props;
                     "@type": "Organization",
                     "name": "Available for Hire"
                 },
-                "description": "Senior Software Engineer with 8+ years of experience in building scalable, high-performance applications. Available for freelance and full-time opportunities.",
+                "description": "Senior Software Engineer with 9+ years of experience building scalable, high-performance applications. Specializing in full-stack development, system architecture, and cloud-native applications. Available for freelance and full-time opportunities.",
                 "knowsAbout": [
                     "Software Engineering",
                     "Web Development",
@@ -112,31 +113,53 @@ const { title, description } = Astro.props;
                     "Cloud Computing",
                     "Database Design",
                     "API Development",
-                    "Agile Methodologies"
+                    "Agile Methodologies",
+                    "Quality Assurance",
+                    "Automated Testing",
+                    "Test-Driven Development",
+                    "System Reliability",
+                    "React",
+                    "Next.js",
+                    "TypeScript",
+                    "Node.js",
+                    "Go",
+                    "PostgreSQL",
+                    "PHP",
+                    "Blade",
+                    "Docker",
+                    "Enterprise Internal Tools",
+                    "E-commerce API Sync",
+                    "Healthcare Data Systems"
                 ],
-                "alumniOf": {
-                    "@type": "EducationalOrganization",
-                    "name": "Your University"
-                }
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Denpasar",
+                    "addressRegion": "Bali",
+                    "addressCountry": "Indonesia"
+                },
+                "nationality": "Indonesian"
             }
         </script>
 
-        <script type="application/ld+json">
+        <script is:inline type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "Oggiesutrisna | Senior Software Engineer",
+                "name": "Oggie Sutrisna | Senior Software Engineer",
                 "url": "https://oggiesutrisna.vercel.app",
-                "description": "Portfolio of a Senior Software Engineer with 8+ years of experience. Hire me for your next project.",
+                "description": "Portfolio of a Senior Software Engineer with 9+ years of experience in full-stack development, system architecture, and cloud-native applications. Specializing in React, Next.js, TypeScript, Node.js, Go, and PHP.",
                 "potentialAction": {
                     "@type": "SearchAction",
-                    "target": "https://oggiesutrisna.vercel.app/?s={search_term_string}",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://github.com/oggiesutrisna?tab=repositories&q={search_term_string}"
+                    },
                     "query-input": "required name=search_term_string"
                 }
             }
         </script>
 
-        <script type="application/ld+json">
+        <script is:inline type="application/ld+json">
             {
                 "@context": "https://schema.org",
                 "@type": "Service",
@@ -184,6 +207,7 @@ const { title, description } = Astro.props;
         </script>
     </head>
     <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
         <header class="sticky top-0 z-50 backdrop-blur-md header-nav">
             <nav class="container mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
                 <a href="/" class="text-xl font-display font-bold text-primary hover:text-primary-light transition-colors">

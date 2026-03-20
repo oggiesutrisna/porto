@@ -22,6 +22,33 @@ const formatDate = (dateString: string): string => {
 
 const isWebsite = repo.homepage || repo.topics.includes('website') || repo.topics.includes('demo');
 const languageColor = getLanguageColor(repo.language);
+
+// SoftwareApplication schema for SEO
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: repo.name,
+  description: repo.description || `View ${repo.name} repository on GitHub`,
+  applicationCategory: 'DeveloperApplication',
+  operatingSystem: 'Web',
+  author: {
+    '@type': 'Person',
+    name: 'Oggie Sutrisna',
+  },
+  url: `https://oggiesutrisna.vercel.app/project/${repo.name}`,
+  codeRepository: repo.url,
+  programmingLanguage: repo.languages.length > 0
+    ? repo.languages.map((l) => l.name).join(', ')
+    : repo.language || 'JavaScript',
+  keywords: repo.topics.length > 0 ? repo.topics.join(', ') : 'open source',
+  ...(repo.stargazersCount > 0 && {
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: Math.min(5, 1 + repo.stargazersCount / 10),
+      ratingCount: repo.stargazersCount,
+    },
+  }),
+};
 ---
 
 <article 
@@ -137,6 +164,8 @@ const languageColor = getLanguageColor(repo.language);
     </a>
   </div>
 </article>
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(softwareSchema)}></script>
 
 <style>
   .line-clamp-2 {

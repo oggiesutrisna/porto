@@ -1,0 +1,31 @@
+# robots.txt - Allow all crawlers including AI/LLM crawlers
+
+User-agent: *
+Allow: /
+
+# Explicitly allow AI/LLM crawlers for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+# Disallow admin/private areas (if any in the future)
+# User-agent: *
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap reference
+Sitemap: https://oggiesutrisna.vercel.app/sitemap.xml

@@ -32,15 +32,74 @@ const siteTitle = user
   ? `${user.name || user.login} | Projects`
   : 'Projects | Oggie Sutrisna';
 
-const siteDescription = user?.bio 
+const siteDescription = user?.bio
   ? `Browse ${user.login}'s open source projects and repositories.`
   : 'Browse my open source projects and repositories.';
+
+// Generate ItemList schema for all repos
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Oggie Sutrisna - Projects',
+  description: 'Collection of open source projects and repositories',
+  itemListElement: repos.map((repo, index) => ({
+    '@type': 'SoftwareApplication',
+    position: index + 1,
+    name: repo.name,
+    description: repo.description || `View ${repo.name} repository on GitHub`,
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: 'Web',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    aggregateRating: repo.stargazersCount > 0 ? {
+      '@type': 'AggregateRating',
+      ratingValue: Math.min(5, 1 + repo.stargazersCount / 10),
+      ratingCount: repo.stargazersCount,
+      bestRating: '5',
+      worstRating: '1',
+    } : undefined,
+    author: {
+      '@type': 'Person',
+      name: 'Oggie Sutrisna',
+      url: 'https://oggiesutrisna.vercel.app',
+    },
+    url: `https://oggiesutrisna.vercel.app/project/${repo.name}`,
+    codeRepository: repo.url,
+    keywords: repo.topics.length > 0 ? repo.topics.join(', ') : 'open source, software development',
+    programmingLanguage: repo.languages.length > 0
+      ? repo.languages.map((l: any) => l.name).join(', ')
+      : repo.language || 'JavaScript',
+  })),
+};
+
+// BreadcrumbList schema for homepage
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://oggiesutrisna.vercel.app',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Projects',
+      item: 'https://oggiesutrisna.vercel.app/#projects',
+    },
+  ],
+};
 ---
 
 <Layout title={siteTitle} description={siteDescription}>
   <HeroSection />
 
-  <main class="min-h-screen">
+  <main id="main-content" class="min-h-screen">
     <div class="container mx-auto px-4 py-12 max-w-7xl">
       <div id="projects" class="scroll-mt-20"></div>
       
@@ -78,7 +137,7 @@ const siteDescription = user?.bio
           </div>
 
           <div class="flex items-center justify-between mb-6">
-            <p id="repo-count" class="text-gray-400 text-sm">
+            <p id="repo-count" class="text-gray-400 text-sm" aria-live="polite" aria-atomic="true">
               {repos.length} project{repos.length !== 1 ? 's' : ''}
             </p>
           </div>
@@ -95,6 +154,9 @@ const siteDescription = user?.bio
     </div>
   </main>
 </Layout>
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(itemListSchema)}></script>
+<script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)}></script>
 
 <script>
   interface RepoData {
