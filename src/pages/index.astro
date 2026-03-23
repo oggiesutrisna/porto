@@ -4,6 +4,7 @@ import HeroSection from '../components/HeroSection.astro';
 import SearchBar from '../components/SearchBar.astro';
 import FilterBar from '../components/FilterBar.astro';
 import FeaturedSection from '../components/FeaturedSection.astro';
+import LocalProjectsSection from '../components/LocalProjectsSection.astro';
 import RepoCard from '../components/RepoCard.astro';
 import { fetchGitHubUser } from '../lib/github';
 import type { GitHubRepo } from '../types/github';
@@ -143,6 +144,8 @@ const breadcrumbSchema = {
           </div>
 
           <FeaturedSection repos={repos} />
+
+          <LocalProjectsSection />
 
           <div id="repo-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {repos.map((repo) => (

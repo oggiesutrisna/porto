@@ -1,0 +1,285 @@
+---
+import UnicareLayout from "../../layouts/UnicareLayout.astro";
+---
+
+<UnicareLayout title="About Us - Bali Medical Center Unicare Clinic" description="Discover more about us at Unicare Clinic, a trusted Bali medical clinic offering exceptional healthcare services with expert doctors & modern medical facilities">
+    <div class="archive-stripe"></div>
+    <div class="archive-banner warning" id="archiveBanner">
+        <button class="archive-banner-close" onclick="document.getElementById('archiveBanner').style.display='none'">&times;</button>
+        <div class="archive-banner-content">
+            <div class="archive-banner-icon">🚧</div>
+            <div class="archive-banner-text">
+                <h3 class="archive-banner-title">⚠️ ARCHIVE TEMPLATE - DISCONTINUED JANUARY 2025</h3>
+                <p class="archive-banner-subtitle">
+                    This template is <strong>no longer in use</strong>. I quit as Web Developer in January 2025 and new developers took over,
+                    changing everything. This site represents my work from <strong>2019 - 2025</strong> as the original Web Developer for Unicare Clinic.
+                </p>
+            </div>
+            <div class="archive-badge">
+                <span class="archive-badge-year">2019</span>
+                <span class="archive-badge-label">to</span>
+                <span class="archive-badge-year">2025</span>
+                <span class="archive-badge-label">My Work</span>
+            </div>
+        </div>
+    </div>
+    <div class="archive-stripe"></div>
+
+    <div class="wrapper">
+        <div class="preloader">
+            <div class="loading"><span></span><span></span><span></span><span></span></div>
+        </div>
+
+        <header class="header header-layout1">
+            <div class="header-topbar">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <ul class="contact__list d-flex flex-wrap align-items-center list-unstyled mb-0">
+                                    <li>
+                                        <button class="miniPopup-emergency-trigger" type="button">24/7 Emergency</button>
+                                        <div id="miniPopup-emergency" class="miniPopup miniPopup-emergency text-center">
+                                            <div class="emergency__icon">
+                                                <i class="icon-call3"></i>
+                                            </div>
+                                            <a href="tel:+6282298298911" class="phone__number">
+                                                <i class="icon-phone"></i> <span>+62 822 9829 8911</span>
+                                            </a>
+                                            <p>Please feel free to contact our friendly reception staff with any general or medical enquiry.</p>
+                                            <a href="/unicare-clinic/appointment.html" class="btn btn__secondary btn__link btn__block">
+                                                <span>Make Appointment</span> <i class="icon-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <i class="icon-phone"></i><a href="tel:+6282298298911">24/7 Hotline: +62 822 9829 8911</a>
+                                    </li>
+                                    <li>
+                                        <i class="icon-location"></i><a href="/unicare-clinic/contact-us.html">Locations: Kuta, Ubud, Nusa Dua, Uluwatu</a>
+                                    </li>
+                                    <li>
+                                        <i class="icon-clock"></i><a href="/unicare-clinic/contact-us.html">Open 24/7, Every Day</a>
+                                    </li>
+                                </ul>
+                                <div class="d-flex">
+                                    <ul class="social-icons list-unstyled mb-0 mr-30">
+                                        <li><a href="https://www.facebook.com/Unicare-Clinic-1936150369754527/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://twitter.com/unicare_clinic" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="https://www.youtube.com/@unicareclinic" target="_blank"><i class="fab fa-youtube"></i></a></li>
+                                    </ul>
+                                    <form class="header-topbar__search">
+                                        <input type="text" class="form-control" placeholder="Search...">
+                                        <button class="header-topbar__search-btn"><i class="fa fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg sticky-navbar">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/unicare-clinic">
+                        <img src="/unicare-assets/images/logo/unicare-logo.webp" class="logo-light" alt="Unicare Clinic Logo" style="max-height: 50px; width: auto;">
+                        <img src="/unicare-assets/images/logo/unicare-logo.webp" class="logo-dark" alt="Unicare Clinic Logo" style="max-height: 50px; width: auto;">
+                    </a>
+                    <button class="navbar-toggler" type="button">
+                        <span class="menu-lines"><span></span></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="mainNavigation">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav__item has-dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Home</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic" class="nav__item-link">Home Main</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/home-modern.html" class="nav__item-link">Home Modern</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/home-classic.html" class="nav__item-link">Home Classic</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/home-dentist.html" class="nav__item-link">Home Dentist</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/home-pharmacy.html" class="nav__item-link">Home pharmacy</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item has-dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link active">About Us</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/about-us" class="nav__item-link">About Us</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/services.html" class="nav__item-link">Our Services</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/services-single.html" class="nav__item-link">single Services</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/pricing.html" class="nav__item-link">Pricing & Plans</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/appointment.html" class="nav__item-link">Appointments</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/faqs.html" class="nav__item-link">Help & FAQs</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/gallery.html" class="nav__item-link">Our Gallery</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item has-dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Doctors</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/doctors-timetable.html" class="nav__item-link">Doctors Timetable</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/doctors-standard.html" class="nav__item-link">Our Doctors Standard</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/doctors-modern.html" class="nav__item-link">Our Doctors Modern</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/doctors-grid.html" class="nav__item-link">Our Doctors Grid</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/doctors-single-doctor1.html" class="nav__item-link">Single Doctor 01</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/doctors-single-doctor2.html" class="nav__item-link">Single Doctor 02</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item has-dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Blog</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/blog.html" class="nav__item-link">Blog Grid</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/blog-single-post.html" class="nav__item-link">Single Blog Post</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item has-dropdown">
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle nav__item-link">Shop</a>
+                                <ul class="dropdown-menu">
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/shop.html" class="nav__item-link">Our Products</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/shop-single-product.html" class="nav__item-link">Products Single</a>
+                                    </li>
+                                    <li class="nav__item">
+                                        <a href="/unicare-clinic/shopping-cart.html" class="nav__item-link">Cart</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav__item">
+                                <a href="/unicare-clinic/contact-us" class="nav__item-link">Contacts</a>
+                            </li>
+                        </ul>
+                        <button class="close-mobile-menu d-block d-lg-none"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="d-none d-xl-flex align-items-center position-relative ml-30">
+                        <div class="miniPopup-departments-trigger">
+                            <span class="menu-lines" id="miniPopup-departments-trigger-icon"><span></span></span>
+                            <a href="/unicare-clinic/departments.html">Departments</a>
+                        </div>
+                        <ul id="miniPopup-departments" class="miniPopup miniPopup-departments dropdown-menu">
+                            <li class="nav__item">
+                                <a href="/unicare-clinic/departments-single.html" class="nav__item-link">Neurology Clinic</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="/unicare-clinic/departments-single.html" class="nav__item-link">Cardiology Clinic</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="/unicare-clinic/departments-single.html" class="nav__item-link">Pathology Clinic</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="/unicare-clinic/departments-single.html" class="nav__item-link">Laboratory Clinic</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="/unicare-clinic/departments-single.html" class="nav__item-link">Pediatric Clinic</a>
+                            </li>
+                            <li class="nav__item">
+                                <a href="/unicare-clinic/departments-single.html" class="nav__item-link">Cardiac Clinic</a>
+                            </li>
+                        </ul>
+                        <a href="/unicare-clinic/appointment.html" class="btn btn__primary btn__rounded ml-30">
+                            <i class="icon-calendar"></i>
+                            <span>Appointment</span>
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section class="page-title page-title-layout1 bg-overlay">
+            <div class="bg-img"><img src="/unicare-assets/images/page-titles/1.jpg" alt="background"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
+                        <h1 class="pagetitle__heading">About Unicare Clinic - Your Trusted Bali Medical Clinic</h1>
+                        <p class="pagetitle__desc">Experience world-class healthcare at Unicare Clinic, the leading medical clinic in Bali. Our dedicated team of experienced doctors and healthcare professionals is committed to delivering compassionate and personalized care.
+                        </p>
+                        <div class="d-flex flex-wrap align-items-center">
+                            <a href="/unicare-clinic/appointment.html" class="btn btn__primary btn__rounded mr-30">
+                                <span>Find A Doctor</span>
+                                <i class="icon-arrow-right"></i>
+                            </a>
+                            <a href="/unicare-clinic/services.html" class="btn btn__white btn__rounded">
+                                <span>Our Services</span>
+                                <i class="icon-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-layout1 pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="heading-layout2">
+                            <h3 class="heading__title mb-40">About Unicare Clinic - Your Trusted Bali Medical Clinic</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="about__Text">
+                            <p class="mb-30">As a trusted 24-hour Bali medical clinic, we prioritize your health and well-being with comprehensive healthcare solutions. From general medical consultations to specialized treatments, our modern facilities ensure the highest standards of care. Your safety and comfort are our top priorities.
+                            </p>
+                            <p class="mb-30">Located conveniently across major areas in Bali, including Kuta, Uluwatu, Ubud, and Nusa Dua, we are always within your reach. Whether you need urgent medical attention or routine health check-ups, our clinics are designed to meet all your healthcare needs. Trust us for accessible and exceptional medical care.</p>
+                            <div class="d-flex align-items-center mb-30">
+                                <a href="/unicare-clinic/doctors-grid.html" class="btn btn__primary btn__outlined btn__rounded mr-30">
+                                    Meet Our Doctors</a>
+                                <img src="/unicare-assets/images/about/singnture.png" alt="singnture">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="video-banner">
+                            <img src="/unicare-assets/images/about/1.jpg" alt="about">
+                            <a class="video__btn video__btn-white popup-video" href="https://www.youtube.com/watch?v=nrJtHemSPW4">
+                                <div class="video__player">
+                                    <i class="fa fa-play"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</UnicareLayout>

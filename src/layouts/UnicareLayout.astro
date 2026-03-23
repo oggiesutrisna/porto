@@ -1,0 +1,38 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="description" content={description} />
+        <link href="/unicare-assets/images/favicon/favicon.png" rel="icon">
+        <title>{title}</title>
+
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Roboto:wght@400;700&display=swap">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+        <link rel="stylesheet" href="/unicare-assets/css/libraries.css">
+        <link rel="stylesheet" href="/unicare-assets/css/style.css">
+        <link rel="stylesheet" href="/unicare-assets/css/banner.css">
+
+        {canonical && <link rel="canonical" href={canonical} />}
+    </head>
+
+    <body>
+        <slot />
+    </body>
+
+    <script src="/unicare-assets/js/jquery-3.5.1.min.js"></script>
+    <script src="/unicare-assets/js/plugins.js"></script>
+    <script src="/unicare-assets/js/main.js"></script>
+</html>
