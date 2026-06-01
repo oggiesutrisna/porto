@@ -1,71 +1,74 @@
-# 🚀 Oggie Sutrisna - Portfolio
+# 🚀 Oggie Sutrisna - 3D Isometric Portfolio
 
-A modern, visually stunning portfolio website built with **Astro** featuring glassmorphism design, interactive animations, and a beautiful dark theme.
+A modern, visually stunning **3D Isometric Interactive Portfolio** built with **Vite**, **Three.js**, **TypeScript**, and **Tailwind CSS**. It features a Balinese-inspired dark sunset archipelago theme with modular structures reflecting professional projects, skill pedestals, biography, and contact kiosks.
 
-![Portfolio Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![Astro](https://img.shields.io/badge/Astro-5.16.6-BC52EE?logo=astro) ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?logo=typescript)
+[![Portfolio Status](https://img.shields.io/badge/Status-Live-brightgreen)](#) [![Vite](https://img.shields.io/badge/Vite-6.x-646CFF?logo=vite)](#) [![Three.js](https://img.shields.io/badge/Three.js-0.184.0-000000?logo=three.js&logoColor=white)](#) [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-3178C6?logo=typescript)](#)
 
-## ✨ Features
+---
 
-- **Modern Dark Theme** - Elegant dark palette with purple/violet accent gradients
-- **Glassmorphism Design** - Beautiful frosted glass effects with backdrop blur
-- **Interactive Tech Stack** - Cards with cursor-following glow effects
-- **Smooth Animations** - Fade-in, float, and scale animations throughout
-- **Fully Responsive** - Looks great on all devices
-- **SEO Optimized** - Proper meta tags, structured data, and semantic HTML
-- **Fast Performance** - Built with Astro for optimal loading speed
+## ✨ Core Highlights & Features
 
-## 🎨 Design Highlights
+- **🎮 Playable Avatar & Physics**: Explore the islands in real-time as a fully-animated 3D avatar using **W, A, S, D** or **Arrow Keys**, complete with a clicking jump Easter egg!
+- **💥 Solid Collision Hitboxes & Sliding**: Custom Circular (pedestals & signposts) and Rectangular 2D Box2 (buildings) collision system. Enables the character to slide smoothly along walls and corners without clipping or getting stuck!
+- **⚡ Proximity Interactions**: Approach houses or pedestals to trigger sleek, responsive, glassmorphic bottom-center HUD prompts showing object titles. Tap **E** or click the prompt to open dialogs!
+- **🔥 Snapped Box3Helper Highlights**: Solid-geometry outline frames that automatically filter out floating text sprites and light sources, wrapping physical assets inside custom-offset neon frames.
+- **✨ Premium Modal Transitions**: Modern `@starting-style` CSS animations coupled with discrete transitions (`allow-discrete`) for native hardware-accelerated modal entry/exit and blurred backdrops.
+- **🔒 Secure Tokenless Integration**: Exclusively utilizes safe public GitHub REST endpoints and raw document fallbacks, preventing credential exposure or Vite-compiled token leaks.
+- **📱 Fully Responsive Layout**: Responsive canvas layout resizing, complete with a flat-grid repository card list overlay fallback for non-WebGL browsers.
 
-### Hero Section
-- Animated gradient orbs in background
-- Grid overlay with noise texture
-- Staggered entrance animations
-- Social links with hover effects
+---
 
-### Tech Stack Section
-- **Interactive Glow Effect** - Cursor-following spotlight on each card
-- **6 Technology Categories**: Backend, Frontend, Database, DevOps, System Design, Tools
-- Experience badges that appear on hover
-- Technology tags with accent highlighting
-
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
 | Category | Technologies |
 |----------|-------------|
-| **Framework** | Astro 5.x |
-| **Language** | TypeScript |
-| **Styling** | Vanilla CSS with custom properties |
-| **Fonts** | Inter, Outfit (Google Fonts) |
-| **Icons** | Custom SVG icons |
-| **Deployment** | Vercel / Netlify ready |
+| **Core Framework** | Vite 6.x |
+| **3D Rendering** | Three.js (WebGL) |
+| **Logic & Engine** | Strict TypeScript |
+| **Styling & UI** | Tailwind CSS & Vanilla CSS Variables |
+| **Asset Modules** | Kenney Low-Poly Suburban & Roads packages |
+| **Fonts** | Outfit, Inter (Google Fonts) |
+| **Deployment** | Vercel Static deployment |
+
+---
 
 ## 📁 Project Structure
 
 ```text
 /
 ├── public/
+│   ├── assets/           # Low-poly GLB models & textures
 │   └── i-putu-oggie-sutrisna-ady_20260227_2116.pdf
 ├── src/
-│   ├── components/       # Astro Overlay & Modal components
-│   ├── data/
-│   │   ├── projects.ts   # Unified projects data
-│   │   └── skills.ts     # Unified skills data
-│   ├── layouts/
-│   │   └── Layout.astro  # Base layout with SEO
-│   ├── pages/
-│   │   └── index.astro   # Main 3D viewport canvas
-│   ├── three/            # Three.js engine and island layout logic
-│   └── styles/
-│       └── global.css    # Global sunset theme & layout variables
+│   ├── data/             # Static profile data & local fallbacks
+│   │   ├── projects.ts
+│   │   └── skills.ts
+│   ├── lib/              # GitHub API fetchers & utilities
+│   │   └── github.ts
+│   ├── three/            # Core Three.js implementation
+│   │   ├── camera.ts
+│   │   ├── character.ts  # Animated WASD Character class
+│   │   ├── interactions.ts
+│   │   ├── scene.ts
+│   │   └── world.ts      # Procedural modular road & island placement
+│   ├── styles/
+│   │   └── global.css    # Balinese dark sunset variables & modals
+│   ├── main.ts           # Game loop ticker & overlay bindings
+│   └── types/
+│       └── github.ts
+├── index.html            # Main viewport structure & HUD modal overlays
+├── vite.config.ts
 └── package.json
 ```
+
+---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or pnpm
+- Node.js 18+
+- bun or npm
 
 ### Installation
 
@@ -83,77 +86,25 @@ npm install
 npm run dev
 ```
 
-The site will be available at `http://localhost:4321`
+The site will launch at **`http://localhost:4321`** (Locked ports for custom servers).
 
-## 📝 Customization
+---
 
-### Update Personal Info
-
-Edit the frontmatter in `src/pages/index.astro`:
-
-```javascript
-const siteTitle = "Your Name | Your Title";
-const siteDescription = "Your description here";
-```
-
-### Modify Tech Stack
-
-Edit `src/data/techStack.ts` to update your technologies:
-
-```typescript
-export const techStack = [
-  {
-    title: "Category Name",
-    description: "Description of your expertise",
-    experience: "X+ years",
-    tags: ["Tech1", "Tech2", "Tech3"],
-    icon: "iconName" // server, layout, database, cloud, architecture, wrench
-  },
-  // Add more categories...
-];
-```
-
-### Update Social Links
-
-Find the social links section in `src/pages/index.astro` and update the URLs:
-
-```html
-<a href="https://github.com/yourusername" ...>
-<a href="https://linkedin.com/in/yourusername" ...>
-<a href="https://twitter.com/yourusername" ...>
-```
-
-## 🧞 Commands
+## 📝 Commands
 
 | Command | Action |
 |---------|--------|
 | `npm install` | Install dependencies |
 | `npm run dev` | Start dev server at `localhost:4321` |
-| `npm run build` | Build production site to `./dist/` |
+| `npm run build` | Build production bundle to `./dist/` |
 | `npm run preview` | Preview production build locally |
-| `npm run astro check` | Run TypeScript checks |
+| `npm run format` | Format files with Prettier |
 
-## 🎨 Color Palette
-
-```css
-/* Primary Background */
---color-bg-primary: #0a0a0f;
---color-bg-secondary: #12121a;
-
-/* Accent Colors (Gradient) */
---color-accent-1: #6366f1;  /* Indigo */
---color-accent-2: #8b5cf6;  /* Violet */
---color-accent-3: #a855f7;  /* Purple */
---color-accent-4: #ec4899;  /* Pink */
-
-/* Text */
---color-text-primary: #ffffff;
---color-text-secondary: #a1a1aa;
-```
+---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open-source and available under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
@@ -166,4 +117,4 @@ Senior Software Engineer
 
 ---
 
-⭐ If you found this helpful, please give it a star!
+⭐ If you like this 3D town explorer portfolio, give it a star!
