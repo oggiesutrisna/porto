@@ -182,27 +182,29 @@ import { techStack } from "../data/techStack";
 ├── src/
 │   ├── components/
 │   │   ├── RepoCard.astro         # Repository card component
-│   │   ├── SearchBar.astro         # Search input
-│   │   ├── FilterBar.astro         # Topic/language filters & sort
-│   │   └── FeaturedSection.astro   # Featured projects section
-│   ├── config/
-│   │   └── featured.ts             # Featured projects configuration
+│   │   ├── SearchBar.astro        # Search input
+│   │   ├── FilterBar.astro        # Topic/language filters & sort
+│   │   ├── PortfolioCanvas.astro  # 3D viewport mount point
+│   │   ├── AreaNavigation.astro   # Fixed bottom island panning nav
+│   │   ├── ProjectModal.astro     # Clicked building project details modal
+│   │   └── SkillModal.astro       # Clicked pedestal skill details modal
 │   ├── data/
-│   │   └── techStack.ts           # Tech stack data
+│   │   ├── projects.ts            # Unified projects registry
+│   │   └── skills.ts              # Unified skills registry
 │   ├── layouts/
 │   │   └── Layout.astro           # Base layout with SEO
 │   ├── lib/
-│   │   └── github.ts              # GitHub API (GraphQL) utilities
+│   │   ├── github.ts              # GitHub API (GraphQL) utilities
+│   │   └── format.ts              # Date formatting & escape utilities
 │   ├── pages/
-│   │   ├── index.astro            # Projects listing page
+│   │   ├── index.astro            # Dynamic 3D canvas + SEO noscript list
 │   │   └── project/
 │   │       └── [slug].astro       # Project detail page
+│   ├── three/                     # Core Three.js implementation
 │   └── styles/
-│       ├── global.css             # Global styles & CSS variables
-│       ├── hero.css               # Hero section
-│       └── stack.css              # Tech stack section
+│       └── global.css             # Sunset themes & layout variables
 ├── public/
-│   └── oggiesutrisna-cv-2026-damascus.pdf
+│   └── i-putu-oggie-sutrisna-ady_20260227_2116.pdf
 ├── .env.example                   # Environment variables template
 ├── astro.config.mjs               # Astro configuration
 ├── tailwind.config.mjs            # Tailwind configuration

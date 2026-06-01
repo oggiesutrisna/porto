@@ -3,33 +3,28 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "check": "astro check",
-    "lint": "eslint src --ext .ts,.astro",
-    "format": "prettier --write src/**/*.{ts,astro,css}"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src/**/*.ts index.html src/**/*.css"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.6",
-    "@astrojs/tailwind": "^6.0.2",
-    "@astrojs/vercel": "^9.0.4",
     "@types/dompurify": "^3.0.5",
-    "astro": "^5.16.6",
+    "@types/three": "^0.184.1",
     "dompurify": "^3.3.1",
-    "graphql-request": "^7.4.0",
-    "jsdom": "^28.1.0",
     "marked": "^17.0.3",
     "tailwindcss": "^3.4.19",
+    "three": "^0.184.0",
     "typescript": "^5.9.3"
   },
   "devDependencies": {
-    "@types/jsdom": "^28.0.0",
     "@typescript-eslint/eslint-plugin": "^8.56.1",
     "@typescript-eslint/parser": "^8.56.1",
+    "autoprefixer": "^10.4.20",
     "eslint": "^10.0.2",
-    "eslint-plugin-astro": "^1.6.0",
-    "prettier": "^3.8.1"
+    "postcss": "^8.5.3",
+    "prettier": "^3.8.1",
+    "vite": "^6.2.0"
   }
 }

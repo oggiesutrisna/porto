@@ -44,18 +44,19 @@ A modern, visually stunning portfolio website built with **Astro** featuring gla
 ```text
 /
 ├── public/
-│   └── oggiesutrisna-cv-2026-damascus.pdf
+│   └── i-putu-oggie-sutrisna-ady_20260227_2116.pdf
 ├── src/
+│   ├── components/       # Astro Overlay & Modal components
 │   ├── data/
-│   │   └── techStack.ts          # Tech stack data (easily editable)
+│   │   ├── projects.ts   # Unified projects data
+│   │   └── skills.ts     # Unified skills data
 │   ├── layouts/
-│   │   └── Layout.astro          # Base layout with SEO
+│   │   └── Layout.astro  # Base layout with SEO
 │   ├── pages/
-│   │   └── index.astro           # Main portfolio page
+│   │   └── index.astro   # Main 3D viewport canvas
+│   ├── three/            # Three.js engine and island layout logic
 │   └── styles/
-│       ├── global.css            # Global styles & design tokens
-│       ├── hero.css              # Hero section styles
-│       └── stack.css             # Tech stack section styles
+│       └── global.css    # Global sunset theme & layout variables
 └── package.json
 ```
 

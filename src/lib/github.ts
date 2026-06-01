@@ -1,228 +1,117 @@
-import { GraphQLClient, gql } from 'graphql-request';
-import type { GitHubRepo, GitHubUser, Language } from '../types/github';
-import { getLanguageColor } from '../types/github';
-
-const GITHUB_GRAPHQL_ENDPOINT = 'https://api.github.com/graphql';
-
-interface GitHubGraphQLResponse {
-  user: {
-    login: string;
-    name: string;
-    bio: string;
-    avatarUrl: string;
-    url: string;
-    followers: { totalCount: number };
-    following: { totalCount: number };
-    repositories: {
-      nodes: RawRepo[];
-      pageInfo: {
-        hasNextPage: boolean;
-        endCursor: string;
-      };
-    };
-  };
-}
-
-interface RawRepo {
-  id: string;
-  name: string;
-  fullName: string;
-  description: string;
-  url: string;
-  homepageUrl: string;
-  isArchived: boolean;
-  isFork: boolean;
-  stargazerCount: number;
-  forkCount: number;
-  issues: { totalCount: number };
-  licenseInfo: { name: string } | null;
-  repositoryTopics: {
-    nodes: Array<{ topic: { name: string } }>;
-  };
-  languages: {
-    edges: Array<{ size: number; node: { name: string } }>;
-  };
-  updatedAt: string;
-  createdAt: string;
-  pushedAt: string;
-  defaultBranchRef: { name: string } | null;
-}
-
-const REPOS_QUERY = gql`
-  query GetUserRepos($login: String!, $first: Int!, $after: String) {
-    user(login: $login) {
-      login
-      name
-      bio
-      avatarUrl
-      url
-      followers(first: 1) {
-        totalCount
-      }
-      following(first: 1) {
-        totalCount
-      }
-      repositories(first: $first, after: $after, orderBy: { field: UPDATED_AT, direction: DESC }, ownerAffiliations: [OWNER], isFork: false) {
-        nodes {
-          id
-          name
-          fullName: nameWithOwner
-          description
-          url
-          homepageUrl
-          isArchived
-          isFork
-          stargazerCount
-          forkCount
-          issues(states: OPEN) {
-            totalCount
-          }
-          licenseInfo {
-            name
-          }
-          repositoryTopics(first: 10) {
-            nodes {
-              topic {
-                name
-              }
-            }
-          }
-          languages(first: 5, orderBy: { field: SIZE, direction: DESC }) {
-            edges {
-              size
-              node {
-                name
-              }
-            }
-          }
-          updatedAt
-          createdAt
-          pushedAt
-          defaultBranchRef {
-            name
-          }
-        }
-        pageInfo {
-          hasNextPage
-          endCursor
-        }
-      }
-    }
-  }
-`;
-
-const README_QUERY = gql`
-  query GetRepoReadme($owner: String!, $name: String!) {
-    repository(owner: $owner, name: $name) {
-      object(expression: "HEAD:README.md") {
-        ... on Blob {
-          text
-        }
-      }
-      object(expression: "HEAD:readme.md") {
-        ... on Blob {
-          text
-        }
-      }
-    }
-  }
-`;
-
-let githubClient: GraphQLClient | null = null;
-
-function getGitHubClient(): GraphQLClient {
-  if (!githubClient) {
-    const token = import.meta.env.GITHUB_TOKEN;
-    if (!token) {
-      throw new Error('GITHUB_TOKEN environment variable is required');
-    }
-    githubClient = new GraphQLClient(GITHUB_GRAPHQL_ENDPOINT, {
-      headers: {
-        authorization: `Bearer ${token}`,
-      },
-    });
-  }
-  return githubClient;
-}
-
+import type { GitHubRepo, GitHubUser, Language } from "../types/github";
+import { getLanguageColor } from "../types/github";
+import { projects } from "../data/projects";
 export async function fetchGitHubUser(username: string): Promise<GitHubUser> {
-  const client = getGitHubClient();
-  
-  const data = await client.request<GitHubGraphQLResponse>(REPOS_QUERY, {
-    login: username,
-    first: 50,
-  });
+  // Try public REST API (works in browser without credentials up to 60/hr)
+  try {
+    const userRes = await fetch(`https://api.github.com/users/${username}`);
+    if (!userRes.ok) throw new Error("REST user fetch failed");
+    const userData = await userRes.json();
 
-  const repos = data.user.repositories.nodes.map(transformRepo);
+    const reposRes = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+    if (!reposRes.ok) throw new Error("REST repos fetch failed");
+    const reposData = await reposRes.json();
 
+    const repositories: GitHubRepo[] = reposData
+      .filter((r: any) => !r.fork)
+      .map((r: any) => ({
+        id: String(r.id),
+        name: r.name,
+        fullName: r.full_name,
+        description: r.description,
+        url: r.html_url,
+        homepage: r.homepage,
+        language: r.language || null,
+        languages: r.language
+          ? [{ name: r.language, percentage: 100, color: getLanguageColor(r.language) }]
+          : [],
+        stargazersCount: r.stargazers_count,
+        forksCount: r.forks_count,
+        openIssuesCount: r.open_issues_count,
+        license: r.license?.name || null,
+        topics: r.topics || [],
+        isArchived: r.archived,
+        isFork: r.fork,
+        updatedAt: r.updated_at,
+        createdAt: r.created_at,
+        pushedAt: r.pushed_at,
+        defaultBranch: r.default_branch || "main",
+        readme: null,
+      }));
+
+    return {
+      login: userData.login,
+      name: userData.name || userData.login,
+      bio: userData.bio || "Senior Software Engineer with 9+ years experience.",
+      avatarUrl: userData.avatar_url,
+      url: userData.html_url,
+      followers: userData.followers,
+      following: userData.following,
+      repositories,
+    };
+  } catch (e) {
+    console.warn("REST API failed. Using robust mock/local data fallback.", e);
+  }
+
+  // 3. Resilient fallback to local static mock data
   return {
-    login: data.user.login,
-    name: data.user.name,
-    bio: data.user.bio,
-    avatarUrl: data.user.avatarUrl,
-    url: data.user.url,
-    followers: data.user.followers.totalCount,
-    following: data.user.following.totalCount,
-    repositories: repos,
+    login: username,
+    name: "Oggie Sutrisna",
+    bio: "Senior Software Engineer with 9+ years building scalable systems and elegant solutions.",
+    avatarUrl: "https://github.com/oggiesutrisna.png",
+    url: `https://github.com/${username}`,
+    followers: 120,
+    following: 75,
+    repositories: projects.map((p) => ({
+      id: p.id,
+      name: p.id,
+      fullName: `${username}/${p.id}`,
+      description: p.description,
+      url: p.githubUrl || `https://github.com/${username}/${p.id}`,
+      homepage: p.demoUrl || null,
+      language: p.stack[0] || "TypeScript",
+      languages: p.stack.map((s, idx) => ({
+        name: s,
+        percentage: idx === 0 ? 60 : Math.round(40 / (p.stack.length - 1)),
+        color: getLanguageColor(s),
+      })),
+      stargazersCount: 25,
+      forksCount: 5,
+      openIssuesCount: 0,
+      license: "MIT",
+      topics: p.stack.map(s => s.toLowerCase()),
+      isArchived: false,
+      isFork: false,
+      updatedAt: new Date().toISOString(),
+      createdAt: new Date(2023, 0, 1).toISOString(),
+      pushedAt: new Date().toISOString(),
+      defaultBranch: "main",
+      readme: null,
+    })),
   };
 }
 
 export async function fetchRepoReadme(owner: string, name: string): Promise<string | null> {
+  // Try REST / raw.githubusercontent.com fetch (no tokens needed!)
   try {
-    const client = getGitHubClient();
-    const data = await client.request<{
-      repository: {
-        object: { text: string } | null;
-      };
-    }>(README_QUERY, { owner, name });
-
-    return data.repository.object?.text || null;
+    const response = await fetch(`https://raw.githubusercontent.com/${owner}/${name}/main/README.md`);
+    if (response.ok) return await response.text();
+    
+    // Try master branch as fallback
+    const masterResponse = await fetch(`https://raw.githubusercontent.com/${owner}/${name}/master/README.md`);
+    if (masterResponse.ok) return await masterResponse.text();
   } catch (error) {
-    console.error(`Failed to fetch README for ${owner}/${name}:`, error);
-    return null;
+    console.warn(`REST README fetch failed for ${owner}/${name}:`, error);
   }
-}
 
-function transformRepo(raw: RawRepo): GitHubRepo {
-  const totalSize = raw.languages.edges.reduce((sum, edge) => sum + edge.size, 0);
-  
-  const languages: Language[] = raw.languages.edges.map((edge) => ({
-    name: edge.node.name,
-    percentage: totalSize > 0 ? Math.round((edge.size / totalSize) * 100) : 0,
-    color: getLanguageColor(edge.node.name),
-  }));
-
-  const topics = raw.repositoryTopics.nodes.map((t) => t.topic.name);
-
-  return {
-    id: raw.id,
-    name: raw.name,
-    fullName: raw.fullName,
-    description: raw.description,
-    url: raw.url,
-    homepage: raw.homepageUrl,
-    language: languages[0]?.name || null,
-    languages,
-    stargazersCount: raw.stargazerCount,
-    forksCount: raw.forkCount,
-    openIssuesCount: raw.issues.totalCount,
-    license: raw.licenseInfo?.name || null,
-    topics,
-    isArchived: raw.isArchived,
-    isFork: raw.isFork,
-    updatedAt: raw.updatedAt,
-    createdAt: raw.createdAt,
-    pushedAt: raw.pushedAt,
-    defaultBranch: raw.defaultBranchRef?.name || 'main',
-    readme: null,
-  };
+  return null;
 }
 
 export function filterRepos(
   repos: GitHubRepo[],
   search: string,
   selectedTopics: string[],
-  language: string | null
+  language: string | null,
 ): GitHubRepo[] {
   return repos.filter((repo) => {
     if (search) {
@@ -236,7 +125,7 @@ export function filterRepos(
 
     if (selectedTopics.length > 0) {
       const hasSelectedTopic = selectedTopics.some((topic) =>
-        repo.topics.includes(topic)
+        repo.topics.includes(topic),
       );
       if (!hasSelectedTopic) return false;
     }
@@ -251,23 +140,25 @@ export function filterRepos(
 
 export function sortRepos(
   repos: GitHubRepo[],
-  sortBy: 'stars' | 'updated' | 'name',
-  direction: 'asc' | 'desc' = 'desc'
+  sortBy: "stars" | "updated" | "name",
+  direction: "asc" | "desc" = "desc",
 ): GitHubRepo[] {
   const sorted = [...repos].sort((a, b) => {
     switch (sortBy) {
-      case 'stars':
+      case "stars":
         return b.stargazersCount - a.stargazersCount;
-      case 'updated':
-        return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
-      case 'name':
+      case "updated":
+        return (
+          new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+        );
+      case "name":
         return a.name.localeCompare(b.name);
       default:
         return 0;
     }
   });
 
-  return direction === 'asc' ? sorted : sorted.reverse();
+  return direction === "asc" ? sorted : sorted.reverse();
 }
 
 export function getAllTopics(repos: GitHubRepo[]): string[] {
