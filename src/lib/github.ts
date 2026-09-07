@@ -1,4 +1,4 @@
-import type { GitHubRepo, GitHubUser, Language } from "../types/github";
+import type { GitHubRepo, GitHubUser } from "../types/github";
 import { getLanguageColor } from "../types/github";
 import { projects } from "../data/projects";
 export async function fetchGitHubUser(username: string): Promise<GitHubUser> {

@@ -19,7 +19,7 @@ export const AREA_VIEWS: Record<AreaId, AreaView> = {
 
 // Global state for camera animation
 let animationFrameId: number | null = null;
-let currentLookAt = new THREE.Vector3(0, 0, 0);
+const currentLookAt = new THREE.Vector3(0, 0, 0);
 
 function easeInOutCubic(t: number): number {
   return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;

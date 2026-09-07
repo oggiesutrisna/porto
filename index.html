@@ -7,75 +7,39 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <script>
-      (function() {
-        const theme = localStorage.getItem('theme') || 'dark';
-        if (theme === 'light') {
-          document.documentElement.classList.add('light-mode');
-        }
-      })();
-    </script>
 
-    <meta name="description" content="Senior Software Engineer with 9+ years of experience building scalable, high-performance applications. Specializing in React, TypeScript, Node.js, Go, PHP, and Three.js." />
+    <meta name="description" content="I Putu Oggie Sutrisna Ady — Senior Software Engineer &amp; System Architect based in Bali (Canggu &amp; Denpasar). 9+ years experience building scalable backends, database architectures, and high-performance applications." />
     <meta
       name="keywords"
-      content="software engineer, senior software engineer, hire software engineer, freelance developer, full-stack developer, web developer, backend developer, frontend developer, software developer for hire, experienced software engineer, remote software engineer, contract developer, technical lead, software architect, hire developer, software engineering services, custom software development, application developer, programming expert, coding professional"
+      content="Oggie Sutrisna, Senior Software Engineer, System Architect, Software Engineer Bali, Laravel Expert, TypeScript, PostgreSQL, Clean Architecture"
     />
     <meta name="author" content="Oggie Sutrisna" />
     <meta
       name="robots"
       content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
     />
-    <meta name="googlebot" content="index, follow" />
 
-    <meta property="og:type" content="website" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
     <meta property="og:url" content="https://oggiesutrisna.vercel.app" />
-    <meta property="og:title" content="Oggie Sutrisna | 3D Isometric Portfolio" />
-    <meta property="og:description" content="Senior Software Engineer with 9+ years of experience. Browse my 3D open source projects and repositories." />
-    <meta
-      property="og:image"
-      content="https://oggiesutrisna.vercel.app/og-image.png"
-    />
+    <meta property="og:title" content="Oggie Sutrisna — Senior Software Engineer &amp; System Architect" />
+    <meta property="og:description" content="Senior Software Engineer &amp; System Architect with 9+ years experience. Scalable backends, PostgreSQL, Laravel, and modern web architectures." />
+    <meta property="og:image" content="https://oggiesutrisna.vercel.app/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta
-      property="og:image:alt"
-      content="Senior Software Engineer - Available for Hire"
-    />
-    <meta
-      property="og:site_name"
-      content="Oggie Sutrisna | Software Engineer"
-    />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Oggie Sutrisna" />
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://oggiesutrisna.vercel.app" />
-    <meta name="twitter:title" content="Oggie Sutrisna | 3D Isometric Portfolio" />
-    <meta name="twitter:description" content="Browse my 3D open source projects and repositories." />
-    <meta
-      name="twitter:image"
-      content="https://oggiesutrisna.vercel.app/og-image.png"
-    />
-    <meta
-      name="twitter:image:alt"
-      content="Senior Software Engineer - Available for Hire"
-    />
+    <meta name="twitter:title" content="Oggie Sutrisna — Senior Software Engineer &amp; System Architect" />
+    <meta name="twitter:description" content="Senior Software Engineer with 9+ years experience building scalable systems and elegant digital solutions." />
+    <meta name="twitter:image" content="https://oggiesutrisna.vercel.app/og-image.png" />
     <meta name="twitter:creator" content="@oggiesutrisna" />
-    <meta name="twitter:site" content="@oggiesutrisna" />
 
-    <meta name="theme-color" content="#ff6b4a" />
-    <meta name="msapplication-TileColor" content="#ff6b4a" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-
-    <meta name="geo.region" content="ID" />
-    <meta name="geo.placename" content="Indonesia" />
-
-    <!-- Canonical URL -->
+    <meta name="theme-color" content="#FFF9D5" />
     <link rel="canonical" href="https://oggiesutrisna.vercel.app" />
 
-    <!-- Structured JSON-LD Metadata (Technical SEO Person & Professional Schema) -->
+    <!-- Structured Data (Person Schema) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -89,615 +53,657 @@
           "https://linkedin.com/in/oggiesutrisna",
           "https://twitter.com/oggiesutrisna"
         ],
-        "jobTitle": "Senior Software Engineer",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Freelance"
-        },
-        "description": "Senior Software Engineer with 9+ years of experience building scalable backends, interactive WebGL/Three.js environments, and robust full-stack enterprise solutions.",
-        "knowsAbout": [
-          "Software Engineering",
-          "Three.js",
-          "WebGL",
-          "Laravel",
-          "PHP",
-          "TypeScript",
-          "JavaScript",
-          "PostgreSQL",
-          "API Integrations",
-          "System Design"
-        ]
+        "jobTitle": "Senior Software Engineer & System Architect",
+        "description": "Senior Software Engineer with 9+ years of experience architecting scalable backends, database architectures, and high-performance applications."
       }
     </script>
 
-    <!-- Search Engine Ownership Verifications -->
-    <!-- <meta name="google-site-verification" content="your-google-verification-code" /> -->
-    <!-- <meta name="msvalidate.01" content="your-bing-verification-code" /> -->
-
-    <!-- Google Fonts -->
+    <!-- Typography: Clash Display + Plus Jakarta Sans + Space Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap"
       rel="stylesheet"
     />
 
-    <title>Oggie Sutrisna | Senior Software Engineer | 3D Isometric Portfolio</title>
+    <title>Oggie Sutrisna — Senior Software Engineer &amp; System Architect</title>
   </head>
-  <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Premium Header -->
-    <header class="sticky top-0 z-50 backdrop-blur-md border-b border-dark-border bg-dark-bg-secondary/80 transition-all duration-200">
-      <nav class="container mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-        <a href="/" class="text-xl font-display font-bold text-[#ff9a3d] hover:text-[#ff6b4a] transition-colors">
-          Oggie
+  <body class="bg-white font-body text-brand-dark min-h-screen selection:bg-brand-lime selection:text-brand-dark">
+    <a href="#identity" class="skip-link sr-only focus:not-sr-only p-2 bg-brand-lime text-brand-dark font-mono font-bold z-50">Skip to content</a>
+
+    <!-- Master Neubrutalism Container -->
+    <div class="max-w-[1440px] mx-auto flex flex-col gap-6 sm:gap-8 lg:gap-10 p-3 sm:p-5 lg:p-8">
+
+      <!-- ================= 1. STICKY TACTICAL NAVIGATION BAR ================= -->
+      <nav aria-label="Main Navigation" class="sticky top-2 sm:top-4 z-50 border-2 border-brand-dark bg-brand-ivory shadow-brutal-sm rounded-xl px-3.5 sm:px-5 py-2.5 flex items-center justify-between gap-3">
+        <!-- Brand Lockup -->
+        <a href="#identity" class="flex items-center gap-2.5 group focus:outline-none" aria-label="Oggie Sutrisna — Home">
+          <span class="w-9 h-9 rounded-lg bg-brand-dark border-2 border-brand-dark flex items-center justify-center text-brand-lime font-heading font-bold text-lg leading-none group-hover:bg-brand-obsidian transition-colors">
+            O
+          </span>
+          <div class="flex flex-col leading-none">
+            <span class="font-heading font-bold text-[16px] sm:text-[18px] tracking-tight text-brand-dark">
+              Oggie Sutrisna
+            </span>
+            <span class="font-mono font-bold text-[9px] sm:text-[10px] tracking-[0.08em] uppercase text-brand-dark/70">
+              Senior Software Engineer • Bali
+            </span>
+          </div>
         </a>
-        <button
-          id="theme-toggle"
-          class="inline-flex items-center justify-center w-10 h-10 bg-dark-bg-secondary border border-dark-border rounded-xl text-white cursor-pointer hover:border-primary-500 hover:scale-105 active:scale-95 transition-all duration-200"
-          aria-label="Toggle dark and light mode"
-          title="Toggle theme"
-        >
-          <!-- Sun Icon -->
-          <svg class="theme-icon theme-icon-light hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a3d" stroke-width="2">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <!-- Moon Icon -->
-          <svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9a3d" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-1.5">
+          <a href="#identity" class="font-mono text-[12px] font-bold px-3 py-1.5 bg-brand-cream-light text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-md hover:bg-brand-lime transition-colors">
+            IDENTITY
+          </a>
+          <a href="#stack" class="font-mono text-[12px] font-bold px-3 py-1.5 bg-brand-cream-light text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-md hover:bg-brand-lime transition-colors">
+            ENGINEERING DNA
+          </a>
+          <a href="#works" class="font-mono text-[12px] font-bold px-3 py-1.5 bg-brand-cream-light text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-md hover:bg-brand-lime transition-colors">
+            SELECTED WORK
+          </a>
+          <a href="#contact" class="font-mono text-[12px] font-bold px-3 py-1.5 bg-brand-cream-light text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-md hover:bg-brand-lime transition-colors">
+            ENGAGEMENT
+          </a>
+        </div>
+
+        <!-- Right Action Cluster -->
+        <div class="flex items-center gap-2">
+          <!-- Live Bali WITA Clock -->
+          <span id="bali-time" class="hidden xl:inline-flex font-mono text-[11px] font-bold px-2.5 py-1.5 bg-brand-cream-light text-brand-dark border-2 border-brand-dark rounded-md whitespace-nowrap">
+            BALI TIME (WITA): --:--
+          </span>
+
+          <!-- Operational Status Pill -->
+          <span class="hidden sm:inline-flex items-center gap-1.5 font-mono text-[11px] font-bold px-2.5 py-1.5 bg-brand-green text-white border-2 border-brand-dark rounded-md whitespace-nowrap">
+            <span class="w-2 h-2 rounded-full bg-white animate-pulse" aria-hidden="true"></span>
+            DPS-01 ACTIVE
+          </span>
+
+          <!-- Direct WhatsApp Consultation CTA -->
+          <a 
+            href="https://wa.me/6285338000872?text=Halo%20Oggie,%20saya%20tertarik%20konsultasi%20software%20architecture" 
+            target="_blank" 
+            rel="noopener" 
+            class="inline-flex items-center gap-1.5 font-heading font-bold text-[12px] sm:text-[13px] uppercase px-3.5 sm:px-4 py-2 bg-brand-lime text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-lg hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all whitespace-nowrap"
+          >
+            <span>Consult</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h9M8 3.5 11.5 7 8 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+
+          <!-- Mobile Drawer Toggle -->
+          <button 
+            type="button" 
+            id="mobile-nav-toggle" 
+            aria-expanded="false" 
+            aria-controls="mobile-nav-menu" 
+            aria-label="Toggle Navigation Menu" 
+            class="md:hidden w-10 h-10 inline-flex items-center justify-center bg-brand-cream-light text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-lg cursor-pointer"
+          >
+            <svg id="mobile-nav-icon-open" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4.5h14M2 9h14M2 13.5h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <svg id="mobile-nav-icon-close" class="hidden" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="m4 4 10 10M14 4 4 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+        </div>
       </nav>
-    </header>
 
-    <!-- Semantic Crawler noscript Fallback -->
-    <noscript>
-      <div class="bg-amber-500/10 border border-amber-500/20 text-amber-200 p-4 text-center text-sm font-semibold rounded-xl m-4">
-        🚀 Enable JavaScript to fully experience the dynamic interactive 3D Isometric Scene!
+      <!-- Mobile Navigation Drawer -->
+      <div id="mobile-nav-menu" class="hidden md:hidden border-2 border-brand-dark bg-brand-ivory shadow-brutal rounded-xl p-4 flex-col gap-2 -mt-3">
+        <a href="#identity" class="font-mono text-[13px] font-bold px-3 py-2.5 bg-brand-cream-light border-2 border-brand-dark rounded-lg">IDENTITY</a>
+        <a href="#stack" class="font-mono text-[13px] font-bold px-3 py-2.5 bg-brand-cream-light border-2 border-brand-dark rounded-lg">ENGINEERING DNA</a>
+        <a href="#works" class="font-mono text-[13px] font-bold px-3 py-2.5 bg-brand-cream-light border-2 border-brand-dark rounded-lg">SELECTED WORK</a>
+        <a href="#contact" class="font-mono text-[13px] font-bold px-3 py-2.5 bg-brand-cream-light border-2 border-brand-dark rounded-lg">ENGAGEMENT</a>
+        <div class="pt-2 border-t-2 border-brand-dark/15 flex items-center gap-2">
+          <a href="/i-putu-oggie-sutrisna-ady_20260227_2116.pdf" download class="flex-1 text-center font-heading font-bold text-[13px] uppercase px-4 py-2 bg-brand-lime border-2 border-brand-dark shadow-brutal-sm rounded-lg">
+            Download CV
+          </a>
+        </div>
       </div>
-      <main class="container mx-auto px-4 py-8">
-        <h1>Oggie Sutrisna - Senior Software Engineer</h1>
-        <p>A Senior Software Engineer with 9+ years of experience building scalable systems and elegant digital solutions.</p>
-        
-        <section class="mt-8">
-          <h2>Technical Core Stack</h2>
-          <ul>
-            <li><strong>Laravel / PHP</strong>: Robust web platforms and enterprise integrations</li>
-            <li><strong>Filament</strong>: Rapid elegant administrator panel development</li>
-            <li><strong>TypeScript / JS</strong>: Strict scalable type systems and frontends</li>
-            <li><strong>Three.js / WebGL</strong>: Premium interactive 3D worlds and spatial UI</li>
-            <li><strong>PostgreSQL / Database</strong>: Advanced query optimization and schema designs</li>
-            <li><strong>Restful APIs & Integration</strong>: Enterprise internal tools and sync operations</li>
-          </ul>
-        </section>
-      </main>
-    </noscript>
 
-    <!-- Project details sub-page (Single Page App router container) -->
-    <div id="project-detail-view" class="hidden min-h-screen bg-[#0a0a0f] py-12">
-      <div class="container mx-auto px-6 max-w-5xl">
-        <button 
-          id="back-to-canvas" 
-          class="inline-flex items-center gap-2 text-gray-400 hover:text-white mb-8 transition-colors text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-[#ff9a3d] rounded"
-        >
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-          </svg>
-          Back to 3D World
-        </button>
+      <!-- ================= 2. HERO IDENTITY & ARCHITECTURE CONSOLE MOCKUP ================= -->
+      <section id="identity" class="dot-grid border-2 border-brand-dark shadow-brutal rounded-xl p-6 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <!-- Left Column: Core Identity (7 cols) -->
+        <div class="lg:col-span-7 flex flex-col gap-5">
+          <!-- Status badges -->
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-brand-cream-light text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-md font-mono text-[10.5px] sm:text-[11.5px] font-bold uppercase tracking-wide">
+              <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse" aria-hidden="true"></span>
+              <span>OGGIE SUTRISNA // DPS-01</span>
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-brand-lime text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-md font-mono text-[10.5px] sm:text-[11.5px] font-bold uppercase">
+              9+ YEARS ENGINEERING
+            </span>
+          </div>
 
-        <div id="project-detail-loading" class="text-center py-12">
-          <div class="inline-block w-8 h-8 border-2 border-t-transparent border-[#ff9a3d] rounded-full animate-spin"></div>
-          <p class="text-gray-400 text-sm mt-3">Fetching project readme...</p>
+          <!-- Headline -->
+          <h1 class="font-heading font-bold text-[32px] sm:text-[46px] xl:text-[54px] leading-[1.05] tracking-tight text-brand-dark">
+            Senior Software Engineer &amp; <span class="bg-brand-lime px-2.5 border-2 border-brand-dark shadow-brutal-sm inline-block -rotate-1">System Architect</span> Based in Bali.
+          </h1>
+
+          <!-- Identity Lead Description -->
+          <p class="font-body text-[15px] sm:text-[16.5px] text-brand-dark/85 font-medium leading-relaxed max-w-[620px]">
+            I architect and engineer enterprise-grade backends, high-concurrency database systems, and modern web platforms. 9+ years building reliable production software across healthcare, enterprise HR, and high-turnover hospitality in Bali with 100% code ownership and zero vendor lock-in.
+          </p>
+
+          <!-- Primary CTA Row -->
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <a 
+              href="https://wa.me/6285338000872?text=Halo%20Oggie,%20saya%20tertarik%20konsultasi%20software%20architecture" 
+              target="_blank" 
+              rel="noopener" 
+              class="inline-flex items-center gap-2 font-heading font-bold text-[14px] sm:text-[15px] uppercase px-6 py-3.5 bg-brand-lime text-brand-dark border-2 border-brand-dark shadow-brutal rounded-xl hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"
+            >
+              <span>Schedule Architecture Consultation</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2.5 8h10M9.5 4 13.5 8 9.5 12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a 
+              href="#works" 
+              class="inline-flex items-center gap-2 font-heading font-bold text-[14px] sm:text-[15px] uppercase px-6 py-3.5 bg-brand-ivory text-brand-dark border-2 border-brand-dark shadow-brutal rounded-xl hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"
+            >
+              <span>Selected Works</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2.5v11M4 9.5 8 13.5 12 9.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a 
+              href="/i-putu-oggie-sutrisna-ady_20260227_2116.pdf" 
+              download 
+              class="inline-flex items-center gap-2 font-heading font-bold text-[14px] sm:text-[15px] uppercase px-5 py-3.5 bg-brand-cream-light text-brand-dark border-2 border-brand-dark shadow-brutal rounded-xl hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19v-7m0 0V5m0 7H5m7 0h7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>CV (PDF)</span>
+            </a>
+          </div>
+
+          <!-- 4 Identity Metrics -->
+          <dl class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-[640px] pt-2">
+            <div class="bg-brand-cream-light border-2 border-brand-dark shadow-brutal-sm rounded-lg p-3 text-center">
+              <dt class="font-mono text-[10px] font-bold uppercase text-brand-dark/70 order-2">Production Exp</dt>
+              <dd class="font-mono font-bold text-[20px] text-brand-dark">9+ Yrs</dd>
+            </div>
+            <div class="bg-brand-cream-light border-2 border-brand-dark shadow-brutal-sm rounded-lg p-3 text-center">
+              <dt class="font-mono text-[10px] font-bold uppercase text-brand-dark/70 order-2">Deployed Systems</dt>
+              <dd class="font-mono font-bold text-[20px] text-brand-dark">50+</dd>
+            </div>
+            <div class="bg-brand-cream-light border-2 border-brand-dark shadow-brutal-sm rounded-lg p-3 text-center">
+              <dt class="font-mono text-[10px] font-bold uppercase text-brand-dark/70 order-2">Production SLA</dt>
+              <dd class="font-mono font-bold text-[20px] text-brand-emerald">99.9%</dd>
+            </div>
+            <div class="bg-brand-cream-light border-2 border-brand-dark shadow-brutal-sm rounded-lg p-3 text-center">
+              <dt class="font-mono text-[10px] font-bold uppercase text-brand-dark/70 order-2">Vendor Lock-in</dt>
+              <dd class="font-mono font-bold text-[20px] text-brand-blue">ZERO</dd>
+            </div>
+          </dl>
         </div>
 
-        <div id="project-detail-content" class="hidden">
-          <header class="mb-8">
-            <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
-              <h1 id="detail-title" class="text-3xl md:text-5xl font-display font-extrabold text-white"></h1>
-              <div class="flex items-center gap-2" id="detail-links">
-                <!-- Links filled dynamically -->
+        <!-- Right Column: Oggie Sutrisna Portrait Photo Frame (5 cols) -->
+        <div class="lg:col-span-5 relative">
+          <!-- Floating sticker: top-left -->
+          <div class="hidden sm:inline-flex absolute -top-5 -left-3 z-10 px-3 py-1.5 bg-brand-orange text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-md font-mono text-[10.5px] font-bold uppercase -rotate-6">
+            Oggie Sutrisna // Architect
+          </div>
+          <!-- Floating sticker: bottom-right -->
+          <div class="hidden sm:inline-flex absolute -bottom-5 -right-2 z-10 px-3 py-1.5 bg-brand-lime text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-md font-mono text-[10.5px] font-bold uppercase rotate-3">
+            9+ Yrs Production Delivery
+          </div>
+
+          <!-- Portrait Photo Frame -->
+          <div class="border-2 border-brand-dark shadow-brutal-lg rounded-xl overflow-hidden bg-brand-obsidian">
+            <!-- Window Header Bar -->
+            <div class="flex items-center justify-between px-4 py-2.5 bg-brand-dark border-b-2 border-brand-dark text-white font-mono">
+              <div class="flex items-center gap-1.5" aria-hidden="true">
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-orange border border-brand-dark"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-cream border border-brand-dark"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-brand-green border border-brand-dark"></span>
               </div>
-            </div>
-            <p id="detail-desc" class="text-xl text-gray-300 mb-6 leading-relaxed"></p>
-            
-            <div class="flex flex-wrap items-center gap-4 mb-6" id="detail-stats">
-              <!-- Stats filled dynamically -->
-            </div>
-
-            <div class="mb-6" id="detail-languages-section">
-              <h3 class="text-sm font-medium text-gray-400 mb-2">Languages</h3>
-              <div class="flex flex-wrap gap-2" id="detail-languages"></div>
+              <span class="text-[11px] font-bold text-brand-cream tracking-wide">me.jpg // portrait</span>
+              <span class="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 bg-brand-green text-white border border-brand-cream rounded">
+                <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse" aria-hidden="true"></span>VERIFIED
+              </span>
             </div>
 
-            <div class="flex flex-wrap gap-2" id="detail-topics"></div>
-          </header>
-
-          <div class="border-t border-dark-border pt-8">
-            <h2 class="text-xl font-display font-semibold text-white mb-6">README.md</h2>
-            <article id="detail-readme" class="prose prose-invert prose-primary max-w-none 
-              prose-headings:text-white 
-              prose-p:text-gray-400 
-              prose-a:text-primary-400 
-              prose-a:no-underline hover:prose-a:underline
-              prose-code:text-primary-300 prose-code:bg-primary-500/10 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
-              prose-pre:bg-dark-bg-card prose-pre:border prose-pre:border-dark-border
-              prose-li:text-gray-400
-              prose-img:rounded-xl"></article>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Content (3D Scene and fallback lists) -->
-    <div id="primary-layout" class="contents">
-      <!-- Interactive 3D World container -->
-      <main id="main-content" class="relative w-full h-screen overflow-hidden select-none">
-        
-        <!-- 1. Hero floating welcome overlay -->
-        <div id="hero-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-[#0a0a0f]/90 transition-all duration-1000 ease-in-out">
-          <div class="absolute inset-0 z-0">
-            <!-- Orb 1 -->
-            <div class="absolute w-[400px] h-[400px] rounded-full blur-[100px] opacity-40 mix-blend-screen animate-float-slow top-[-100px] right-[-200px]" style="background: radial-gradient(circle, rgba(255, 154, 61, 0.25), transparent);"></div>
-            <!-- Orb 2 -->
-            <div class="absolute w-[350px] h-[350px] rounded-full blur-[100px] opacity-40 mix-blend-screen animate-float-slower bottom-[100px] left-[-150px]" style="background: radial-gradient(circle, rgba(139, 92, 246, 0.15), transparent);"></div>
-            <!-- Grid -->
-            <div class="absolute inset-0 opacity-15" style="background-image: linear-gradient(rgba(255, 154, 61, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 154, 61, 0.05) 1px, transparent 1px); background-size: 50px 50px;"></div>
-          </div>
-
-          <div class="relative z-10 container mx-auto px-6 max-w-4xl text-center">
-            <div id="hero-avatar-badge" class="hidden inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full border border-[#ff9a3d]/30 bg-[#ff9a3d]/5 backdrop-blur-sm">
+            <!-- Portrait Image -->
+            <div class="relative overflow-hidden bg-brand-obsidian">
               <img
-                id="hero-avatar-img"
-                src=""
-                alt="Profile Avatar"
-                width="48"
-                height="48"
-                class="w-12 h-12 rounded-full border-2 border-[#ff9a3d]"
+                src="me.jpg"
+                alt="I Putu Oggie Sutrisna Ady — Senior Software Engineer &amp; System Architect"
+                width="1176"
+                height="1568"
+                fetchpriority="high"
+                loading="eager"
+                decoding="async"
+                class="w-full h-auto object-cover object-top aspect-[4/5] sm:aspect-[3/4] max-h-[500px] transition-transform duration-300 hover:scale-[1.02]"
               />
-              <span class="text-sm font-semibold text-[#ff9a3d]">Welcome to my digital island! 👋</span>
             </div>
 
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-display font-extrabold leading-tight text-white mb-6">
-              Building <span class="gradient-text bg-gradient-to-r from-[#ff9a3d] to-[#ff6b4a] bg-clip-text text-transparent">Beautiful</span><br />
-              Digital Experiences
-            </h1>
-
-            <p id="hero-bio" class="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto mb-8">
-              Senior Software Engineer with 9+ years building scalable systems and elegant solutions.
-            </p>
-
-            <div class="flex flex-wrap items-center justify-center gap-4">
-              <button 
-                id="enter-3d" 
-                class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#ff9a3d] to-[#ff6b4a] hover:from-[#ffa34d] hover:to-[#ff7b5a] text-white font-semibold rounded-lg shadow-lg shadow-[#ff9a3d]/15 transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none"
-              >
-                <span>Enter 3D World</span>
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                </svg>
-              </button>
-              <a 
-                href="/i-putu-oggie-sutrisna-ady_20260227_2116.pdf" 
-                download 
-                class="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#ff9a3d]/50 hover:border-[#ff9a3d] text-[#ff9a3d] font-semibold rounded-lg transition-all duration-300 focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none"
-              >
-                <span>Download CV</span>
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19v-7m0 0V5m0 7H5m7 0h7"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Loading screen overlay -->
-        <div id="loading-screen" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#1a1410] transition-opacity duration-700 ease-out">
-          <div class="relative max-w-md w-full px-6 text-center">
-            <div class="inline-block mb-4 p-4 rounded-full bg-[#ff9a3d]/10 border border-[#ff9a3d]/20 text-[#ff9a3d] animate-pulse">
-              <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-              </svg>
-            </div>
-            
-            <h2 class="text-3xl font-display font-extrabold text-[#f5f0e6] mb-2 tracking-wide uppercase">
-              ISOMETRIC 3D WORLD
-            </h2>
-            <p class="text-gray-400 text-sm mb-8">
-              Assembling procedural geometries and Kenney modules...
-            </p>
-
-            <div class="w-full h-1.5 bg-[#5a3a2a] rounded-full overflow-hidden mb-3">
-              <div id="loading-bar" class="h-full bg-gradient-to-r from-[#ff9a3d] to-[#ff6b4a] w-0 transition-all duration-300"></div>
-            </div>
-            
-            <div class="flex items-center justify-between text-xs font-semibold text-gray-500 uppercase tracking-widest">
-              <span>Progress</span>
-              <span id="loading-text" class="text-[#ff9a3d]">0%</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Dynamic projected labels hint -->
-        <div 
-          id="nav-hint" 
-          class="absolute pointer-events-none opacity-0 scale-95 transition-all duration-200 ease-out z-30 bg-[#12121a]/90 backdrop-blur-md border border-dark-border rounded-xl px-3 py-2 shadow-xl flex flex-col gap-0.5 max-w-xs"
-        >
-          <div class="absolute bottom-[-6px] left-1/2 -translate-x-1/2 w-3 h-3 bg-[#12121a] border-r border-b border-dark-border rotate-45 z-[-1]"></div>
-          <span id="hint-type" class="text-[10px] font-bold text-[#ff9a3d] uppercase tracking-wider"></span>
-          <span id="hint-title" class="text-xs font-semibold text-white"></span>
-          <span class="text-[9px] text-gray-500 italic mt-0.5">Click to inspect details</span>
-        </div>
-
-        <!-- HTML Projected Area Labels (z-20) -->
-        <div id="html-labels-container" class="absolute inset-0 pointer-events-none z-20 overflow-hidden">
-          <!-- Home Card Overlay -->
-          <div id="label-home" class="absolute -translate-x-1/2 -translate-y-[110%] flex flex-col items-center text-center opacity-0 transition-opacity duration-300 pointer-events-auto select-none">
-            <div class="px-5 py-4 bg-[#12121a]/85 backdrop-blur-md border border-[#ff9a3d]/45 rounded-2xl shadow-2xl max-w-xs text-white relative">
-              <!-- Balinese Kain Poleng border accents in corners -->
-              <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#ff9a3d]/70 rounded-tl-lg"></div>
-              <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#ff9a3d]/70 rounded-tr-lg"></div>
-              <div class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#ff9a3d]/70 rounded-bl-lg"></div>
-              <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#ff9a3d]/70 rounded-br-lg"></div>
-              
-              <h2 class="text-base font-display font-extrabold tracking-wide text-white">Oggie Sutrisna</h2>
-              <p class="text-[10px] text-[#ff9a3d] font-bold uppercase tracking-wider mb-2">Laravel & Interactive Web Architect</p>
-              <p class="text-[11px] text-gray-400 leading-normal mb-3">Hi, I'm Oggie. I build highly scalable enterprise backends and modern interactive web experiences.</p>
-              
-              <div class="flex items-center justify-center gap-2 mt-2">
-                <button id="cta-explore" class="px-3 py-2 bg-gradient-to-r from-[#ff9a3d] to-[#ff6b4a] hover:from-[#ffa34d] hover:to-[#ff7b5a] text-white text-[10px] font-bold rounded-lg hover:scale-105 active:scale-95 transition-all cursor-pointer">📂 Explore Projects</button>
-                <button id="cta-contact" class="px-3 py-2 border border-[#ff9a3d]/40 text-[#ff9a3d] hover:text-white hover:bg-[#ff9a3d]/10 text-[10px] font-bold rounded-lg hover:scale-105 active:scale-95 transition-all cursor-pointer">📧 Contact Me</button>
+            <!-- Identity Micro-Bar Footer -->
+            <div class="p-3.5 sm:p-4 bg-brand-ivory border-t-2 border-brand-dark flex items-center justify-between gap-3">
+              <div class="flex flex-col leading-snug">
+                <span class="font-heading font-bold text-sm sm:text-base text-brand-dark uppercase tracking-tight">
+                  I Putu Oggie Sutrisna Ady
+                </span>
+                <span class="font-mono text-[10px] sm:text-[11px] font-bold text-brand-dark/70 uppercase">
+                  System Architect • Canggu, Bali
+                </span>
+              </div>
+              <div class="flex items-center gap-1 font-mono text-[11px] font-bold px-2.5 py-1 bg-brand-lime text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-md whitespace-nowrap">
+                DPS-01
               </div>
             </div>
-            <div class="w-3 h-3 bg-[#12121a] border-r border-b border-[#ff9a3d]/45 rotate-45 mt-[-6px]"></div>
-          </div>
-
-          <!-- Projects Area Label -->
-          <div id="label-projects" class="absolute -translate-x-1/2 -translate-y-[110%] flex flex-col items-center text-center opacity-0 transition-opacity duration-300">
-            <div class="px-3 py-2 bg-[#12121a]/85 backdrop-blur-md border border-dark-border/60 rounded-xl shadow-lg text-white">
-              <h3 class="text-xs font-display font-extrabold tracking-wider uppercase text-white">💻 Projects Area</h3>
-              <p class="text-[9px] text-gray-400">Click building models to view project specs</p>
-            </div>
-            <div class="w-2 h-2 bg-[#12121a] border-r border-b border-dark-border/60 rotate-45 mt-[-4px]"></div>
-          </div>
-
-          <!-- Skills Area Label -->
-          <div id="label-skills" class="absolute -translate-x-1/2 -translate-y-[110%] flex flex-col items-center text-center opacity-0 transition-opacity duration-300">
-            <div class="px-3 py-2 bg-[#12121a]/85 backdrop-blur-md border border-dark-border/60 rounded-xl shadow-lg text-white">
-              <h3 class="text-xs font-display font-extrabold tracking-wider uppercase text-white">⚡ Skills Area</h3>
-              <p class="text-[9px] text-gray-400">Click pedestals to inspect skill levels</p>
-            </div>
-            <div class="w-2 h-2 bg-[#12121a] border-r border-b border-dark-border/60 rotate-45 mt-[-4px]"></div>
-          </div>
-
-          <!-- About Area Label -->
-          <div id="label-about" class="absolute -translate-x-1/2 -translate-y-[110%] flex flex-col items-center text-center opacity-0 transition-opacity duration-300">
-            <div class="px-3 py-2 bg-[#12121a]/85 backdrop-blur-md border border-dark-border/60 rounded-xl shadow-lg text-white">
-              <h3 class="text-xs font-display font-extrabold tracking-wider uppercase text-white">🎨 Museum Board</h3>
-              <p class="text-[9px] text-gray-400">Click museum architecture for bio</p>
-            </div>
-            <div class="w-2 h-2 bg-[#12121a] border-r border-b border-dark-border/60 rotate-45 mt-[-4px]"></div>
-          </div>
-
-          <!-- Contact Area Label -->
-          <div id="label-contact" class="absolute -translate-x-1/2 -translate-y-[110%] flex flex-col items-center text-center opacity-0 transition-opacity duration-300">
-            <div class="px-3 py-2 bg-[#12121a]/85 backdrop-blur-md border border-dark-border/60 rounded-xl shadow-lg text-white">
-              <h3 class="text-xs font-display font-extrabold tracking-wider uppercase text-white">📧 Contact Kiosk</h3>
-              <p class="text-[9px] text-gray-400">Click kiosk to connect and chat</p>
-            </div>
-            <div class="w-2 h-2 bg-[#12121a] border-r border-b border-dark-border/60 rotate-45 mt-[-4px]"></div>
-          </div>
-        </div>
-
-        <!-- 4. Interactive canvas mount -->
-        <div class="absolute inset-0 z-10 w-full h-full" id="canvas-mount">
-          <!-- WebGL Fallback error trigger -->
-          <div id="webgl-fallback" class="hidden absolute inset-0 z-[60] flex flex-col items-center justify-center bg-[#0a0a0f] p-6 text-center">
-            <svg class="w-16 h-16 text-yellow-500 mb-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-            </svg>
-            <h3 class="text-2xl font-display font-extrabold text-white mb-2">3D Context Not Available</h3>
-            <p class="text-gray-400 text-sm max-w-md">
-              Your browser or graphics card does not seem to support WebGL. Don't worry, you can view the fully responsive flat directory grid below!
-            </p>
-          </div>
-          <!-- Mounting standard Three.js canvas container -->
-          <div id="portfolio-viewport" class="w-full h-full bg-[#0a0a0f]"></div>
-        </div>
-        <button 
-          id="reset-camera-btn" 
-          class="absolute bottom-24 left-1/2 -translate-x-1/2 z-40 bg-[#12121a]/85 backdrop-blur-md border border-dark-border/60 hover:bg-[#ff9a3d]/15 text-gray-300 hover:text-white px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-all shadow-lg active:scale-95 focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none"
-          aria-label="Reset Camera view"
-          title="Reset camera zoom and focus"
-        >
-          📷 Reset View
-        </button>
-
-        <!-- 5. Bottom Area Navigation Menu -->
-        <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-[#12121a]/85 backdrop-blur-md border border-dark-border rounded-full px-2 py-1.5 shadow-2xl flex items-center gap-1 max-w-[92vw] w-max md:px-3 md:py-2">
-          <!-- Active highlight slider -->
-          <div id="nav-indicator" class="absolute h-[80%] bg-[#ff9a3d]/20 border border-[#ff9a3d]/30 rounded-full transition-all duration-300 ease-out z-0"></div>
-
-          <button data-area="home" class="nav-btn relative z-10 px-4 py-2 text-xs font-semibold rounded-full text-[#ff9a3d] hover:text-white transition-all duration-200" aria-label="Navigate to Home island">🏠 Home</button>
-          <button data-area="projects" class="nav-btn relative z-10 px-4 py-2 text-xs font-semibold rounded-full text-gray-400 hover:text-white transition-all duration-200" aria-label="Navigate to Projects island">💻 Projects</button>
-          <button data-area="skills" class="nav-btn relative z-10 px-4 py-2 text-xs font-semibold rounded-full text-gray-400 hover:text-white transition-all duration-200" aria-label="Navigate to Skills island">⚡ Skills</button>
-          <button data-area="about" class="nav-btn relative z-10 px-4 py-2 text-xs font-semibold rounded-full text-gray-400 hover:text-white transition-all duration-200" aria-label="Navigate to About island">🎨 About</button>
-          <button data-area="contact" class="nav-btn relative z-10 px-4 py-2 text-xs font-semibold rounded-full text-gray-400 hover:text-white transition-all duration-200" aria-label="Navigate to Contact island">📧 Contact</button>
-        </nav>
-
-        <!-- Onboarding overlay overlay short tutorial -->
-        <div id="onboarding-overlay" class="fixed inset-0 z-[80] flex items-center justify-center bg-[#0a0a0f]/80 backdrop-blur-md hidden transition-opacity duration-500 ease-out">
-          <div class="m-4 max-w-sm w-full bg-dark-bg-card/95 border border-[#ff9a3d]/30 rounded-2xl p-6 shadow-2xl relative text-center">
-            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#ff9a3d] via-[#f5c842] to-[#ff6b4a] rounded-t-2xl"></div>
-            <div class="inline-block p-3 rounded-full bg-[#ff9a3d]/10 border border-[#ff9a3d]/20 text-[#ff9a3d] mb-4">
-              <span class="text-2xl">🎮</span>
-            </div>
-            <h3 class="text-xl font-display font-extrabold text-white mb-2">Welcome to My 3D Portfolio!</h3>
-            <p class="text-gray-300 text-sm mb-6 leading-relaxed">
-              Explore my interactive Balinese-inspired digital island. Click building objects to view projects, pedestal emblems to inspect skills, or use the bottom navigation.
-            </p>
-            <div class="p-3 bg-white/5 rounded-xl border border-white/5 text-xs text-[#ff9a3d]/80 italic mb-6">
-              Tip: You can walk around using WASD or Arrow Keys!
-            </div>
-            <button id="close-onboarding" class="w-full py-3 bg-gradient-to-r from-[#ff9a3d] to-[#ff6b4a] hover:from-[#ffa34d] hover:to-[#ff7b5a] text-white font-semibold rounded-lg text-sm transition-all focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none hover:scale-[1.02] active:scale-[0.98]">
-              Start Exploring
-            </button>
-          </div>
-        </div>
-
-        <!-- Proximity Interaction HUD Prompt -->
-        <div 
-          id="interaction-prompt" 
-          class="absolute bottom-32 left-1/2 -translate-x-1/2 z-40 bg-[#12121a]/95 backdrop-blur-md border border-[#ff9a3d]/50 hover:border-[#ff9a3d]/90 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transition-all duration-300 transform scale-90 opacity-0 pointer-events-none cursor-pointer hover:scale-[1.02] active:scale-95"
-        >
-          <span class="flex items-center justify-center w-6 h-6 bg-[#ff9a3d]/20 text-[#ff9a3d] font-bold text-xs rounded-lg border border-[#ff9a3d]/45 shadow-sm shadow-[#ff9a3d]/10">E</span>
-          <span id="interaction-text" class="text-sm font-semibold text-gray-200">Interact</span>
-        </div>
-
-        <!-- Standard toggler button for backup flat list grid -->
-        <button 
-          id="toggle-fallback-list" 
-          class="absolute top-6 right-6 md:right-20 z-40 bg-[#12121a]/80 backdrop-blur-sm border border-dark-border/60 hover:bg-[#ff9a3d]/10 text-gray-300 hover:text-white px-4 py-2 text-xs font-semibold rounded-full flex items-center gap-1.5 transition-colors focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none"
-          aria-label="Toggle repository card list grid"
-        >
-          <span>📂</span> Flat Grid
-        </button>
-      </main>
-
-      <!-- Standard Backup flat grid - collapse by default, expandable -->
-      <section id="fallback-grid-section" class="relative z-30 min-h-screen bg-[#0a0a0f] border-t border-dark-border/40 py-16 hidden">
-        <div class="container mx-auto px-6 max-w-7xl">
-          <header class="mb-12 text-center">
-            <h2 class="text-4xl md:text-5xl font-display font-extrabold text-white mb-4">
-              All GitHub <span class="gradient-text bg-gradient-to-r from-[#ff9a3d] to-[#ff6b4a] bg-clip-text text-transparent">Repositories</span>
-            </h2>
-            <p class="text-gray-400 text-base md:text-lg max-w-xl mx-auto">
-              Search, filter, and sort my complete catalog of open-source projects.
-            </p>
-          </header>
-
-          <div id="fallback-error" class="hidden bg-red-500/10 border border-red-500/20 rounded-xl p-6 text-center max-w-lg mx-auto mb-8">
-            <h3 class="text-lg font-semibold text-red-400 mb-2">Failed to load repositories</h3>
-            <p id="fallback-error-text" class="text-gray-400 text-sm"></p>
-          </div>
-
-          <div class="mb-8 space-y-4 max-w-3xl mx-auto">
-            <!-- Search bar -->
-            <div class="relative">
-              <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                </svg>
-              </div>
-              <input
-                type="search"
-                id="repo-search"
-                name="search"
-                placeholder="Search repositories..."
-                class="w-full pl-12 pr-4 py-3 bg-dark-bg-secondary border border-dark-border rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
-                aria-label="Search repositories"
-              />
-              <div class="absolute inset-y-0 right-0 pr-4 flex items-center">
-                <kbd class="hidden sm:inline-flex items-center px-2 py-0.5 text-xs text-gray-500 bg-dark-bg rounded border border-dark-border">
-                  /
-                </kbd>
-              </div>
-            </div>
-
-            <!-- Filter and Sort Bar -->
-            <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-              <div class="flex flex-wrap gap-2 items-center">
-                <div class="relative" id="topics-filter-container">
-                  <button
-                    type="button"
-                    id="topics-filter-btn"
-                    class="inline-flex items-center gap-2 px-4 py-2 bg-dark-bg-secondary border border-dark-border rounded-lg text-sm text-gray-300 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                  >
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
-                    </svg>
-                    Topics
-                    <span id="selected-topics-count" class="hidden px-1.5 py-0.5 text-xs bg-primary-500 text-white rounded-full"></span>
-                  </button>
-                  <div id="topics-dropdown" class="hidden absolute z-50 mt-2 w-64 max-h-64 overflow-y-auto bg-dark-bg-secondary border border-dark-border rounded-lg shadow-xl" role="menu">
-                    <div class="p-2" id="topics-dropdown-container"></div>
-                  </div>
-                </div>
-
-                <div class="relative" id="language-filter-container">
-                  <button
-                    type="button"
-                    id="language-filter-btn"
-                    class="inline-flex items-center gap-2 px-4 py-2 bg-dark-bg-secondary border border-dark-border rounded-lg text-sm text-gray-300 hover:border-primary-500/50 focus:outline-none focus:ring-2 focus:ring-primary-500 transition-colors"
-                  >
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                    </svg>
-                    <span id="language-filter-text">Language</span>
-                  </button>
-                  <div id="language-dropdown" class="hidden absolute z-50 mt-2 w-48 max-h-64 overflow-y-auto bg-dark-bg-secondary border border-dark-border rounded-lg shadow-xl" role="menu">
-                    <div class="p-2" id="language-dropdown-container"></div>
-                  </div>
-                </div>
-
-                <button
-                  type="button"
-                  id="clear-filters"
-                  class="hidden inline-flex items-center gap-1 px-3 py-1.5 text-xs text-gray-400 hover:text-white transition-colors"
-                >
-                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                  </svg>
-                  Clear
-                </button>
-              </div>
-
-              <div class="flex items-center gap-2">
-                <span class="text-sm text-gray-500">Sort:</span>
-                <select
-                  id="sort-select"
-                  name="sort"
-                  class="bg-dark-bg-secondary border border-dark-border rounded-lg px-3 py-2 text-sm text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500"
-                >
-                  <option value="updated-desc">Recently Updated</option>
-                  <option value="updated-asc">Oldest Updated</option>
-                  <option value="stars-desc">Most Stars</option>
-                  <option value="stars-asc">Least Stars</option>
-                  <option value="name-asc">Name (A-Z)</option>
-                  <option value="name-desc">Name (Z-A)</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <div class="flex items-center justify-between mb-6 max-w-7xl mx-auto">
-            <p id="repo-count" class="text-gray-400 text-sm font-semibold uppercase tracking-wider" aria-live="polite" aria-atomic="true">
-              0 projects
-            </p>
-          </div>
-
-          <div id="repo-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            <!-- Repos populated dynamically -->
           </div>
         </div>
       </section>
-    </div>
 
-    <!-- 6. Detail information panel modals -->
-    
-    <!-- Project Modal Dialog -->
-    <dialog id="project-modal" class="bg-transparent border-none p-0 w-full max-w-2xl backdrop:bg-black/60 backdrop:backdrop-blur-sm outline-none overflow-visible">
-      <div class="m-4 bg-dark-bg-card/90 backdrop-blur-md border border-dark-border rounded-2xl p-6 md:p-8 shadow-2xl relative">
-        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#ff9a3d] via-[#f5c842] to-[#ff6b4a] rounded-t-2xl"></div>
-
-        <button id="close-proj-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/5 transition-colors focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none" aria-label="Close modal">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-
-        <header class="mb-4">
-          <span id="proj-badge" class="inline-block px-2.5 py-1 text-xs font-semibold uppercase bg-[#ff9a3d]/10 text-[#ff9a3d] rounded-full border border-[#ff9a3d]/25 mb-2"></span>
-          <h2 id="proj-title" class="text-2xl md:text-3xl font-display font-extrabold text-white"></h2>
-        </header>
-
-        <p id="proj-desc" class="text-gray-300 text-sm md:text-base leading-relaxed mb-6"></p>
-
-        <div class="mb-8">
-          <h3 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-3">Core Stack</h3>
-          <div id="proj-stack" class="flex flex-wrap gap-2"></div>
+      <!-- ================= 3. ENGINEERING DNA & CORE CAPABILITIES ================= -->
+      <section id="stack" class="bg-brand-cream border-2 border-brand-dark shadow-brutal rounded-xl p-6 sm:p-10 lg:p-12 flex flex-col gap-8 scroll-mt-24">
+        <!-- Header -->
+        <div class="flex flex-col gap-2 max-w-[820px]">
+          <span class="inline-flex self-start px-3 py-1 bg-brand-dark text-brand-lime border-2 border-brand-dark rounded-md font-mono text-[10.5px] sm:text-[11.5px] font-bold uppercase tracking-wide">
+            Engineering DNA &amp; Core Capabilities
+          </span>
+          <h2 class="font-heading font-bold text-[28px] sm:text-[38px] uppercase tracking-tight text-brand-dark leading-tight">
+            Standar Rekayasa Perangkat Lunak &amp; Kapabilitas Inti
+          </h2>
+          <p class="font-body text-[15px] sm:text-[16px] text-brand-dark/85 font-medium">
+            9+ tahun spesialisasi mendalam dalam arsitektur backend scalable, optimasi basis data, dan sistem berkinerja tinggi tanpa kompromi.
+          </p>
         </div>
 
-        <footer class="flex flex-wrap items-center gap-3 pt-6 border-t border-dark-border">
-          <a id="proj-demo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#ff9a3d] to-[#ff6b4a] hover:from-[#ffa34d] hover:to-[#ff7b5a] text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-[1.03] focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none text-sm shadow-lg shadow-[#ff9a3d]/15">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-            </svg>
-            Live Demo
+        <!-- 4 Bento Architecture Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Pillar 1: Backend Architecture -->
+          <article class="bg-brand-ivory border-2 border-brand-dark shadow-brutal rounded-xl p-6 flex flex-col justify-between gap-5">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <span class="w-11 h-11 rounded-lg bg-brand-blue text-white border-2 border-brand-dark shadow-brutal-sm flex items-center justify-center font-heading font-bold text-lg" aria-hidden="true">
+                  BE
+                </span>
+                <span class="font-mono text-[10px] font-bold bg-brand-lime text-brand-dark px-2.5 py-1 border border-brand-dark rounded uppercase">BACKEND &amp; API</span>
+              </div>
+              <h3 class="font-heading font-bold text-[20px] uppercase text-brand-dark">Cloud REST, GraphQL &amp; Microservices</h3>
+              <p class="font-body text-[13.5px] text-brand-dark/80 leading-relaxed">
+                Arsitektur API Gateway terdistribusi berbasis Laravel 11 dan PHP 8.3+. Dioptimalkan dengan queue workers asynchronous, event broadcasts, dan pemisahan read-write replica untuk menangani puluhan ribu transaksi bersamaan.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-brand-dark/15 font-mono text-[10.5px] font-bold">
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">Laravel 11</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">PHP 8.3+</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">GraphQL &amp; REST</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">Docker</span>
+            </div>
+          </article>
+
+          <!-- Pillar 2: Frontend & Reactive Systems -->
+          <article class="bg-brand-ivory border-2 border-brand-dark shadow-brutal rounded-xl p-6 flex flex-col justify-between gap-5">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <span class="w-11 h-11 rounded-lg bg-brand-lime text-brand-dark border-2 border-brand-dark shadow-brutal-sm flex items-center justify-center font-heading font-bold text-lg" aria-hidden="true">
+                  FE
+                </span>
+                <span class="font-mono text-[10px] font-bold bg-brand-cream text-brand-dark px-2.5 py-1 border border-brand-dark rounded uppercase">TYPE-SAFE UI</span>
+              </div>
+              <h3 class="font-heading font-bold text-[20px] uppercase text-brand-dark">Strict TypeScript &amp; Offline-First PWA</h3>
+              <p class="font-body text-[13.5px] text-brand-dark/80 leading-relaxed">
+                Antarmuka modern berbasis TypeScript dengan aturan kompilasi ketat. Aplikasi PWA yang menulis transaksi ke IndexedDB lokal terlebih dahulu, sehingga tetap responsif saat koneksi terputus dan otomatis tersinkron saat online.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-brand-dark/15 font-mono text-[10.5px] font-bold">
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">TypeScript</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">JavaScript (ES6+)</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">TailwindCSS</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">IndexedDB PWA</span>
+            </div>
+          </article>
+
+          <!-- Pillar 3: Database Optimization -->
+          <article class="bg-brand-ivory border-2 border-brand-dark shadow-brutal rounded-xl p-6 flex flex-col justify-between gap-5">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <span class="w-11 h-11 rounded-lg bg-brand-orange text-brand-dark border-2 border-brand-dark shadow-brutal-sm flex items-center justify-center font-heading font-bold text-lg" aria-hidden="true">
+                  DB
+                </span>
+                <span class="font-mono text-[10px] font-bold bg-brand-lime text-brand-dark px-2.5 py-1 border border-brand-dark rounded uppercase">STORAGE &amp; CACHE</span>
+              </div>
+              <h3 class="font-heading font-bold text-[20px] uppercase text-brand-dark">Relational Schemas &amp; Query Caching</h3>
+              <p class="font-body text-[13.5px] text-brand-dark/80 leading-relaxed">
+                Perancangan skema relasional tangguh (PostgreSQL &amp; MySQL), strategi pengindeksan presisi, audit log forensik, serta implementasi Redis key-value cache untuk pencapaian query berkecepatan sub-milidetik.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-brand-dark/15 font-mono text-[10.5px] font-bold">
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">PostgreSQL</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">MySQL / MariaDB</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">Redis Caching</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">Indexing Tuning</span>
+            </div>
+          </article>
+
+          <!-- Pillar 4: Architecture Governance & Standards -->
+          <article class="bg-brand-ivory border-2 border-brand-dark shadow-brutal rounded-xl p-6 flex flex-col justify-between gap-5">
+            <div class="flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <span class="w-11 h-11 rounded-lg bg-brand-green text-white border-2 border-brand-dark shadow-brutal-sm flex items-center justify-center font-heading font-bold text-lg" aria-hidden="true">
+                  IP
+                </span>
+                <span class="font-mono text-[10px] font-bold bg-brand-cream text-brand-dark px-2.5 py-1 border border-brand-dark rounded uppercase">GOVERNANCE</span>
+              </div>
+              <h3 class="font-heading font-bold text-[20px] uppercase text-brand-dark">Zero Lock-in &amp; 100% Hak Milik Kode</h3>
+              <p class="font-body text-[13.5px] text-brand-dark/80 leading-relaxed">
+                Seluruh repositori Git, skema basis data, dan hak cipta IP diserahkan penuh kepada klien. Bebas royalti berulang, garansi uptime 99.9% target SLA, dan kemitraan teknis langsung tanpa birokrasi berbelit.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2 border-t-2 border-brand-dark/15 font-mono text-[10.5px] font-bold">
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">100% IP Transfer</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">99.9% SLA</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">Clean Architecture</span>
+              <span class="px-2.5 py-1 bg-brand-cream border border-brand-dark rounded">Direct Engagement</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= 4. SELECTED SIGNATURE WORK ================= -->
+      <section id="works" class="bg-brand-cream-light border-2 border-brand-dark shadow-brutal rounded-xl p-6 sm:p-10 lg:p-12 flex flex-col gap-8 scroll-mt-24">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="flex flex-col gap-2 max-w-[760px]">
+            <span class="inline-flex self-start px-3 py-1 bg-brand-cream text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-md font-mono text-[10.5px] sm:text-[11.5px] font-bold uppercase tracking-wide">
+              Proof of Work &amp; Production Track Record
+            </span>
+            <h2 class="font-heading font-bold text-[28px] sm:text-[38px] uppercase tracking-tight text-brand-dark leading-tight">
+              Studi Kasus Arsitektur &amp; Sistem Produksi Nyata
+            </h2>
+            <p class="font-body text-[14.5px] sm:text-[16px] text-brand-dark/80 font-medium">
+              Aplikasi skala enterprise yang beroperasi di lapangan untuk sektor layanan kesehatan, HR korporat, dan ekosistem F&amp;B di Bali.
+            </p>
+          </div>
+          <a 
+            href="https://github.com/oggiesutrisna" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="font-mono text-[12px] font-bold px-4 py-2 bg-brand-lime text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-lg hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none transition-all whitespace-nowrap self-start md:self-end inline-flex items-center gap-2"
+          >
+            <span>GitHub (50+ Repos)</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h9M8 3.5 11.5 7 8 10.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-          <a id="proj-github" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/5 hover:bg-white/10 text-white font-semibold rounded-lg border border-white/10 hover:border-white/20 transition-all text-sm focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            View Repository
+        </div>
+
+        <!-- 3 Signature Case Studies Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Case Study 1: DokterOne -->
+          <article class="bg-brand-cream border-2 border-brand-dark shadow-brutal rounded-xl overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all">
+            <div>
+              <div class="h-9 bg-brand-cream-light text-brand-dark border-b-2 border-brand-dark flex items-center justify-between px-3">
+                <div class="flex items-center gap-1.5" aria-hidden="true">
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-orange border border-brand-dark"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-cream border border-brand-dark"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-green border border-brand-dark"></span>
+                </div>
+                <span class="font-mono text-[10.5px] font-bold text-brand-dark">dokterone.co.id</span>
+                <span class="font-mono text-[9px] bg-brand-lime text-brand-dark px-1.5 py-0.5 border border-brand-dark rounded font-bold">HEALTHCARE</span>
+              </div>
+
+              <div class="p-5 flex flex-col gap-2.5">
+                <span class="font-mono text-[10.5px] font-bold text-brand-blue uppercase tracking-wide">
+                  Clinical Platform
+                </span>
+                <h3 class="font-heading font-bold text-[18px] uppercase text-brand-dark leading-snug">
+                  DokterOne Healthcare System
+                </h3>
+                <p class="font-body text-[13px] text-brand-dark/80 leading-relaxed">
+                  Platform rekam medis digital komprehensif, sertifikasi tes PCR Covid terintegrasi, dan analitik data pasien dengan standar enkripsi medis ketat.
+                </p>
+                <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-[10px] font-bold">
+                  <span class="px-2 py-0.5 bg-brand-cream-light border border-brand-dark rounded">Laravel</span>
+                  <span class="px-2 py-0.5 bg-brand-cream-light border border-brand-dark rounded">MySQL</span>
+                  <span class="px-2 py-0.5 bg-brand-cream-light border border-brand-dark rounded">HIPAA Ready</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 pt-0 flex flex-col gap-3">
+              <div class="p-2 bg-brand-cream-light border border-brand-dark rounded-lg font-mono text-[10.5px] font-bold text-brand-dark flex items-center justify-between">
+                <span>10k+ Pasien</span>
+                <span class="text-brand-emerald">● HIPAA Standards</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a 
+                  href="https://dokterone.co.id" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="flex-1 py-2.5 bg-brand-lime border-2 border-brand-dark shadow-brutal-sm rounded-lg font-heading font-bold text-[12px] uppercase text-brand-dark text-center transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                >
+                  Live Demo
+                </a>
+                <button 
+                  type="button" 
+                  data-project-trigger="dokterone" 
+                  class="px-3.5 py-2.5 bg-brand-cream-light border-2 border-brand-dark shadow-brutal-sm rounded-lg font-heading font-bold text-[12px] uppercase text-brand-dark hover:bg-brand-cream cursor-pointer"
+                >
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 2: Simaka HRMS -->
+          <article class="bg-brand-cream border-2 border-brand-dark shadow-brutal rounded-xl overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all">
+            <div>
+              <div class="h-9 bg-brand-cream-light text-brand-dark border-b-2 border-brand-dark flex items-center justify-between px-3">
+                <div class="flex items-center gap-1.5" aria-hidden="true">
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-orange border border-brand-dark"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-cream border border-brand-dark"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-green border border-brand-dark"></span>
+                </div>
+                <span class="font-mono text-[10.5px] font-bold text-brand-dark">simaka.app</span>
+                <span class="font-mono text-[9px] bg-brand-cream text-brand-dark px-1.5 py-0.5 border border-brand-dark rounded font-bold">ENTERPRISE HR</span>
+              </div>
+
+              <div class="p-5 flex flex-col gap-2.5">
+                <span class="font-mono text-[10.5px] font-bold text-brand-emerald uppercase tracking-wide">
+                  HR &amp; Payroll Platform
+                </span>
+                <h3 class="font-heading font-bold text-[18px] uppercase text-brand-dark leading-snug">
+                  Simaka HRMS Enterprise
+                </h3>
+                <p class="font-body text-[13px] text-brand-dark/80 leading-relaxed">
+                  Sistem otomasi manajemen SDM korporat: alur persetujuan cuti berjenjang, visualisasi struktur bagan organisasi real-time, dan kalkulasi payroll otomatis.
+                </p>
+                <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-[10px] font-bold">
+                  <span class="px-2 py-0.5 bg-brand-cream-light border border-brand-dark rounded">Laravel</span>
+                  <span class="px-2 py-0.5 bg-brand-cream-light border border-brand-dark rounded">PostgreSQL</span>
+                  <span class="px-2 py-0.5 bg-brand-cream-light border border-brand-dark rounded">TailwindCSS</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 pt-0 flex flex-col gap-3">
+              <div class="p-2 bg-brand-cream-light border border-brand-dark rounded-lg font-mono text-[10.5px] font-bold text-brand-dark flex items-center justify-between">
+                <span>Automated Payroll</span>
+                <span class="text-brand-emerald">● Org Chart Sync</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a 
+                  href="https://github.com/oggiesutrisna/simaka" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="flex-1 py-2.5 bg-brand-cream-light hover:bg-brand-lime border-2 border-brand-dark shadow-brutal-sm rounded-lg font-heading font-bold text-[12px] uppercase text-brand-dark text-center transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                >
+                  GitHub Repo
+                </a>
+                <button 
+                  type="button" 
+                  data-project-trigger="simaka" 
+                  class="px-3.5 py-2.5 bg-brand-cream-light border-2 border-brand-dark shadow-brutal-sm rounded-lg font-heading font-bold text-[12px] uppercase text-brand-dark hover:bg-brand-cream cursor-pointer"
+                >
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Case Study 3: zivoPOS -->
+          <article class="bg-brand-cream border-2 border-brand-dark shadow-brutal rounded-xl overflow-hidden flex flex-col justify-between hover:-translate-y-1 transition-all">
+            <div>
+              <div class="h-9 bg-brand-cream-light text-brand-dark border-b-2 border-brand-dark flex items-center justify-between px-3">
+                <div class="flex items-center gap-1.5" aria-hidden="true">
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-orange border border-brand-dark"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-cream border border-brand-dark"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-brand-green border border-brand-dark"></span>
+                </div>
+                <span class="font-mono text-[10.5px] font-bold text-brand-dark">zivopos.app</span>
+                <span class="font-mono text-[9px] bg-brand-lime text-brand-dark px-1.5 py-0.5 border border-brand-dark rounded font-bold">25+ OUTLETS</span>
+              </div>
+
+              <div class="p-5 flex flex-col gap-2.5">
+                <span class="font-mono text-[10.5px] font-bold text-brand-blue uppercase tracking-wide">
+                  F&amp;B &amp; Offline Commerce
+                </span>
+                <h3 class="font-heading font-bold text-[18px] uppercase text-brand-dark leading-snug">
+                  zivoPOS Cloud &amp; Offline Engine
+                </h3>
+                <p class="font-body text-[13px] text-brand-dark/80 leading-relaxed">
+                  Sistem kasir cloud offline-ready untuk kafe, beach club, dan restoran di Bali. Split bill instan di bawah 15 detik, tiket Kitchen Display System (KDS), dan auto-sync tanpa jeda.
+                </p>
+                <div class="flex flex-wrap gap-1.5 pt-2 font-mono text-[10px] font-bold">
+                  <span class="px-2 py-0.5 bg-brand-cream-light border border-brand-dark rounded">Laravel 11</span>
+                  <span class="px-2 py-0.5 bg-brand-cream-light border border-brand-dark rounded">TanStack PWA</span>
+                  <span class="px-2 py-0.5 bg-brand-cream-light border border-brand-dark rounded">Offline Sync</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 pt-0 flex flex-col gap-3">
+              <div class="p-2 bg-brand-cream-light border border-brand-dark rounded-lg font-mono text-[10.5px] font-bold text-brand-dark flex items-center justify-between">
+                <span>120k+ Tx/Bln</span>
+                <span class="text-brand-emerald">● &lt; 0.8s Latency</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <a 
+                  href="https://wa.me/6285338000872?text=Halo%20Oggie,%20saya%20tertarik%20konsultasi%20sistem%20zivoPOS" 
+                  target="_blank" 
+                  rel="noopener" 
+                  class="flex-1 py-2.5 bg-brand-lime border-2 border-brand-dark shadow-brutal-sm rounded-lg font-heading font-bold text-[12px] uppercase text-brand-dark text-center transition-all hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none"
+                >
+                  Consult Demo
+                </a>
+                <button 
+                  type="button" 
+                  data-project-trigger="porto" 
+                  class="px-3.5 py-2.5 bg-brand-cream-light border-2 border-brand-dark shadow-brutal-sm rounded-lg font-heading font-bold text-[12px] uppercase text-brand-dark hover:bg-brand-cream cursor-pointer"
+                >
+                  Details
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= 5. DIRECT ENGAGEMENT & STUDIO FOOTER ================= -->
+      <section id="contact" class="bg-brand-obsidian border-2 border-brand-dark shadow-brutal-lg rounded-xl p-6 sm:p-10 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-7 text-white">
+        <div class="flex flex-col gap-3 max-w-[660px] text-center lg:text-left">
+          <span class="inline-flex self-center lg:self-start px-3 py-1 bg-brand-lime text-brand-dark border-2 border-brand-dark rounded-md font-mono text-[10.5px] sm:text-[11.5px] font-bold uppercase tracking-wide">
+            VIP TECHNICAL ENGAGEMENT • BALI
+          </span>
+          <h2 class="font-heading font-bold text-[26px] sm:text-[36px] uppercase tracking-tight text-brand-cream leading-tight">
+            Siap Membangun Arsitektur Software yang <span class="bg-brand-lime text-brand-dark px-2 border-2 border-brand-dark inline-block -rotate-1">Tangguh &amp; Terukur</span>?
+          </h2>
+          <p class="font-body text-[14px] sm:text-[16px] text-brand-cream/85 font-medium leading-relaxed">
+            Terbuka untuk posisi Senior Software Engineer, kontrak rekayasa arsitektur enterprise, serta sesi technical blueprint langsung di outlet atau kantor Anda di Bali.
+          </p>
+          <p class="font-mono text-[11.5px] font-bold text-brand-lime">
+            WAKTU AKTIF: SENIN–SABTU • 09.00–18.00 WITA (CANGGU &amp; DENPASAR)
+          </p>
+        </div>
+
+        <div class="flex flex-col gap-3 w-full lg:w-auto shrink-0">
+          <a 
+            href="https://wa.me/6285338000872?text=Halo%20Oggie,%20saya%20ingin%20jadwalkan%20technical%20meeting%20arsitektur%20aplikasi" 
+            target="_blank" 
+            rel="noopener" 
+            class="inline-flex items-center justify-center gap-2 font-heading font-bold text-[14px] sm:text-[15px] uppercase px-8 py-4 bg-brand-lime text-brand-dark border-2 border-brand-cream shadow-brutal rounded-xl hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none active:translate-x-[4px] active:translate-y-[4px] transition-all whitespace-nowrap"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 9.5c.5 2.5 2.5 4.5 5 5l1.5-1.5 2 2c-.5 1.5-1.5 2-3 1.5-3.5-1-6.5-4-7.5-7.5-.5-1.5 0-2.5 1.5-3l2 2L9 9.5Z" fill="currentColor"/></svg>
+            <span>WhatsApp Direct</span>
           </a>
-          <button id="proj-page" class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#ff9a3d]/10 hover:bg-[#ff9a3d]/20 text-[#ff9a3d] font-semibold rounded-lg border border-[#ff9a3d]/20 hover:border-[#ff9a3d]/30 transition-all text-sm focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none">
-            Details
-          </button>
-        </footer>
-      </div>
-    </dialog>
+          <a 
+            href="mailto:info@extensiacreativebali.com" 
+            class="inline-flex items-center justify-center gap-2 font-heading font-bold text-[13px] uppercase px-8 py-3 bg-transparent text-brand-cream border-2 border-brand-cream rounded-xl hover:bg-brand-cream hover:text-brand-dark transition-colors"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            <span>Email Inquiry</span>
+          </a>
+        </div>
+      </section>
 
-    <!-- Skill Modal Dialog -->
-    <dialog id="skill-modal" class="bg-transparent border-none p-0 w-full max-w-md backdrop:bg-black/60 backdrop:backdrop-blur-sm outline-none overflow-visible">
-      <div class="m-4 bg-dark-bg-card/90 backdrop-blur-md border border-dark-border rounded-2xl p-6 shadow-2xl relative">
-        <div class="absolute inset-x-0 top-0 h-1 bg-[#ff9a3d] rounded-t-2xl"></div>
-
-        <button id="close-skill-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/5 transition-colors focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none" aria-label="Close modal">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-
-        <div class="flex items-center gap-4 mb-4 mt-2">
-          <div id="skill-icon-container" class="w-14 h-14 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-3xl"></div>
-          <div>
-            <h2 id="skill-title" class="text-xl md:text-2xl font-display font-extrabold text-white"></h2>
-            <span class="text-xs font-semibold text-[#ff9a3d] uppercase tracking-wider">Verified Competency</span>
+      <!-- Semantic Studio Footer -->
+      <footer class="border-2 border-brand-dark shadow-brutal rounded-xl p-6 sm:p-8 bg-brand-cream-light flex flex-col gap-5">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pb-4 border-b-2 border-brand-dark/15">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-dark flex items-center justify-center text-brand-lime font-heading font-bold">O</span>
+            <div class="flex flex-col">
+              <span class="font-heading font-bold text-[16px] text-brand-dark leading-tight">Oggie Sutrisna</span>
+              <span class="font-mono text-[10px] text-brand-dark/70 font-semibold uppercase">Senior Software Engineer • Bali, Indonesia</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 font-mono text-[12px] font-bold text-brand-dark">
+            <a href="https://github.com/oggiesutrisna" target="_blank" rel="noopener noreferrer" class="hover:underline">GitHub</a>
+            <span>•</span>
+            <a href="https://linkedin.com/in/oggiesutrisna" target="_blank" rel="noopener noreferrer" class="hover:underline">LinkedIn</a>
+            <span>•</span>
+            <a href="https://twitter.com/oggiesutrisna" target="_blank" rel="noopener noreferrer" class="hover:underline">Twitter/X</a>
+            <span>•</span>
+            <a href="#identity" class="hover:underline">Top ↑</a>
           </div>
         </div>
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 font-mono text-[11px] text-brand-dark/70 text-center sm:text-left">
+          <span>&copy; 2026 <strong>Oggie Sutrisna</strong>. All Rights Reserved. Engineered with Neubrutalism.</span>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-brand-green" aria-hidden="true"></span>
+            <span>DPS-01 Production Node Active</span>
+            <span>•</span>
+            <span>Zero Vendor Lock-in</span>
+          </div>
+        </div>
+      </footer>
 
-        <p id="skill-desc" class="text-gray-300 text-sm md:text-base leading-relaxed mb-6"></p>
+    </div>
 
-        <footer class="flex justify-end pt-4 border-t border-dark-border">
-          <button id="ok-skill-modal" class="px-5 py-2 bg-gradient-to-r from-[#ff9a3d] to-[#ff6b4a] text-white font-semibold rounded-lg text-sm hover:scale-[1.03] transition-all focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none">
-            Got it!
-          </button>
-        </footer>
-      </div>
-    </dialog>
-
-    <!-- Contact Panel Dialog -->
-    <dialog id="contact-panel" class="bg-transparent border-none p-0 w-full max-w-lg backdrop:bg-black/60 backdrop:backdrop-blur-sm outline-none overflow-visible">
-      <div class="m-4 bg-dark-bg-card/90 backdrop-blur-md border border-dark-border rounded-2xl p-6 md:p-8 shadow-2xl relative">
-        <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#ff9a3d] via-[#f5c842] to-[#ff6b4a] rounded-t-2xl"></div>
-
-        <button id="close-contact-panel" class="absolute top-4 right-4 text-gray-400 hover:text-white p-2 rounded-full hover:bg-white/5 transition-colors focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none" aria-label="Close modal">
+    <!-- ================= MODALS ================= -->
+    <!-- Project Modal Dialog -->
+    <dialog id="project-modal" class="bg-transparent border-none p-0 w-full max-w-2xl backdrop:bg-black/60 backdrop:backdrop-blur-sm outline-none overflow-visible">
+      <div class="m-4 bg-brand-cream border-2 border-brand-dark rounded-xl p-6 md:p-8 shadow-brutal-lg relative">
+        <button id="close-proj-modal" class="absolute top-4 right-4 text-brand-dark p-2 hover:bg-brand-cream-light border-2 border-brand-dark rounded-lg transition-colors cursor-pointer" aria-label="Close modal">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
           </svg>
         </button>
 
         <header class="mb-4">
-          <h2 id="contact-title" class="text-2xl font-display font-extrabold text-white"></h2>
-          <span id="contact-subtitle" class="text-xs font-semibold text-[#ff9a3d] uppercase tracking-wider"></span>
+          <span id="proj-badge" class="inline-block px-2.5 py-1 text-xs font-mono font-bold uppercase bg-brand-lime text-brand-dark rounded border-2 border-brand-dark mb-2"></span>
+          <h2 id="proj-title" class="text-2xl md:text-3xl font-heading font-bold text-brand-dark"></h2>
         </header>
 
-        <div class="space-y-4">
-          <p id="contact-desc" class="text-gray-300 text-sm md:text-base leading-relaxed"></p>
-          <div id="contact-extra" class="pt-4 mt-4 border-t border-white/5"></div>
+        <p id="proj-desc" class="font-body text-brand-dark/85 text-sm md:text-base leading-relaxed mb-6"></p>
+
+        <div class="mb-8">
+          <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-brand-dark/70 mb-3">Core Stack</h3>
+          <div id="proj-stack" class="flex flex-wrap gap-2 font-mono"></div>
         </div>
 
-        <footer class="flex justify-end pt-6 border-t border-dark-border mt-6">
-          <button id="ok-contact-panel" class="px-5 py-2 bg-gradient-to-r from-[#ff9a3d] to-[#ff6b4a] text-white font-semibold rounded-lg text-sm hover:scale-[1.03] transition-all focus:ring-2 focus:ring-[#ff9a3d] focus:outline-none">
-            Close
-          </button>
+        <footer class="flex flex-wrap items-center gap-3 pt-6 border-t-2 border-brand-dark/15">
+          <a id="proj-demo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-lime text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-lg font-heading font-bold uppercase text-xs hover:translate-x-[1px] hover:translate-y-[1px]">
+            Live Demo ↗
+          </a>
+          <a id="proj-github" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-ivory text-brand-dark border-2 border-brand-dark shadow-brutal-sm rounded-lg font-heading font-bold uppercase text-xs hover:translate-x-[1px] hover:translate-y-[1px]">
+            Repository ↗
+          </a>
         </footer>
       </div>
     </dialog>
 
-    <!-- Main Module Script -->
+    <!-- Main Entry Module Script -->
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

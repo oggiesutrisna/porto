@@ -595,3 +595,64 @@ dialog[open]::backdrop {
 .animate-float-slower {
   animation: float 8s ease-in-out infinite;
 }
+
+/* --- Floating HUD Primitives (3D overlay hierarchy) --- */
+
+/* Shared glassmorphism surface for HUD cards, prompts, and badges */
+.hud-float {
+  background-color: rgba(18, 18, 26, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 154, 61, 0.25);
+}
+
+html.light-mode .hud-float {
+  background-color: rgba(255, 255, 255, 0.88);
+  border-color: #e5c07b;
+}
+
+/* Shared hidden state: fade + slight slide-down + shrink.
+   Toggled via classList so enter/exit transitions stay smooth.
+   Uses individual `translate`/`scale` properties to avoid clobbering
+   Tailwind translate utilities applied on the same elements. */
+.hud-hidden {
+  opacity: 0 !important;
+  translate: 0 8px;
+  scale: 0.96;
+  pointer-events: none !important;
+}
+
+/* Pulsing pinpoint dot for in-world area indicators */
+.hud-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+  background: radial-gradient(circle, #ff9a3d 0%, #ff6b4a 100%);
+  box-shadow:
+    0 0 0 3px rgba(255, 154, 61, 0.25),
+    0 0 12px rgba(255, 154, 61, 0.8);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hud-dot {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   Neubrutalism Design System Utilities
+   ========================================================================== */
+@layer utilities {
+  .dot-grid {
+    background-color: #fffdf5;
+    background-image: radial-gradient(rgba(17, 17, 24, 0.1) 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+  }
+}
+
+::selection {
+  background-color: #d4ff00;
+  color: #111118;
+}

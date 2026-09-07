@@ -26,3 +26,7 @@ pnpm-debug.log*
 # agent workflows
 .agent/
 .vercel/
+
+# local SEO audit output (HTML-only; PDFs/binaries excluded)
+audit-pages.json
+audit-*.json

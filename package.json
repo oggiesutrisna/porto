@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint src --ext .ts",
+    "lint": "eslint src",
+    "check": "tsc --noEmit",
     "format": "prettier --write src/**/*.ts index.html src/**/*.css"
   },
   "dependencies": {

@@ -4,9 +4,23 @@ export default {
     './index.html',
     './src/**/*.{ts,css,html}'
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
+        "brand-obsidian": "#0F1117",
+        "brand-midnight": "#171923",
+        "brand-cream": "#FFF9D5",
+        "brand-ivory": "#FFFDF5",
+        "brand-cream-light": "#FFFDF0",
+        "brand-blue": "#2563EB",
+        "brand-blue-tech": "#3B82F6",
+        "brand-lime": "#D4FF00",
+        "brand-orange": "#FF9D50",
+        "brand-amber": "#D97706",
+        "brand-dark": "#111118",
+        "brand-green": "#10B981",
+        "brand-emerald": "#059669",
         primary: {
           50: '#f5f3ff',
           100: '#ede9fe',
@@ -31,41 +45,26 @@ export default {
           muted: 'var(--color-text-muted)',
         }
       },
-      backgroundColor: {
-        'dark-bg': 'var(--color-bg-primary)',
-        'dark-bg-secondary': 'var(--color-bg-secondary)',
-        'dark-bg-card': 'var(--color-bg-card)',
-      },
-      textColor: {
-        'white': 'var(--color-text-primary)',
-        'gray-300': 'var(--color-text-secondary)',
-        'gray-400': 'var(--color-text-muted)',
-      },
-      borderColor: {
-        'dark-border': 'var(--color-border)',
-      },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Outfit', 'system-ui', 'sans-serif'],
+        heading: ["'Clash Display'", "sans-serif"],
+        body: ["'Plus Jakarta Sans'", "sans-serif"],
+        mono: ["'Space Mono'", "monospace"],
+        sans: ["'Plus Jakarta Sans'", "sans-serif"],
+        display: ["'Clash Display'", "sans-serif"],
       },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-out',
-        'fade-in-up': 'fadeInUp 0.6s ease-out',
-        'float': 'float 6s ease-in-out infinite',
+      boxShadow: {
+        "brutal-sm": "3px 3px 0 0 #111118",
+        brutal: "5px 5px 0 0 #111118",
+        "brutal-lg": "7px 7px 0 0 #111118",
+        "brutal-xl": "10px 10px 0 0 #111118",
       },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
+      borderRadius: {
+        sm: "4px",
+        DEFAULT: "4px",
+        md: "6px",
+        lg: "8px",
+        xl: "12px",
+        "2xl": "14px",
       },
     },
   },
